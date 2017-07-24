@@ -1,0 +1,2 @@
+[26-Oct-2016 00:08:42 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/webmelin/public_html/vifonic.vn/wp-content/themes/vifonic/404.php on line 6
+[26-Oct-2016 10:17:14 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/webmelin/public_html/vifonic.vn/wp-content/themes/vifonic/404.php on line 6
