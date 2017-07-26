@@ -2,7 +2,6 @@
 /**
  * Template name: Full Width
  */
-global $vifonic_options;
 get_header();
 ?>
 

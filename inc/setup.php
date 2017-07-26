@@ -204,10 +204,11 @@ function vifonic_enqueue_styles()
 {
     global $vifonic_version;
 
-    wp_enqueue_style('vifonic-style', get_stylesheet_uri());
-    wp_enqueue_style('font-awesome-style', get_template_directory_uri() . '/css/font-awesome.min.css');
-    wp_enqueue_style('carousel-style', get_template_directory_uri() . '/css/owl.carousel.min.css');
-    wp_enqueue_style('carousel-default-theme-style', get_template_directory_uri() . '/css/owl.theme.default.min.css');
+    wp_enqueue_style('vifonic-css', get_stylesheet_uri());
+    wp_enqueue_style('font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
+    wp_enqueue_style('carousel-css', get_template_directory_uri() . '/css/owl.carousel.min.css');
+    wp_enqueue_style('carousel-default-theme-css', get_template_directory_uri() . '/css/owl.theme.default.min.css');
+    wp_enqueue_style('custom-css', get_template_directory_uri() . '/css/custom.css');
 
     if (!is_front_page() && (is_page() || is_single())) {
         wp_enqueue_style('single-page-style', get_template_directory_uri() . '/css/single-page.css');

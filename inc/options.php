@@ -60,8 +60,8 @@ if ( ! class_exists( 'Foxtail_theme_options' ) ) {
                 'display_name' => $theme->get( 'Name' ), // Thiết lập tên theme hiển thị trong Theme Options
                 'menu_type'          => 'menu',
                 'allow_sub_menu'     => true,
-                'menu_title'         => 'Foxtail theme options',
-                'page_title'         => 'Foxtail theme options',
+                'menu_title'         => 'Theme options',
+                'page_title'         => 'Theme options',
                 'dev_mode' => false,
                 'customizer' => true,
                 'menu_icon' => '', // Đường dẫn icon của menu option
@@ -133,10 +133,10 @@ if ( ! class_exists( 'Foxtail_theme_options' ) ) {
                 'icon'   => 'el-icon-home',
                 'fields' => array(
                     array(
-                        'id'       => 'favicon',
+                        'id'       => 'site_favicon',
                         'type'     => 'media',
-                        'title'    => 'Favicon',
-                        'desc'     => 'Favicon',
+                        'title'    => 'Site favicon',
+                        'desc'     => 'Site favicon',
                         'readonly' => false,
                         'url'      => true,
                         'default'  => array(
@@ -144,53 +144,15 @@ if ( ! class_exists( 'Foxtail_theme_options' ) ) {
                         )
                     ),
                     array(
-                        'id'       => 'site-logo',
+                        'id'       => 'site_logo',
                         'type'     => 'media',
-                        'title'    => 'Site Logo',
-                        'desc'     => 'Site Logo',
+                        'title'    => 'Site logo',
+                        'desc'     => 'Site logo',
                         'readonly' => false,
                         'url'      => true,
                         'default'  => array(
                             'url' => get_template_directory_uri().'/img/logo.png'
                         )
-                    ),
-                    array(
-                        'id'       => 'site-logo-width',
-                        'type'     => 'text',
-                        'title'    => 'Site Logo Width',
-                        'desc'     => 'Site Logo Width',
-                    ),
-                    array(
-                        'id'       => 'site-logo-mgt',
-                        'type'     => 'text',
-                        'title'    => 'Site Logo Margin Top',
-                        'desc'     => 'Site Logo Margin Top',
-                    ),
-                    array(
-                        'id'       => 'header-banner',
-                        'type'     => 'media',
-                        'title'    => 'Header Banner',
-                        'desc'     => 'Header Banner',
-                        'readonly' => false,
-                        'url'      => true,
-                        'default'  => array(
-                            'url' => get_template_directory_uri().'/img/banner.jpg'
-                        )
-                    )
-                )
-            ); // end section
-
-            $this->sections[] = array(
-                'title'  => 'Support',
-                'desc'   => 'Support Settings',
-                'icon'   => 'el-icon-cog',
-                'fields' => array(
-                    array(
-                        'id'       => 'right-support',
-                        'type'     => 'ace_editor',
-                        'title'    => 'Right Support',
-                        'desc'     => 'Right Support',
-                        'mode'     => 'html'
                     )
                 )
             ); // end section

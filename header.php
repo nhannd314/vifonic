@@ -3,7 +3,6 @@
  * The header for our theme.
  * Displays all of the <head> section and everything up till <div id="content">
  */
-global $vifonic_options;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -12,7 +11,7 @@ global $vifonic_options;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" href="<?php echo $vifonic_options['favicon']['url'] ?>" type="image/x-icon">
+<link rel="shortcut icon" href="<?php echo vifonic_site_favicon() ?>" type="image/x-icon">
 
 <?php wp_head(); ?>
 
@@ -22,10 +21,10 @@ global $vifonic_options;
 
 <nav id="top-bar">
     <div class="container">
-        <div class="pull-left">
+        <div class="pull-left left">
             <?php dynamic_sidebar('sidebar-top-left') ?>
         </div>
-        <div class="pull-right">
+        <div class="pull-right right">
             <?php dynamic_sidebar('sidebar-top-right') ?>
         </div>
     </div>
@@ -33,66 +32,39 @@ global $vifonic_options;
 
 <header id="header">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4 header-left">
-                <div class="logo">
-
-                    <?php if (is_front_page()): ?>
-                        <h1 style="width: 150px; height: 100px; margin: 0 0 -100px 0; position: relative; top: -250px; font-size: 18px" class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ) ?>" rel="home" title="<?php bloginfo('name') ?>">
-                                <?php bloginfo( 'name' ) ?>
-                            </a>
-                        </h1>
-                    <?php endif; ?>
-
-                    <a href="<?php echo home_url('/') ?>" title="<?php bloginfo('name') ?>">
-                        <img src="<?php echo $vifonic_options['site-logo']['url'] ?>" alt="<?php bloginfo('name') ?>">
-                    </a>
-
-                </div>
+        <div class="left pull-left">
+            <nav class="course-nav pull-left">
+                <div class="nav-btn" id="course-nav-btn"><i class="fa fa-bars"></i> <span><?php _e('Categories', 'vifonic') ?></span></div>
+                <ul class="course-menu" id="course-menu">
+                    <li><a href="#"><i class="fa fa-heart"></i> Nha khoa cơ bản</a></li>
+                    <li><a href="#"><i class="fa fa-heartbeat"></i> Nha khoa nâng cao</a></li>
+                    <li><a href="#"><i class="fa fa-user-plus"></i> Nha khoa lâm sàng</a></li>
+                    <li><a href="#"><i class="fa fa-ambulance"></i> Đa khoa chuyên sâu</a></li>
+                    <li><a href="#"><i class="fa fa-heart"></i> Nha khoa cơ bản</a></li>
+                    <li><a href="#"><i class="fa fa-heart"></i> Nha khoa cơ bản</a></li>
+                    <li><a href="#"><i class="fa fa-heart"></i> Nha khoa cơ bản</a></li>
+                </ul>
+            </nav>
+            <div class="search-box pull-left">
+                <?php get_search_form() ?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8 header-right text-right">
-                <a rel="nofollow" title="<?php bloginfo('name') ?>" href="<?php echo home_url() ?>">
-                    <img src="<?php echo $vifonic_options['header-banner']['url'] ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('name') ?>">
-                </a>
+        </div>
+        <div class="center pull-left">
+            <div class="logo">
+                <a href="<?php echo home_url('/') ?>"><?php echo vifonic_site_logo() ?></a>
             </div>
+        </div>
+        <div class="right pull-left text-right">
+            <a class="register-login" href="#"><?php _e('Register', 'vifonic') ?></a>
+            <a class="register-login" href="#"><?php _e('Login', 'vifonic') ?></a>
+            <a class="active-course" href="#"><?php _e('Active course', 'vifonic') ?></a>
+            <a class="cart" href="#" data-toggle="tooltip" data-placement="top" title="<?php _e('View your cart', 'vifonic' ) ?>">
+                <i class="fa fa-shopping-basket"></i><span id="cart-count">2</span>
+            </a>
         </div>
     </div>
 </header>
-<style>
-    #header .logo img { max-width: <?php echo $vifonic_options['site-logo-width'] ?>px; margin-top: <?php echo $vifonic_options['site-logo-mgt'] ?>px }
-</style>
-<nav id="main-nav">
-    <div class="container">
-        <div class="pull-left">
 
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main-nav-left'
-            )) ?>
-
-        </div>
-        <div class="pull-right">
-
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main-nav-right'
-            )) ?>
-
-        </div>
-    </div>
-</nav>
-
-<div id="main-nav-mobile">
-    <div id="mobile-menu-toggle"><i class="fa fa-reorder"></i></div>
-    <div id="mobile-menu-wrapper">
-
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'main-nav-left'
-        ));
-        wp_nav_menu(array(
-            'theme_location' => 'main-nav-right'
-        ));
-        ?>
-
-    </div>
+<div id="slider">
+    <img src="<?php echo get_template_directory_uri() ?>/img/slider.jpg" alt="slider" />
 </div>

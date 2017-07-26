@@ -180,3 +180,15 @@ function vifonic_pagination()
         </div> <!-- /archive-nav -->
     <?php endif;
 }
+
+// ============== Site favicon ============
+
+function vifonic_site_favicon() {
+    global $vifonic_options;
+    return $vifonic_options['site_favicon']['url'];
+}
+
+function vifonic_site_logo() {
+    global $vifonic_options;
+    return '<img src="' . $vifonic_options['site_logo']['url'] .'" alt="' . get_bloginfo('name') .'" />';
+}
