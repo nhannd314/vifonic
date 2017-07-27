@@ -192,3 +192,64 @@ function vifonic_site_logo() {
     global $vifonic_options;
     return '<img src="' . $vifonic_options['site_logo']['url'] .'" alt="' . get_bloginfo('name') .'" />';
 }
+
+
+// ============== Title ============
+if (!function_exists('vifonic_title'))
+{
+    function vifonic_title($main_title = 'Main Title', $sub_title = ''){
+        ?>
+        <div class="container section-title-container">
+            <h2 class="section-title section-title-center">
+                <span class="section-title-main"><?php echo $main_title; ?></span>
+            </h2>
+            <p class="section-title-sub section-title-center"><?php echo $sub_title; ?></p>
+        </div>
+        <?php
+    }
+}
+
+// ============== Button ============
+if (!function_exists('vifonic_button'))
+{
+    function vifonic_button($button_text = 'Button Text', $text_align = 'center', $is_icon = false){
+        ?>
+        <div class="text-<?php echo $text_align ?>">
+            <a class="btn btn-primary vifonic-button">
+                <span class="<?php if ($is_icon) echo 'has-icon'; ?>"><?php echo $button_text; ?></span>
+            </a>
+        </div>
+        <?php
+    }
+}
+
+// ============== Show list Courses ============
+if (!function_exists('vifonic_show_list_courses_by_category'))
+{
+    function vifonic_show_list_courses_by_category($course_cat = '', $number_of_course = 8){
+        $args = array(
+            'post_type' => 'course',
+            'posts_per_page' => $number_of_course,
+            'post_status' => 'publish',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'course_category',
+                    'field'    => 'slug',
+                    'terms'    => array( $course_cat ),
+                ),
+            ),
+        );
+
+        $queryCourse = new WP_Query($args);
+        if ($queryCourse->have_posts()){
+            echo '<div class="container"><div class="row">';
+            while ($queryCourse->have_posts()) {
+                $queryCourse->the_post();
+                echo '<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">';
+                get_template_part('templates/loop/content', 'course');
+                echo '</div>';
+            }
+            echo '</div></div>';
+        }
+    }
+}
