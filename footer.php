@@ -5,29 +5,37 @@
 global $vifonic_options;
 ?>
 
-<footer>
-    <div class="container footer">
+<footer id="footer">
+    <div class="container footer-1">
         <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-6 col info">
+            <div class="col-md-3 col-sm-6 col-xs-6 col info">
                 <?php dynamic_sidebar('sidebar-footer-1') ?>
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6 col menu">
-
+            <div class="col-md-3 col-sm-6 col-xs-6 col menu">
                 <?php dynamic_sidebar('sidebar-footer-2') ?>
-
             </div>
-            <div class="col-md-2 col-sm-6 col-xs-6 col menu">
-
+            <div class="col-md-3 col-sm-6 col-xs-6 col menu">
                 <?php dynamic_sidebar('sidebar-footer-3') ?>
-
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col facebook responsive">
+            <div class="col-md-3 col-sm-6 col-xs-6 col facebook responsive">
                 <?php dynamic_sidebar('sidebar-footer-4') ?>
+                <img class="icon_bocongthuong" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bocongthuong.png" alt="" width="150px">
             </div>
         </div>
     </div>
-    <!--. /footer -->
-    <div class="copyright container text-center">
+    <!--. /footer-1 -->
+    <div class="container footer-2">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 footer-2-left">
+                <p class="copyright text-left">© <?php echo date("Y")." ".get_bloginfo('name'); ?>. All rights reserved</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 footer-2-right">
+
+            </div>
+        </div>
+    </div>
+    <!--. /footer-2 -->
+    <div class="container copyright text-center" style="display: none;">
         <h2><a style="font-size: 14px; margin: 0" href="https://webdep247.vn/">Thiết kế web giá rẻ, website giá rẻ</a></h2>
         <p>
             <!-- DMCA -->
@@ -41,7 +49,7 @@ global $vifonic_options;
     <i class="fa fa-angle-up"></i>
 </div>
 
-<?php echo $vifonic_options['right-support'] ?>
+<?php //echo $vifonic_options['right-support'] ?>
 
 <!-- facebook sdk -->
 <div id="fb-root"></div>
@@ -49,7 +57,7 @@ global $vifonic_options;
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=192928294419816";
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=355627444798303";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 

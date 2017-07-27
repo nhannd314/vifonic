@@ -174,3 +174,89 @@ img {
         }
     }
 }
+
+
+//--------------------------- FOOTER -------------------------
+
+@footer-height: 170px;
+
+#footer {
+    min-height: @footer-height;
+    background-color: @brand-primary;
+    color: #fff;
+    .footer-1 {
+        padding-top: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        .widget-title {
+            color: #fff;
+            font-weight:700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            position: relative;
+            &:after {
+                content: '';
+                border-bottom: 2px solid #fff;
+                padding: 0 30px 0px;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
+        }
+        ul.menu {
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 5px;
+            li {
+                padding:5px 0;
+                a{
+                    color: #fff;
+                    &:hover{
+                        color: @brand-second;
+                    }
+                    i{
+                        width:20px;
+                    }
+                }
+            }
+        }
+    }
+    .footer-2 {
+        padding: 10px 0px;
+        .footer-2-left {
+            .copyright {
+                margin: 0px;
+            }
+        }
+        .footer-2-right {
+            img.icon_bocongthuong {
+                float: right;
+                margin-right: 120px;
+            }
+        }
+    }
+}
+
+//Up to top botton
+#up-to-top {
+    display: inline-block;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    i.fa-angle-up {
+        width: 40px;
+        height: 40px;
+        border: 2px solid @brand-second;
+        text-align: center;
+        &:before{
+            color: @brand-second;
+            font-size: 36px;
+        }
+        &:hover{
+            background-color: @brand-second;
+            &:before{
+                color: #ffffff;
+            }
+        }
+    }
+}
