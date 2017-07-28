@@ -64,7 +64,3 @@
         </div>
     </div>
 </header>
-
-<div id="slider">
-    <img src="<?php echo get_template_directory_uri() ?>/img/slider.jpg" alt="slider" />
-</div>

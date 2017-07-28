@@ -197,13 +197,17 @@ function vifonic_site_logo() {
 // ============== Title ============
 if (!function_exists('vifonic_title'))
 {
-    function vifonic_title($main_title = 'Main Title', $sub_title = ''){
+    function vifonic_title($main_title = 'Main Title', $sub_title = '', $text_align = 'center'){
         ?>
-        <div class="container section-title-container">
-            <h2 class="section-title section-title-center">
+        <div class="section-title-container">
+            <h2 class="section-title section-title-<?php echo $text_align ?>">
                 <span class="section-title-main"><?php echo $main_title; ?></span>
             </h2>
-            <p class="section-title-sub section-title-center"><?php echo $sub_title; ?></p>
+            <?php
+                if ($sub_title != '') {
+                    echo '<p class="section-title-sub section-title-center">'.$sub_title.'</p>';
+                }
+            ?>
         </div>
         <?php
     }
@@ -212,11 +216,11 @@ if (!function_exists('vifonic_title'))
 // ============== Button ============
 if (!function_exists('vifonic_button'))
 {
-    function vifonic_button($button_text = 'Button Text', $text_align = 'center', $is_icon = false){
+    function vifonic_button($link = '#', $button_text = 'Button Text', $text_align = 'center', $is_icon = false){
         ?>
         <div class="text-<?php echo $text_align ?>">
-            <a class="btn btn-primary vifonic-button">
-                <span class="<?php if ($is_icon) echo 'has-icon'; ?>"><?php echo $button_text; ?></span>
+            <a href="<?php echo esc_url($link); ?>"  class="btn btn-primary vifonic-button">
+                <span class="<?php if ($is_icon)  echo esc_attr('has-icon'); ?>"><?php echo $button_text; ?></span>
             </a>
         </div>
         <?php
@@ -245,11 +249,133 @@ if (!function_exists('vifonic_show_list_courses_by_category'))
             echo '<div class="container"><div class="row">';
             while ($queryCourse->have_posts()) {
                 $queryCourse->the_post();
-                echo '<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">';
+                echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
                 get_template_part('templates/loop/content', 'course');
                 echo '</div>';
             }
             echo '</div></div>';
+	        vifonic_button(get_term_link($course_cat, 'course_category'),'XEM TẤT CẢ', 'center', true);
         }
     }
 }
+
+// ============== Show Featured Courses ============
+if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
+{
+	function vifonic_show_featured_courses_slider_by_category($course_cat = '', $number_of_course = 8){
+		$args = array(
+			'post_type' => 'course',
+			'posts_per_page' => $number_of_course,
+			'post_status' => 'publish',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'slug',
+					'terms'    => array( $course_cat ),
+				),
+			),
+//Khóa học nổi bật
+//            'meta_query' => array (
+//                array(
+//	                'key'     => 'featured_course',
+//	                'value'   => '1',
+//	                'compare' => '=='
+//                ),
+//            ),
+		);
+
+		$queryCourse = new WP_Query($args);
+		if ($queryCourse->have_posts()){
+			echo '<div class="container"><div id="featured-course" class="row owl-carousel owl-theme">';
+			while ($queryCourse->have_posts()) {
+				$queryCourse->the_post();
+				echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
+				get_template_part('templates/loop/content', 'course');
+				echo '</div>';
+			}
+			echo '</div></div>';
+			echo '<script>
+                    jQuery(document).ready(function(){
+                        jQuery("#featured-course").owlCarousel({
+                            loop:true,
+                            margin:10,
+                            autoplay: true,
+                            navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
+                            dots: false,
+                            autoplayTimeout: 3000,
+                            responsiveClass:true,
+                            responsive:{
+                                0:{
+                                    items:1,
+                                    nav:false
+                                },
+                                600:{
+                                    items:3,
+                                    nav:false
+                                },
+                                1000:{
+                                    items:4,
+                                    nav:true,
+                                    loop:true
+                                }
+                            },
+                        });
+                    });
+                    </script>';
+		}
+	}
+}
+
+// ============== Show Vifonic Slider ============
+if (!function_exists('vifonic_slider'))
+{
+	function vifonic_slider(){
+		$args = array(
+			'post_type' => 'vifonic-slider',
+			'posts_per_page' => -1,
+			'post_status' => 'publish',
+		);
+
+		$querySlider = new WP_Query($args);
+		if ($querySlider->have_posts()){
+			echo '<div id="vifonic_slider" class="owl-carousel owl-theme">';
+			while ($querySlider->have_posts()) {
+				$querySlider->the_post();
+				?>
+				<div class="slide-item">
+				    <?php the_post_thumbnail('slider-size'); ?>
+				    <div class="caption"><?php the_content(); ?></div>
+				</div>
+                <?php
+			}
+			echo '</div>';
+			echo '<script>
+                    jQuery(document).ready(function(){
+                        jQuery(".owl-carousel").owlCarousel({
+                            loop:true,
+                            margin:10,
+                            autoplay: true,
+                            autoplayTimeout: 3000,
+                            responsiveClass:true,
+                            responsive:{
+                                0:{
+                                    items:1,
+                                    nav:false
+                                },
+                                600:{
+                                    items:1,
+                                    nav:false
+                                },
+                                1000:{
+                                    items:1,
+                                    nav:false,
+                                    loop:true
+                                }
+                            },
+                        });
+                    });
+                    </script>';
+		}
+	}
+}
+

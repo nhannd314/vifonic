@@ -73,6 +73,7 @@ img {
                 min-width: 220px;
                 background: #fff;
                 display: none;
+                z-index:2;
                 li {
                     a {
                         display: block;
@@ -207,6 +208,14 @@ img {
             }
         }
     }
+    .section-title-left {
+        text-align: left;
+        .section-title-main {
+            &:after {
+                margin: 5px 0;
+            }
+        }
+    }
 
 }
 //Buton
@@ -223,18 +232,75 @@ img {
         margin-left: 8px;
     }
 }
+//Vifonic Slider
+#vifonic_slider {
+    .slide-item {
+        position: relative;
+        img {
+            width:100%;
+            max-height:300px;
+            object-fit: cover;
+        }
+        .caption {
+            position: absolute;
+            top: 25%;
+            left: 0;
+            width: 100%;
+            color: #fff;
+        }
+    }
+    .owl-controls {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}
+//Heading page
+.vifonic-heading {
+    color: #fff;
+    font-size: 22px;
+    height: 35px;
+    line-height: 35px;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
 
+//Breadcrumb
+#breadcrumbs-wrapper {
+    background-color: @brand-primary;
+    margin-bottom: 30px;
+    #breadcrumbs {
+        margin:30px 0 0;
+        color: #fff;
+        a {
+            color: @brand-second;
+        }
+    }
+}
 
 main.full-width {
     .container-fluid{
         padding: 0;
     }
 }
+
 //Template: Homepage
 main.page-home{
     border-top: 10px solid #ff6c00;
+    .reason_row {
+        text-align: center;
+        i:before {
+            font-size: 40px;
+            color: @brand-primary;
+        }
+    }
 }
 
+//Course Category
+main.main-course_category {
+    
+}
 
 //----------------------- Course ----------------------------
 .single-course {
@@ -304,6 +370,97 @@ main.page-home{
 
 }
 
+//Featured Course Slider
+#featured-course {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    .owl-controls {
+        position: absolute;
+        top: 40%;
+        bottom: 40%;
+        margin: 0;
+        width: 100%;
+        .owl-nav [class*=owl-] {
+            display: block;
+            height: 50px;
+            line-height: 42px;
+            background-color: #fff;
+            color: @brand-primary;
+            border: 1px solid @brand-primary;
+        }
+        .owl-prev {
+            float: left;
+            margin-left: -15px;
+        }
+        .owl-next {
+            float: right;
+            margin-right: -15px;
+        }
+
+    }
+}
+
+//---------------------- Email Subcribe ----------------------
+.vifonic_email_subcribe {
+    padding:10px 0;
+    background-color: @brand-second;
+    text-align: center;
+    p {
+        margin: 0;
+    }
+    span.subcribe_text {
+        color: #fff;
+        font-size: 16px;
+        padding-right: 10px;
+        font-weight: 700;
+    }
+    .your-email input {
+        height:30px;
+        border: 1px solid #fff;
+    }
+    #btn_email_subcribe {
+        padding: 0 15px;
+        height: 30px;
+        font-weight: 700;
+    }
+}
+
+//--------------------- Pagination ---------------------------
+.pagination {
+    text-align: center;
+    margin-bottom: 30px;
+    li {
+        display: inline-block;
+        list-style: none;
+
+        a {
+            background: @brand-primary;
+            display: block;
+            line-height:32px;
+            font-weight:700;
+            font-size: 18px;
+            color: #fff;
+
+        }
+    }
+    li.number {
+        a {
+            width: 32px;
+            height:32px;
+        }
+    }
+    .number.active a {
+        background-color: @brand-second;
+    }
+    .number a:hover {
+        color: @brand-second;
+    }
+    .archive-nav-older a, .archive-nav-newer a {
+        margin: 0 5px;
+        padding:0 10px;
+    }
+}
+
 //--------------------------- FOOTER -------------------------
 
 @footer-height: 170px;
@@ -371,6 +528,7 @@ main.page-home{
     position: fixed;
     bottom: 40px;
     right: 40px;
+    z-index:1000;
     i.fa-angle-up {
         width: 40px;
         height: 40px;

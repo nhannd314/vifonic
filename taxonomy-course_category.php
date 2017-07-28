@@ -5,47 +5,37 @@
 
 get_header(); ?>
 
-    <div id="breadcrumbs-wrapper">
-        <div class="container">
 
-            <?php if ( function_exists('yoast_breadcrumb') )
-            {yoast_breadcrumb('<div id="breadcrumbs">','</div>');} ?>
 
-        </div>
-    </div>
-    <div class="theme-cat-menu-wrap">
-        <div class="container">
-            <div class="hidden-xs">
+    <main class="main main-course_category section">
+        <div id="breadcrumbs-wrapper">
+            <div class="container">
 
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'theme-cat-nav',
-                    'menu_id' => 'theme-cat-menu'
-                )) ?>
+			    <?php if ( function_exists('yoast_breadcrumb') )
+			    { yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
 
-            </div>
-            <div class="visible-xs">
-                <div id="theme-cat-menu-mobile-toggle"><i class="fa fa-reorder"></i></div>
-
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'theme-cat-nav',
-                    'menu_id' => 'theme-cat-menu-mobile'
-                )) ?>
+                <h1 class="vifonic-heading text-left">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+		            <?php
+		            $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+		            echo $term->name;
+		            ?>
+                </h1>
 
             </div>
         </div>
-    </div>
-
-    <main class="main main-theme section">
         <div class="container">
-            <h1 class="vifonic-heading text-center">
-                <?php
-                $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-                echo 'Danh mục: '.$term->name;
-                ?>
-            </h1>
+
             <div class="section-content">
 
                 <?php if (have_posts()): ?>
+
+                    <?php
+	                vifonic_title("Các khóa học nổi bật", "","left");
+                    vifonic_show_featured_courses_slider_by_category(get_query_var( 'term' ));
+
+	                vifonic_title("Tất cả khóa học", "","left");
+                    ?>
 
                     <div class="row">
 
@@ -54,7 +44,9 @@ get_header(); ?>
                         while (have_posts()) {
                             $i++;
                             the_post();
-                            get_template_part('content', 'theme');
+	                        echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+	                        get_template_part('templates/loop/content', 'course');
+                            echo '</div>';
                             if ($i%4 == 0) echo '<div class="col-xs-12 hidden-xs"></div>';
                         }
                         ?>

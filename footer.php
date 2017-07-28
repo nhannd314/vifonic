@@ -4,9 +4,14 @@
  */
 global $vifonic_options;
 ?>
-
+<div class="vifonic_email_subcribe">
+    <div class="container">
+	    <?php echo do_shortcode('[contact-form-7 id="43" title="Email Subcribe"]'); ?>
+    </div>
+</div>
 <footer id="footer">
-    <div class="container footer-1">
+    <div class="footer-1">
+        <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-6 col info">
                 <?php dynamic_sidebar('sidebar-footer-1') ?>
@@ -23,8 +28,10 @@ global $vifonic_options;
             </div>
         </div>
     </div>
+    </div>
     <!--. /footer-1 -->
-    <div class="container footer-2">
+    <div class="footer-2">
+        <div class="container">
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 footer-2-left">
                 <p class="copyright text-left">© <?php echo date("Y")." ".get_bloginfo('name'); ?>. All rights reserved</p>
@@ -33,6 +40,7 @@ global $vifonic_options;
 
             </div>
         </div>
+    </div>
     </div>
     <!--. /footer-2 -->
     <div class="container copyright text-center" style="display: none;">

@@ -50,6 +50,8 @@ if (!function_exists('vifonic_setup'))
 //        set_post_thumbnail_size( 200, 125, true );
 //        add_image_size( 'small', 60, 45, true );
 //        add_image_size( 'big-thumb', 535, 250, true );
+	    add_image_size( 'course-thumbnail', 261, 161, true );
+	    add_image_size( 'slider-size', 1350, 300, true );
     }
 }
 // ===== end function vifonic_setup =====
@@ -107,6 +109,31 @@ function vifonic_create_custom_post_types()
         'rewrite'            => array( 'slug' => 'khoa-hoc' ),
     ));
 
+    //Slider
+	register_post_type('vifonic-slider', array(
+		'labels' => array(
+			'name' => __('Vifonic Slider', 'vifonic'),
+			'singular_name' => __('Vifonic Slider', 'vifonic')
+		),
+		'description' => __('Vifonic Slider', 'vifonic'),
+		'supports' => array(
+			'title', 'editor', 'excerpt', 'thumbnail'
+		),
+
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_admin_bar' => true,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-images-alt2',
+		'can_export' => true,
+		'has_archive' => true,
+		'exclude_from_search' => false,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+		'rewrite'            => array( 'slug' => 'vslider' ),
+	));
 }
 
 // =========== Register widget area =========
