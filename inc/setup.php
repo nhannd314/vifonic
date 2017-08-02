@@ -5,7 +5,7 @@ if (!isset($content_width)) {
     $content_width = 980; /* pixels */
 }
 
-// ======== Assign the Foxtail version to a var =========
+// ======== Assign the Vifonic version to a var =========
 
 $theme = wp_get_theme('vifonic');
 $vifonic_version = $theme['Version'];
@@ -91,7 +91,7 @@ function vifonic_create_custom_post_types()
         ),
         'description' => __('Courses', 'vifonic'),
         'supports' => array(
-            'title', 'editor', 'excerpt', 'thumbnail'
+            'title', 'editor', 'excerpt', 'thumbnail','comments'
         ),
 
         'public' => true,
@@ -112,10 +112,10 @@ function vifonic_create_custom_post_types()
     //Slider
 	register_post_type('vifonic-slider', array(
 		'labels' => array(
-			'name' => __('Vifonic Slider', 'vifonic'),
-			'singular_name' => __('Vifonic Slider', 'vifonic')
+			'name' => __('Slider', 'vifonic'),
+			'singular_name' => __('Slider', 'vifonic')
 		),
-		'description' => __('Vifonic Slider', 'vifonic'),
+		'description' => __('Slider', 'vifonic'),
 		'supports' => array(
 			'title', 'editor', 'excerpt', 'thumbnail'
 		),
@@ -126,13 +126,38 @@ function vifonic_create_custom_post_types()
 		'show_in_nav_menus' => true,
 		'show_in_admin_bar' => true,
 		'menu_position' => 7,
-		'menu_icon' => 'dashicons-images-alt2',
+		'menu_icon' => 'dashicons-slides',
 		'can_export' => true,
 		'has_archive' => true,
 		'exclude_from_search' => false,
 		'publicly_queryable' => true,
 		'capability_type' => 'post',
 		'rewrite'            => array( 'slug' => 'vslider' ),
+	));
+
+	register_post_type('teacher', array(
+		'labels' => array(
+			'name' => __('Teachers', 'vifonic'),
+			'singular_name' => __('Teacher', 'vifonic')
+		),
+		'description' => __('Teachers', 'vifonic'),
+		'supports' => array(
+			'title', 'editor', 'excerpt', 'thumbnail'
+		),
+
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_admin_bar' => true,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-admin-users',
+		'can_export' => true,
+		'has_archive' => true,
+		'exclude_from_search' => false,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+		'rewrite'            => array( 'slug' => 'giang-vien' ),
 	));
 }
 

@@ -31,6 +31,30 @@ if (!function_exists('vifonic_entry_meta'))
     }
 }
 
+// ============== Facebook SDK ================
+
+if (!function_exists('vifonic_facebook_sdk')) {
+	function vifonic_facebook_sdk(){
+		global $locale;
+		$lang = "";
+		if ($locale == "vi") {
+			$lang = "vi_VN";
+		} elseif($locale == "en"){
+			$lang = "en_US";
+		}
+		?>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/<?php echo $lang; ?>/sdk.js#xfbml=1&version=v2.10&appId=355627444798303";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+		<?php
+	}
+	add_action("wp_head", "vifonic_facebook_sdk");
+}
 
 // ============== Social links ===========
 
@@ -44,22 +68,22 @@ if (!function_exists('vifonic_social_links'))
 
         <ul class="vifonic-social-share list-inline clearfix">
             <li>
-                <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php echo $link ?>','Share', 'toolbar=0,status=0,width=620,height=280');" data-toggle="tooltip" title="Share on Facebook" href="javascript:" data-original-title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?php echo $link ?>','Share', 'toolbar=0,status=0,width=620,height=280');" data-toggle="tooltip" title="<?php _e('Share on Facebook','vifonic'); ?>" href="javascript:" data-original-title="<?php _e('Share on Facebook','vifonic'); ?>"><i class="fa fa-facebook"></i></a>
             </li>
             <li>
-                <a onclick="popUp=window.open('http://twitter.com/home?status=<?php echo $title ?> <?php echo $link ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" data-toggle="tooltip" title="Share on Twitter" href="javascript:" data-original-title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                <a onclick="popUp=window.open('http://twitter.com/home?status=<?php echo $title ?> <?php echo $link ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" data-toggle="tooltip" title="<?php _e('Share on Twitter','vifonic'); ?>" href="javascript:" data-original-title="<?php _e('Share on Twitter','vifonic'); ?>"><i class="fa fa-twitter"></i></a>
             </li>
             <li>
-                <a data-toggle="tooltip" title="Share on Google +" href="javascript:" onclick="popUp=window.open('https://plus.google.com/share?url=<?php echo $link ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" data-original-title="Share on Google +"><i class="fa fa-google-plus"></i></a>
+                <a data-toggle="tooltip" title="<?php _e('Share on Google +','vifonic'); ?>" href="javascript:" onclick="popUp=window.open('https://plus.google.com/share?url=<?php echo $link ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" data-original-title="<?php _e('Share on Google +','vifonic'); ?>"><i class="fa fa-google-plus"></i></a>
             </li>
             <li>
-                <a data-toggle="tooltip" title="Share on Linkedin" onclick="popUp=window.open('http://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $link ?>&amp;title=<?php echo $title ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="Share on Linkedin"><i class="fa fa-linkedin"></i></a>
+                <a data-toggle="tooltip" title="<?php _e('Share on Linkedin','vifonic'); ?>" onclick="popUp=window.open('http://linkedin.com/shareArticle?mini=true&amp;url=<?php echo $link ?>&amp;title=<?php echo $title ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="<?php _e('Share on Linkedin','vifonic'); ?>"><i class="fa fa-linkedin"></i></a>
             </li>
             <li>
-                <a data-toggle="tooltip" title="Share on Tumblr" onclick="popUp=window.open('http://www.tumblr.com/share/link?url=<?php echo $link ?>&amp;name=<?php echo $title ?>&amp;description=<?php the_excerpt() ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="Share on Tumblr"><i class="fa fa-tumblr"></i></a>
+                <a data-toggle="tooltip" title="<?php _e('Share on Tumblr','vifonic'); ?>" onclick="popUp=window.open('http://www.tumblr.com/share/link?url=<?php echo $link ?>&amp;name=<?php echo $title ?>&amp;description=<?php the_excerpt() ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="<?php _e('Share on Tumblr','vifonic'); ?>"><i class="fa fa-tumblr"></i></a>
             </li>
             <li>
-                <a data-toggle="tooltip" title="Share Pinterest" onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url=<?php echo $link ?>&amp;description=<?php echo $title ?>&amp;media=<?php the_post_thumbnail_url('full') ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="Share Pinterest"><i class="fa fa-pinterest"></i></a>
+                <a data-toggle="tooltip" title="<?php _e('Pin on Pinterest','vifonic'); ?>" onclick="popUp=window.open('http://pinterest.com/pin/create/button/?url=<?php echo $link ?>&amp;description=<?php echo $title ?>&amp;media=<?php the_post_thumbnail_url('full') ?>','sharer','scrollbars=yes,width=800,height=400');popUp.focus();return false;" href="javascript:" data-original-title="<?php _e('Pin on Pinterest','vifonic'); ?>"><i class="fa fa-pinterest"></i></a>
             </li>
         </ul>
 
@@ -76,9 +100,13 @@ if (!function_exists('vifonic_comment_facebook'))
     {
         if ($link == '') $link = home_url('/');
         ?>
-        <div class="facebook-comment responsive">
-            <h4 class="title"><?php _e('Your comment', 'vifonic') ?></h4>
-            <div class="fb-comments" data-href="<?php echo $link ?>" data-width="817px" data-numposts="20"></div>
+        <div class="clearfix"></div>
+        <div class="facebook-comment responsive" style="border: 1px solid #3B5998;">
+            <h4 class="title" style="background-color: #3B5998;padding: 5px 20px;color: #fff;font-weight: 700;margin-top: 0;">
+                <i class="fa fa-comment-o" aria-hidden="true" style="margin-right: 5px;"></i>
+			    <?php _e('Your comment', 'vifonic') ?>
+            </h4>
+            <div class="fb-comments" data-href="<?php echo $link ?>" data-width="100%" data-numposts="20"></div>
         </div>
         <?php
     }
@@ -103,7 +131,7 @@ function vifonic_related_posts($ID, $content_template = '')
         if (have_posts()) {
             while (have_posts()) {
                 the_post();
-                get_template_part('content', $content_template);
+                get_template_part('templates/loop/content', $content_template);
             }
         }
         wp_reset_query();
@@ -113,7 +141,7 @@ function vifonic_related_posts($ID, $content_template = '')
 
 // ============== Get excerpt ==============
 
-function vifonic_get_the_excerpt($limit)
+function vifonic_get_the_excerpt($limit = 30)
 {
     $excerpt = explode(' ', get_the_excerpt(), $limit);
     if (count($excerpt) >= $limit) {
@@ -126,7 +154,7 @@ function vifonic_get_the_excerpt($limit)
     return $excerpt;
 }
 
-function vifonic_the_excerpt($limit)
+function vifonic_the_excerpt($limit = 30)
 {
     echo vifonic_get_the_excerpt($limit);
 }
@@ -201,11 +229,11 @@ if (!function_exists('vifonic_title'))
         ?>
         <div class="section-title-container">
             <h2 class="section-title section-title-<?php echo $text_align ?>">
-                <span class="section-title-main"><?php echo $main_title; ?></span>
+                <span class="section-title-main"><?php echo __($main_title); ?></span>
             </h2>
             <?php
                 if ($sub_title != '') {
-                    echo '<p class="section-title-sub section-title-center">'.$sub_title.'</p>';
+                    echo '<p class="section-title-sub section-title-center">'.__($sub_title).'</p>';
                 }
             ?>
         </div>
@@ -220,11 +248,20 @@ if (!function_exists('vifonic_button'))
         ?>
         <div class="text-<?php echo $text_align ?>">
             <a href="<?php echo esc_url($link); ?>"  class="btn btn-primary vifonic-button">
-                <span class="<?php if ($is_icon)  echo esc_attr('has-icon'); ?>"><?php echo $button_text; ?></span>
+                <span class="<?php if ($is_icon)  echo esc_attr('has-icon'); ?>"><?php echo __($button_text); ?></span>
             </a>
         </div>
         <?php
     }
+}
+
+// ============== Price =============
+if (!function_exists('vifonic_price_format'))
+{
+	function vifonic_price_format($price){
+		$formatted_price = number_format (intval($price), 0, '.', ',');
+		return $formatted_price.'đ';
+	}
 }
 
 // ============== Show list Courses ============
@@ -235,23 +272,30 @@ if (!function_exists('vifonic_show_list_courses_by_category'))
             'post_type' => 'course',
             'posts_per_page' => $number_of_course,
             'post_status' => 'publish',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'course_category',
-                    'field'    => 'slug',
-                    'terms'    => array( $course_cat ),
-                ),
-            ),
         );
+	    if ($course_cat != ''){
+		    $args['tax_query'] = array(
+			    array(
+				    'taxonomy' => 'course_category',
+				    'field'    => 'slug',
+				    'terms'    => array( $course_cat ),
+			    ),
+		    );
+	    }
 
         $queryCourse = new WP_Query($args);
         if ($queryCourse->have_posts()){
             echo '<div class="container"><div class="row">';
+	        $i = 0;
             while ($queryCourse->have_posts()) {
                 $queryCourse->the_post();
+
                 echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
                 get_template_part('templates/loop/content', 'course');
                 echo '</div>';
+
+	            $i++;
+	            if ($i%4==0){ echo '<div class="clearfix"></div>'; }
             }
             echo '</div></div>';
 	        vifonic_button(get_term_link($course_cat, 'course_category'),'XEM TẤT CẢ', 'center', true);
@@ -267,33 +311,35 @@ if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
 			'post_type' => 'course',
 			'posts_per_page' => $number_of_course,
 			'post_status' => 'publish',
-			'tax_query' => array(
-				array(
-					'taxonomy' => 'course_category',
-					'field'    => 'slug',
-					'terms'    => array( $course_cat ),
-				),
-			),
 //Khóa học nổi bật
-//            'meta_query' => array (
-//                array(
-//	                'key'     => 'featured_course',
-//	                'value'   => '1',
-//	                'compare' => '=='
-//                ),
-//            ),
+            'meta_query' => array (
+                array(
+	                'key'     => 'featured_course',
+	                'value'   => '1',
+	                'compare' => '=='
+                ),
+            ),
 		);
+		if ($course_cat != ''){
+		    $args['tax_query'] = array(
+			    array(
+				    'taxonomy' => 'course_category',
+				    'field'    => 'slug',
+				    'terms'    => array( $course_cat ),
+			    ),
+		    );
+        }
 
 		$queryCourse = new WP_Query($args);
 		if ($queryCourse->have_posts()){
-			echo '<div class="container"><div id="featured-course" class="row owl-carousel owl-theme">';
+			echo '<div id="featured-course" class="owl-carousel owl-theme courses-slider">';
 			while ($queryCourse->have_posts()) {
 				$queryCourse->the_post();
 				echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 				get_template_part('templates/loop/content', 'course');
 				echo '</div>';
 			}
-			echo '</div></div>';
+			echo '</div>';
 			echo '<script>
                     jQuery(document).ready(function(){
                         jQuery("#featured-course").owlCarousel({
@@ -322,6 +368,141 @@ if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
                         });
                     });
                     </script>';
+		}
+	}
+}
+
+// ============== Show Free Courses ============
+if (!function_exists('vifonic_show_free_courses_slider_by_category'))
+{
+	function vifonic_show_free_courses_slider_by_category($course_cat = '', $number_of_course = 8){
+		$args = array(
+			'post_type' => 'course',
+			'posts_per_page' => $number_of_course,
+			'post_status' => 'publish',
+//Khóa học nổi bật
+            'meta_query' => array (
+                array(
+	                'key'     => 'free_course',
+	                'value'   => '1',
+	                'compare' => '=='
+                ),
+            ),
+		);
+		if ($course_cat != ''){
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'slug',
+					'terms'    => array( $course_cat ),
+				),
+			);
+		}
+
+		$queryCourse = new WP_Query($args);
+		if ($queryCourse->have_posts()){
+			echo '<div id="free-course" class="owl-carousel owl-theme courses-slider">';
+			while ($queryCourse->have_posts()) {
+				$queryCourse->the_post();
+				echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
+				get_template_part('templates/loop/content', 'course');
+				echo '</div>';
+			}
+			echo '</div>';
+			echo '<script>
+                    jQuery(document).ready(function(){
+                        jQuery("#free-course").owlCarousel({
+                            loop:true,
+                            margin:10,
+                            autoplay: true,
+                            navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
+                            dots: false,
+                            autoplayTimeout: 3000,
+                            responsiveClass:true,
+                            responsive:{
+                                0:{
+                                    items:1,
+                                    nav:false
+                                },
+                                600:{
+                                    items:3,
+                                    nav:false
+                                },
+                                1000:{
+                                    items:4,
+                                    nav:true,
+                                    loop:true
+                                }
+                            },
+                        });
+                    });
+                    </script>';
+		}
+	}
+}
+
+// ============== Show Related Courses =============
+if (!function_exists('vifonic_related_courses')) {
+	function vifonic_related_courses($ID, $content_template = '')
+	{
+		$terms = wp_get_post_terms($ID, 'course_category', array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'ids'));
+		if ($terms) {
+			$args = array(
+				'post_type' => 'course',
+				'post_status' => 'publish',
+				'post__not_in' => array($ID),
+				'posts_per_page' => 8,
+				'ignore_sticky_posts' => 1,
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'course_category',
+						'field'    => 'term_id',
+						'terms'    => $terms,
+						'operator' => 'IN',
+					),
+				),
+			);
+			vifonic_title('KHÓA HỌC LIÊN QUAN');
+			query_posts($args);
+			if (have_posts()) {
+				echo '<div id="related-course" class="owl-carousel owl-theme courses-slider">';
+				while (have_posts()) {
+					the_post();
+					echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
+					get_template_part('templates/loop/content', $content_template);
+					echo '</div>';
+				}
+				echo '</div>';
+				echo '<script>
+                    jQuery(document).ready(function(){
+                        jQuery("#related-course").owlCarousel({
+                            loop:true,
+                            margin:10,
+                            autoplay: true,
+                            navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
+                            dots: false,
+                            autoplayTimeout: 3000,
+                            responsiveClass:true,
+                            responsive:{
+                                0:{
+                                    items:1,
+                                    nav:false
+                                },
+                                600:{
+                                    items:3,
+                                    nav:false
+                                },
+                                1000:{
+                                    items:4,
+                                    nav:true,
+                                    loop:true
+                                }
+                            },
+                        });
+                    });
+                    </script>';
+			}
+			wp_reset_query();
 		}
 	}
 }

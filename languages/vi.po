@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vifonic\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-02 03:33+0000\n"
+"PO-Revision-Date: 2017-08-02 03:33+0000\n"
+"Last-Translator: ykhoa_admin <web.vifonic@gmail.com>\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: inc/structure.php:107
+msgid "Your comment"
+msgstr "Bình luận Facebook"
+
+#: 404.php:18
+msgid "404. Page not found!"
+msgstr "Lỗi 404: Không tìm thây!"
+
+#: 404.php:22
+msgid "It seem like the content you look is not exist"
+msgstr "Dường như nội dung bạn tìm kiếm không tồn tại"
+
+#: 404.php:24 templates/loop/content-none.php:13
+msgid "Try to search in website:"
+msgstr "Thử tìm kiếm trong trang:"
+
+#: 404.php:28 templates/loop/content-none.php:17
+msgid "Or return to"
+msgstr "Hoặc trở về"
+
+#: author-bio.php:15
+msgid "Published by"
+msgstr "Đăng bởi"
+
+#: author-bio.php:30
+#, php-format
+msgid "View all posts by %s"
+msgstr "Xem tất cả bài viết của %s"
+
+#: header.php:37
+msgid "Categories"
+msgstr "Chuyên mục"
+
+#: header.php:58
+msgid "Register"
+msgstr "Đăng ký"
+
+#: header.php:59
+msgid "Login"
+msgstr "Đăng nhập"
+
+#: header.php:60
+msgid "Active course"
+msgstr "Kích hoạt khóa học"
+
+#: header.php:61
+msgid "View your cart"
+msgstr "Xem giỏ hàng"
+
+#: inc/options.php:63 inc/options.php:64
+msgid "Theme options"
+msgstr "Tùy chỉnh giao diện"
+
+#: inc/setup.php:33
+msgid "Main Nav"
+msgstr "Menu chính"
+
+#: inc/setup.php:69 inc/setup.php:71
+msgid "Course Categories"
+msgstr "Danh mục khóa học"
+
+#: inc/setup.php:70
+msgid "Course Category"
+msgstr "Danh mục khóa học"
+
+#: inc/setup.php:89 inc/setup.php:92
+msgid "Courses"
+msgstr "Khóa học"
+
+#: inc/setup.php:90
+msgid "Course"
+msgstr "Khóa học"
+
+#: inc/setup.php:115 inc/setup.php:116 inc/setup.php:118
+msgid "Slider"
+msgstr "Slider"
+
+#: inc/setup.php:140 inc/setup.php:143
+msgid "Teachers"
+msgstr "Giảng viên"
+
+#: inc/setup.php:141
+msgid "Teacher"
+msgstr "Giảng viên"
+
+#: inc/setup.php:170
+msgid "Main Sidebar"
+msgstr "Main Sidebar"
+
+#: inc/setup.php:180
+msgid "Page Sidebar"
+msgstr "Page Sidebar"
+
+#: inc/setup.php:190
+msgid "Top Left Sidebar"
+msgstr "Top Left Sidebar"
+
+#: inc/setup.php:200
+msgid "Top Right Sidebar"
+msgstr "Top Right Sidebar"
+
+#: inc/setup.php:210
+msgid "Footer Sidebar 1"
+msgstr "Footer Sidebar 1"
+
+#: inc/setup.php:220
+msgid "Footer Sidebar 2"
+msgstr "Footer Sidebar 2"
+
+#: inc/setup.php:230
+msgid "Footer Sidebar 3"
+msgstr "Footer Sidebar 3"
+
+#: inc/setup.php:240
+msgid "Footer Sidebar 4"
+msgstr "Footer Sidebar 4"
+
+#: inc/structure.php:71 inc/structure.php:71
+msgid "Share on Facebook"
+msgstr "Chia sẻ trên Facebook"
+
+#: inc/structure.php:74 inc/structure.php:74
+msgid "Share on Twitter"
+msgstr "Chia sẻ trên Twitter"
+
+#: inc/structure.php:77 inc/structure.php:77
+msgid "Share on Google +"
+msgstr "Chia sẻ trên Google +"
+
+#: inc/structure.php:80 inc/structure.php:80
+msgid "Share on Linkedin"
+msgstr "Chia sẻ trên Linkedin"
+
+#: inc/structure.php:83 inc/structure.php:83
+msgid "Share on Tumblr"
+msgstr "Chia sẻ trên Tumblr"
+
+#: inc/structure.php:86 inc/structure.php:86
+msgid "Pin on Pinterest"
+msgstr "Ghim lên Pinterest"
+
+#: inc/structure.php:170
+msgid "Previous"
+msgstr "Trước"
+
+#: inc/structure.php:205
+msgid "Next"
+msgstr "Tiếp"
+
+#: inc/widgets.php:28
+msgid "Recent Posts"
+msgstr "Bài viết gần đây"
+
+#: inc/widgets.php:39
+msgid "Widget title"
+msgstr "Tiêu đề"
+
+#: inc/widgets.php:40
+msgid "Post type"
+msgstr "Loại dữ liệu"
+
+#: inc/widgets.php:41
+msgid "Number of posts"
+msgstr "Số lượng"
+
+#: inc/widgets.php:42
+msgid "Category id"
+msgstr "ID danh mục"
+
+#: templates/loop/content-course.php:24
+#: templates/loop/content-single-course.php:22
+msgid "review"
+msgstr "đánh giá"
+
+#: templates/loop/content-course.php:26
+#: templates/loop/content-single-course.php:24
+msgid "Teacher:"
+msgstr "Giảng viên:"
+
+#: templates/loop/content-course.php:44
+#: templates/loop/content-single-course.php:63
+msgid "BUY NOW"
+msgstr "MUA NGAY"
+
+#: templates/loop/content-course.php:53
+#: templates/loop/content-single-course.php:54
+msgid "Free"
+msgstr "Miễn phí"
+
+#: templates/loop/content-course.php:57
+msgid "See More"
+msgstr "Xem thêm"
+
+#: templates/loop/content-none.php:10
+msgid "Nothing found!"
+msgstr "Không tìm thấy!"
+
+#: templates/loop/content-single-course.php:68
+msgid "ADD TO CART"
+msgstr "THÊM VÀO GIỎ"
+
+#: templates/loop/content-single-course.php:72
+msgid "Input coupon code here..."
+msgstr "Nhập mã khuyến mãi..."
+
+#: templates/loop/content-single-course.php:73
+msgid "Apply"
+msgstr "Áp dụng"
+
+#: templates/loop/content-single-course.php:78
+msgid "Error!"
+msgstr "Báo lỗi!"
+
+#: templates/loop/content-single-course.php:81
+msgid "Lesson"
+msgstr "Số lượng bài giảng"
+
+#: templates/loop/content-single-course.php:82
+msgid "Lesson duration"
+msgstr "Thời lượng bài giảng"
+
+#. Name of the theme
+#. Author of the theme
+msgid "Vifonic"
+msgstr "Vifonic"
+
+#. Description of the theme
+msgid "Vifonic is the perfect theme for your website"
+msgstr "Vifonic is the perfect theme for your website"
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "http://vifonic.vn/"
+msgstr "http://vifonic.vn/"

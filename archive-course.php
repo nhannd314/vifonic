@@ -5,52 +5,62 @@
 
 get_header(); ?>
 
-<div id="breadcrumbs-wrapper">
-    <div class="container">
-        <h1 class="text-center title archive-title">DỰ ÁN THIẾT KẾ WEBSITE</h1>
-        <h2 class="text-center title archive-description">Những dự án thiết kế website gần đây nhất mà Vifonic đã thực hiện</h2>
+    <main class="main main-course_category section">
+        <div id="breadcrumbs-wrapper">
+            <div class="container">
 
-        <?php if ( function_exists('yoast_breadcrumb') )
-        {yoast_breadcrumb('<div id="breadcrumbs">','</div>');} ?>
+				<?php if ( function_exists('yoast_breadcrumb') )
+				{ yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
 
-    </div>
-</div>
+                <h1 class="vifonic-heading text-left">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+					<?php
+					the_archive_title();
+					?>
+                </h1>
 
-<main class="main main-project section">
-    <div class="container">
-        <div class="section-header text-center">
-            <h2 class="section-title">DỰ ÁN THIẾT KẾ WEBSITE TIÊU BIỂU</h2>
-            <img class="header-bottom-line" src="<?php echo get_template_directory_uri() ?>/img/styled-line.png" alt="">
-            <p class="text-center section-sub-title">
-                Mỗi dự án là một đứa con cưng, mỗi khách hàng là một ông chủ lớn!
-            </p>
+            </div>
         </div>
-        <div class="section-content">
+        <div class="container">
 
-            <?php if (have_posts()): ?>
+            <div class="section-content">
 
-                <div class="row">
+	            <?php if (have_posts()): ?>
 
-                    <?php
-                    $i = 0;
-                    while (have_posts()) {
-                        $i++;
-                        the_post();
-                        echo '<div class="col-md-4 col-sm-6 col-xs-12 col">';
-                        get_template_part('content', 'project2');
-                        echo '</div>';
-                        if ( $i % 3 == 0) echo '<div class="col-xs-12 hidden-xs"></div>';
-                    }
-                    ?>
+		            <?php
+		            vifonic_title("Các khóa học nổi bật", "","left");
+		            vifonic_show_featured_courses_slider_by_category('',8);
 
-                </div>
+		            vifonic_title("Tất cả khóa học", "","left");
+		            ?>
 
-                <?php vifonic_pagination() ?>
+                    <div class="row">
 
-            <?php endif; wp_reset_query(); ?>
+			            <?php
+			            $i = 0;
+			            while (have_posts()) {
+				            $i++;
+				            the_post();
+				            echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+				            get_template_part('templates/loop/content', 'course');
+				            echo '</div>';
+				            if ($i%4==0){ echo '<div class="clearfix"></div>'; }
+			            }
+			            ?>
 
+                    </div>
+
+		            <?php vifonic_pagination() ?>
+
+		            <?php
+		            vifonic_title("KHÓA HỌC ONLINE MIỄN PHÍ", "","center");
+		            vifonic_show_free_courses_slider_by_category();
+		            ?>
+
+	            <?php endif; wp_reset_query(); ?>
+
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
 <?php get_footer(); ?>

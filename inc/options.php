@@ -6,9 +6,9 @@
  * Time: 16:53
  */
 
-if ( ! class_exists( 'Foxtail_theme_options' ) ) {
+if ( ! class_exists( 'Vifonic_theme_options' ) ) {
 
-    class Foxtail_theme_options {
+    class Vifonic_theme_options {
 
         public $args = array();
         public $sections = array();
@@ -60,8 +60,8 @@ if ( ! class_exists( 'Foxtail_theme_options' ) ) {
                 'display_name' => $theme->get( 'Name' ), // Thiết lập tên theme hiển thị trong Theme Options
                 'menu_type'          => 'menu',
                 'allow_sub_menu'     => true,
-                'menu_title'         => 'Theme options',
-                'page_title'         => 'Theme options',
+                'menu_title'         => __('Theme options', 'vifonic'),
+                'page_title'         => __('Theme options', 'vifonic'),
                 'dev_mode' => false,
                 'customizer' => true,
                 'menu_icon' => '', // Đường dẫn icon của menu option
@@ -162,6 +162,6 @@ if ( ! class_exists( 'Foxtail_theme_options' ) ) {
     } // end My_theme_option class
 
     global $reduxConfig;
-    $reduxConfig = new Foxtail_theme_options();
+    $reduxConfig = new Vifonic_theme_options();
 
 }

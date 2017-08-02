@@ -262,16 +262,31 @@ img {
     height: 35px;
     line-height: 35px;
     text-align: left;
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin: 0;
+}
+//Social Share
+.vifonic-social-share {
+    li {
+        padding:0 3px;
+        i {
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #fff;
+            border: 1px solid @brand-primary;
+            border-radius: 100%;
+        }
+    }
+
 }
 
 //Breadcrumb
 #breadcrumbs-wrapper {
     background-color: @brand-primary;
-    margin-bottom: 30px;
+    padding: 30px 0;
     #breadcrumbs {
-        margin:30px 0 0;
         color: #fff;
         a {
             color: @brand-second;
@@ -303,7 +318,7 @@ main.main-course_category {
 }
 
 //----------------------- Course ----------------------------
-.single-course {
+.single-course-item {
     border: 1px solid #f3f3f3;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
@@ -344,26 +359,34 @@ main.main-course_category {
                     margin-left: 10px;
                 }
             }
-            .course-teachcher {
+            .course-teacher {
                 text-align: center;
                 margin-top: 5px;
             }
             .course-price {
                 margin-bottom: 20px;
                 text-align: center;
-                .sale-price { text-decoration: line-through; }
+                .price_1 { text-decoration: line-through; }
                 i {
                     color: @brand-second;
                     margin:0 10px;
                 }
-                .regular-price{
+                .free-tag {
+                    width: 32px;
+                    margin-top: -6px;
+                    margin-bottom: -6px;
+                    display: inline-block;
+                }
+                .price_2 {
                     font-weight:700;
                 }
             }
             .course-add-to-cart {
                 text-align: center;
                 margin-bottom: 10px;
-                button.btn-add-to-cart {}
+                button.btn-add-to-cart {
+
+                }
             }
         }
     }
@@ -371,7 +394,7 @@ main.main-course_category {
 }
 
 //Featured Course Slider
-#featured-course {
+.courses-slider {
     border-bottom: 1px solid #ddd;
     margin-bottom: 30px;
     .owl-controls {
@@ -387,16 +410,129 @@ main.main-course_category {
             background-color: #fff;
             color: @brand-primary;
             border: 1px solid @brand-primary;
+            &:hover {
+                background-color: @brand-primary;
+                color: #fff;
+            }
         }
         .owl-prev {
             float: left;
-            margin-left: -15px;
+            margin-left: -15px !important;
         }
         .owl-next {
             float: right;
-            margin-right: -15px;
+            margin-right: -15px !important;
         }
 
+    }
+}
+
+//Main Single Course
+main.main-single-course {
+    .single-course-heading {
+        .course-title {
+            font-size: 32px;
+        }
+        .course-rating {
+            padding:5px 0;
+            .rating-star {
+                display: inline-block;
+                i {
+                    &:before{
+                        color: #ddd;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .rating-text {
+                font-style: italic;
+                margin-left: 10px;
+            }
+        }
+        .course-teacher {
+            text-align: left;
+        }
+    }
+    .single-course-primary {
+        margin-bottom: 30px;
+        .course-video-demo {
+            .course-video-wrapper {
+                border: 1px solid @brand-primary;
+            }
+        }
+        .course-information {
+            .course-price {
+                margin-bottom: 15px;
+                text-align: left;
+                .price_1 { text-decoration: line-through; }
+                i {
+                    color: @brand-second;
+                    margin:0 10px;
+                }
+                .free-tag {
+                    width: 32px;
+                    display: inline-block;
+                }
+                .price_2 {
+                    font-weight:700;
+                }
+            }
+            .course-add-to-cart {
+                text-align: left;
+                margin-bottom: 15px;
+                button {
+                    min-width: 100px;
+                    margin-right: 10px;
+                }
+            }
+            .course-warning-error {
+                margin-bottom: 15px;
+            }
+            .course-lesson-time {
+                .lesson-time {
+                    display: inline-block;
+                    width:85px;
+                    i {
+                        margin-right: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .course-social-share {
+
+            }
+        }
+    }
+    .single-course-secondary {
+        margin-bottom: 30px;
+        .course-tabs {
+            margin-bottom: 20px;
+            .course_chapter {
+                ul.chapter-list {
+                    list-style-type: none;
+                    font-size: 16px;
+                    padding-left: 20px;
+                    line-height: 25px;
+                    li.chapter-item {
+                        &:before {
+                            font-family:FontAwesome;
+                            content: '\f02e';
+                            margin-right: 5px;
+                        }
+                        ul.lesson-list {
+                            list-style-type: none;
+                            li.lesson-item {
+                                &:before {
+                                    font-family:FontAwesome;
+                                    content: '\f0f6';
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -459,6 +595,127 @@ main.main-course_category {
         margin: 0 5px;
         padding:0 10px;
     }
+}
+
+//--------------------- Comment ------------------------------
+#comments {
+    clear: both;
+    margin-bottom: 30px;
+    .comments-title {
+        display: none;
+    }
+    .comment-list {
+        padding-left: 20px;
+        list-style: none;
+        margin-top: 25px;
+        li.comment {
+            border: 2px solid @brand-second;
+            margin-bottom: 21px;
+            article.comment-body {
+                margin-right: -1px;
+                .comment-meta {
+                    background-color: @brand-second;
+                    color: #fff;
+                    position: relative;
+                    min-height: 32px;
+                    padding: 6px 0 0 40px;
+                    width: 100%;
+                    display: inline-block;
+                    .comment-author {
+                        display: inline-block;
+                        img.avatar {
+                            background-color: #fff;
+                            margin-right: 10px;
+                            border: 2px solid @brand-second;
+                            border-radius: 100%;
+                            position: absolute;
+                            width: 60px;
+                            top: -14px;
+                            left: -25px;
+                        }
+                        b.fn a {
+                            color: #fff;
+                        }
+                        span.says {
+                            display: none;
+                        }
+                        &:after {
+                            content: '\f27b';
+                            font-family: FontAwesome;
+                            margin: 0 10px 0 3px;
+                        }
+                    }
+                    .comment-metadata {
+                        display: inline-block;
+                        a {
+                            color: #fff;
+                        }
+                        span.edit-link a.comment-edit-link {
+                            color: @brand-primary;
+                        }
+                    }
+                    .comment-awaiting-moderation {
+                        display: inline-block;
+                        float: right;
+                        margin-right: 15px;
+                    }
+                }
+                .comment-content {
+                    padding:15px;
+                }
+                .reply {
+                    a.comment-reply-link {
+                        display: inline-block;
+                        margin: 0 0 10px 15px;
+                        background-color: @brand-primary;
+                        border: 1px solid @brand-primary;
+                        padding: 5px 10px;
+                        color: #fff;
+                    }
+                }
+            }
+
+            ol.children {
+                list-style: none;
+                margin-top: 10px;
+                padding-right: 15px;
+            }
+        }
+    }
+    .comment-respond{
+        #reply-title {
+            display: none;
+        }
+        form.comment-form {
+            p[class^='comment-form'] {
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                margin-right: 50px;
+                label {
+                    vertical-align: top;
+                    margin-right: 15px;
+                    width: 65px;
+                }
+                input, textarea {
+                    border: 1px solid #333;
+                }
+            }
+            .form-submit {
+                clear: both;
+                display: inline-block;
+                width: 50%;
+                input.submit {
+                    background-color: @brand-primary;
+                    border: 1px solid @brand-primary;
+                    color: #fff;
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+
+
 }
 
 //--------------------------- FOOTER -------------------------

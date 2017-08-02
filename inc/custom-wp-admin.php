@@ -17,13 +17,13 @@ if ( is_admin() )
         define( 'DISALLOW_FILE_MODS', true );
         define( 'DISALLOW_FILE_EDIT', true );
 
-        add_action( 'admin_menu', 'foxtail_remove_menus' );
+        add_action( 'admin_menu', 'vifonic_remove_menus' );
 
         // Remove
-        add_action( 'admin_menu', 'foxtail_remove_unnecessary_wordpress_menus', 999 );
+        add_action( 'admin_menu', 'vifonic_remove_unnecessary_wordpress_menus', 999 );
     }
 
-    function foxtail_remove_menus() {
+    function vifonic_remove_menus() {
 
         remove_menu_page( 'index.php' );
         remove_menu_page( 'jetpack' );
@@ -46,7 +46,7 @@ if ( is_admin() )
         remove_menu_page( 'about-ultimate' );
     }
 
-    function foxtail_remove_unnecessary_wordpress_menus() {
+    function vifonic_remove_unnecessary_wordpress_menus() {
         global $submenu;
         unset( $submenu['themes.php'][6] );
         unset( $submenu['themes.php'][20] );

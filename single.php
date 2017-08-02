@@ -23,13 +23,13 @@ get_header(); ?>
 				if (have_posts()):
 					while (have_posts()):
 						the_post();
-						get_template_part('content', 'single');
+						get_template_part('templates/loop/content', 'single');
 					endwhile;
 
 					vifonic_pagination();
 
 				else:
-					get_template_part('content', 'none');
+					get_template_part('templates/loop/content', 'none');
 				endif;
 				?>
 
@@ -62,7 +62,7 @@ get_header(); ?>
 					$i++;
 					the_post();
 					echo '<div class="col-md-6 col-sm-6 col-xs-12 col">';
-					get_template_part('content', 'home');
+					get_template_part('templates/loop/content', 'home');
 					echo '</div>';
 					if ($i % 2 == 0) echo '<div class="col-xs-12 hidden-xs"></div>';
 				}

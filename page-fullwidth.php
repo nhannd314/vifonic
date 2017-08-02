@@ -41,7 +41,7 @@ get_header();
 
 				<?php endwhile;
 			else:
-				get_template_part('content', 'none');
+				get_template_part('templates/loop/content', 'none');
 			endif;
 			?>
 

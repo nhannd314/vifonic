@@ -24,10 +24,10 @@ get_header(); ?>
 
 					while (have_posts()):
 						the_post();
-						get_template_part('content', 'page');
+						get_template_part('templates/loop/content', 'page');
 					endwhile;
 				else:
-					get_template_part('content', 'none');
+					get_template_part('templates/loop/content', 'none');
 				endif;
 				?>
 

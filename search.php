@@ -23,13 +23,13 @@ get_header(); ?>
 
 					while (have_posts()):
 						the_post();
-						get_template_part('content', get_post_format());
+						get_template_part('templates/loop/content', get_post_format());
 					endwhile;
 
 					vifonic_pagination();
 
 				else:
-					get_template_part('content', 'none');
+					get_template_part('templates/loop/content', 'none');
 				endif;
 				?>
 
