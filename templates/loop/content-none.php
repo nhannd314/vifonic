@@ -14,7 +14,7 @@
 
 		<?php get_search_form() ?>
 
-		<p><?php esc_html_e('Or return to', 'vifonic') ?> <a href="<?php echo home_url('/') ?>"><?php esc_html_e('Home page') ?></a></p>
+		<p><?php esc_html_e('Or return to', 'vifonic') ?> <a href="<?php echo home_url('/') ?>"><?php esc_html_e('Home page', 'vifonic') ?></a></p>
 
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

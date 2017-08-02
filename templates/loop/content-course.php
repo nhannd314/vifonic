@@ -23,7 +23,7 @@
                     </div>
                     <span class="rating-text">0 <?php _e('review', 'vifonic'); ?></span>
                 </div>
-                <?php printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), get_field( 'course_teacher', get_the_ID()) ); ?>
+                <?php printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), get_field( 'teacher_name', get_the_ID()) ); ?>
 				<?php
 				$is_free = get_field('free_course', get_the_ID());
 				if (!$is_free) {

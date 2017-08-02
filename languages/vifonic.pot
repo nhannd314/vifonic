@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-02 03:33+0000\n"
+"POT-Creation-Date: 2017-08-02 11:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,6 +30,10 @@ msgstr ""
 msgid "Or return to"
 msgstr ""
 
+#: 404.php:28 templates/loop/content-none.php:17
+msgid "Home page"
+msgstr ""
+
 #: author-bio.php:15
 msgid "Published by"
 msgstr ""
@@ -39,24 +43,57 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: header.php:37
+#: header.php:74
 msgid "Categories"
 msgstr ""
 
-#: header.php:58
+#: header.php:100 header.php:108 header.php:139 header.php:139
 msgid "Register"
 msgstr ""
 
-#: header.php:59
+#: header.php:113
+msgid "Full Name"
+msgstr ""
+
+#: header.php:117
+msgid "Email"
+msgstr ""
+
+#: header.php:121
+msgid "Mobile"
+msgstr ""
+
+#: header.php:125
+msgid "Password >= 7 character"
+msgstr ""
+
+#: header.php:129
+msgid "Confirm Password"
+msgstr ""
+
+#: header.php:134
+msgid "Already have an account?"
+msgstr ""
+
+#: header.php:134 header.php:146
 msgid "Login"
 msgstr ""
 
-#: header.php:60
+#: header.php:138
+msgid "Close"
+msgstr ""
+
+#: header.php:171
 msgid "Active course"
 msgstr ""
 
-#: header.php:61
+#: header.php:172
 msgid "View your cart"
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search results for: \"%1$s\""
 msgstr ""
 
 #: inc/options.php:63 inc/options.php:64
@@ -181,6 +218,54 @@ msgstr ""
 
 #: inc/widgets.php:42
 msgid "Category id"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:64
+msgid "This field is required!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:76
+msgid "Passwords must be greater than 7 characters!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:79
+msgid "Password incorrect!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:82
+msgid "Invalid email!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:85
+msgid "Email already exists!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:180
+msgid "Can not send email. Please check your email or use another email!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:184
+msgid "Error creating new user, please try again later!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:202
+msgid "Username does not exist!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:207
+msgid "Account has been activated before!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:216
+msgid "Activation code expired, please reapply!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:226
+msgid "Successful! Login account for immediate use!"
+msgstr ""
+
+#: inc/func/vifonic-register-login-function.php:229
+msgid "Incorrect activation code! Please check again!"
 msgstr ""
 
 #: templates/loop/content-course.php:24

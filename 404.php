@@ -17,7 +17,7 @@ get_header(); ?>
 
 		<h1 class="page-title title"><?php esc_html_e( '404. Page not found!', 'vifonic' ); ?></h1>
 
-		<img src="<?php echo get_template_directory_uri() ?>/img/404-thiet-ke-web.jpg" alt="404-page">
+		<img src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="404-page">
 
 		<p><?php esc_html_e('It seem like the content you look is not exist', 'vifonic') ?></p>
 
@@ -25,7 +25,7 @@ get_header(); ?>
 
 		<?php get_search_form() ?>
 
-		<p><?php esc_html_e('Or return to', 'vifonic') ?> <a href="<?php echo home_url('/') ?>"><?php esc_html_e('Home page') ?></a></p>
+		<p><?php esc_html_e('Or return to', 'vifonic') ?> <a href="<?php echo home_url('/') ?>"><?php esc_html_e('Home page', 'vifonic') ?></a></p>
 
 	</div>
 </main>

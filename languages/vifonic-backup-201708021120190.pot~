@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 11:25+0000\n"
+"POT-Creation-Date: 2017-08-02 09:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,6 +30,10 @@ msgstr ""
 msgid "Or return to"
 msgstr ""
 
+#: 404.php:28 templates/loop/content-none.php:17
+msgid "Home page"
+msgstr ""
+
 #: author-bio.php:15
 msgid "Published by"
 msgstr ""
@@ -39,24 +43,57 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: header.php:37
+#: header.php:73
 msgid "Categories"
 msgstr ""
 
-#: header.php:58
+#: header.php:99 header.php:107 header.php:135
 msgid "Register"
 msgstr ""
 
-#: header.php:59
+#: header.php:111
+msgid "Full Name"
+msgstr ""
+
+#: header.php:115
+msgid "Email"
+msgstr ""
+
+#: header.php:119
+msgid "Mobile"
+msgstr ""
+
+#: header.php:123
+msgid "Password >= 7 character"
+msgstr ""
+
+#: header.php:127
+msgid "Confirm Password"
+msgstr ""
+
+#: header.php:130
+msgid "Already have an account?"
+msgstr ""
+
+#: header.php:130 header.php:142
 msgid "Login"
 msgstr ""
 
-#: header.php:60
+#: header.php:134
+msgid "Close"
+msgstr ""
+
+#: header.php:167
 msgid "Active course"
 msgstr ""
 
-#: header.php:61
+#: header.php:168
 msgid "View your cart"
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search results for: \"%1$s\""
 msgstr ""
 
 #: inc/options.php:63 inc/options.php:64
@@ -149,6 +186,10 @@ msgstr ""
 
 #: inc/structure.php:86 inc/structure.php:86
 msgid "Pin on Pinterest"
+msgstr ""
+
+#: inc/structure.php:107
+msgid "Your comment"
 msgstr ""
 
 #: inc/structure.php:170

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-01 11:25+0000\n"
-"PO-Revision-Date: 2017-08-01 11:25+0000\n"
+"POT-Creation-Date: 2017-08-02 09:41+0000\n"
+"PO-Revision-Date: 2017-08-02 09:41+0000\n"
 "Last-Translator: ykhoa_admin <web.vifonic@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: inc/setup.php:115 inc/setup.php:116 inc/setup.php:118
-msgid "Slider"
-msgstr "Slider"
+#: header.php:130
+msgid "Already have an account?"
+msgstr "Bạn đã có tài khoản?"
 
 #: 404.php:18
 msgid "404. Page not found!"
-msgstr "Lỗi 404: Không tìm thây!"
+msgstr "Lỗi 404: Không tìm thấy!"
 
 #: 404.php:22
 msgid "It seem like the content you look is not exist"
@@ -33,6 +33,10 @@ msgstr "Thử tìm kiếm trong trang:"
 msgid "Or return to"
 msgstr "Hoặc trở về"
 
+#: 404.php:28 templates/loop/content-none.php:17
+msgid "Home page"
+msgstr "Trang chủ"
+
 #: author-bio.php:15
 msgid "Published by"
 msgstr "Đăng bởi"
@@ -42,25 +46,54 @@ msgstr "Đăng bởi"
 msgid "View all posts by %s"
 msgstr "Xem tất cả bài viết của %s"
 
-#: header.php:37
+#: header.php:73
 msgid "Categories"
 msgstr "Chuyên mục"
 
-#: header.php:58
+#: header.php:99 header.php:107 header.php:135
 msgid "Register"
 msgstr "Đăng ký"
 
-#: header.php:59
+#: header.php:111
+msgid "Full Name"
+msgstr "Họ và tên"
+
+#: header.php:115
+msgid "Email"
+msgstr "Email"
+
+#: header.php:119
+msgid "Mobile"
+msgstr "Số điện thoại"
+
+#: header.php:123
+msgid "Password >= 7 character"
+msgstr "Mật khẩu >= 7 kí tự"
+
+#: header.php:127
+msgid "Confirm Password"
+msgstr "Xác nhận mật khẩu"
+
+#: header.php:130 header.php:142
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: header.php:60
+#: header.php:134
+msgid "Close"
+msgstr "Hủy"
+
+#: header.php:167
 msgid "Active course"
 msgstr "Kích hoạt khóa học"
 
-#: header.php:61
+#: header.php:168
 msgid "View your cart"
 msgstr "Xem giỏ hàng"
+
+#: search.php:17
+#, php-format
+msgid "Search results for: \"%1$s\""
+msgstr "Kết quả tìm kiếm cho: \"%1$s\""
 
 #: inc/options.php:63 inc/options.php:64
 msgid "Theme options"
@@ -85,6 +118,10 @@ msgstr "Khóa học"
 #: inc/setup.php:90
 msgid "Course"
 msgstr "Khóa học"
+
+#: inc/setup.php:115 inc/setup.php:116 inc/setup.php:118
+msgid "Slider"
+msgstr "Slider"
 
 #: inc/setup.php:140 inc/setup.php:143
 msgid "Teachers"
@@ -150,6 +187,10 @@ msgstr "Chia sẻ trên Tumblr"
 msgid "Pin on Pinterest"
 msgstr "Ghim lên Pinterest"
 
+#: inc/structure.php:107
+msgid "Your comment"
+msgstr "Bình luận Facebook"
+
 #: inc/structure.php:170
 msgid "Previous"
 msgstr "Trước"
@@ -204,7 +245,7 @@ msgstr "Xem thêm"
 
 #: templates/loop/content-none.php:10
 msgid "Nothing found!"
-msgstr "Không tìm thấy!"
+msgstr "Không tìm thấy kết quả phù hợp!"
 
 #: templates/loop/content-single-course.php:68
 msgid "ADD TO CART"
