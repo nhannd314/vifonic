@@ -1,12 +1,31 @@
 jQuery(document).ready(function() {
+    var btn_timeout;
 
-    jQuery('#register-form .btn').on('click', function() {
+    jQuery('[id^="modal-"]').each(function () {
+        jQuery(this).on('show.bs.modal', function () {
+            // Load up a new modal...
+            jQuery('[id^="modal-"]').not(jQuery(this)).modal('hide');
+        });
+    });
+
+    jQuery('.vifonic-ajax-button').each(function () {
+        jQuery(this).on('click', function() {
+            var $this = jQuery(this);
+            $this.button('loading');
+            btn_timeout = setTimeout(function() {
+                $this.button('reset');
+            }, 10000);
+        });
+    });
+
+/*    jQuery('.vifonic-ajax-button').on('click', function() {
         var $this = jQuery(this);
         $this.button('loading');
-        setTimeout(function() {
+        btn_timeout = setTimeout(function() {
             $this.button('reset');
-        }, 2000);
-    });
+        }, 10000);
+    });*/
+
 
     // Ajax register new user
     jQuery("#register-form").on("submit", function(e) {
@@ -21,19 +40,21 @@ jQuery(document).ready(function() {
                 "email": jQuery("#register-form #vifonic_email").val(),
                 "mobile": jQuery("#register-form #vifonic_mobile").val(),
                 "password": jQuery("#register-form #vifonic_pass").val(),
-                "password_comfirm": jQuery("#register-form #vifonic_pass_confirm").val(),
+                "password_confirm": jQuery("#register-form #vifonic_pass_confirm").val(),
                 "security": jQuery("#register-form #vifonic_register_security").val()
             },
             success: function(response){
-                jQuery("#register-form .status").html(response.message);
+                clearTimeout(btn_timeout);
+                jQuery('#register-form .vifonic-ajax-button').button('reset');
 
                 if (response.success == true){
-                    jQuery("#register-form .status").html(__("Account registration successful! Please check your email to confirm your registration!", 'vifonic'));
+                    jQuery("#register-form .status").html(response.message);
                 }
                 else {
                     jQuery("#register-form .status").html(response.error.join("<br>"));
                     //console.log(response.error);
                 }
+
             }
             // end success
         });
@@ -43,26 +64,26 @@ jQuery(document).ready(function() {
     });
 
     // Perform AJAX login on form submit
-    /*jQuery("#login-form").on("submit", function(e) {
-        jQuery("#login-form > .hover").show();
-        jQuery("#login-form > .loading").show();
+    jQuery("#login-form").on("submit", function(e) {
+
         jQuery.ajax({
             type: "POST",
             dataType: "json",
-            url: ajax_login_object.ajaxurl,
+            url: ajax_register_login_object.ajaxurl,
             data: {
                 "action": "ajaxlogin", //calls wp_ajax_nopriv_ajaxlogin
-                "email": jQuery("#na_email").val(),
-                "password": jQuery("#na_pass").val(),
-                "security": jQuery("#login-security").val() },
+                "email": jQuery("#login-form #vifonic_email").val(),
+                "password": jQuery("#login-form #vifonic_pass").val(),
+                "security": jQuery("#login-form #vifonic_login_security").val() },
             success: function(response){
-                jQuery("#login-form > .hover").hide();
-                jQuery("#login-form > .loading").hide();
+
+                clearTimeout(btn_timeout);
+                jQuery('#login-form .vifonic-ajax-button').button('reset');
+
                 if (response.success == true){
-                    jQuery("#login-form .status").html("Logged in successfully. Redirecting ...");
+                    jQuery("#login-form .status").html(response.message);
                     location.reload(true);
-                }
-                else {
+                } else {
                     jQuery("#login-form .status").html(response.error);
                     console.log(response.error);
                 }
@@ -70,5 +91,33 @@ jQuery(document).ready(function() {
         });
         e.preventDefault();
         return false;
-    });*/
+    });
+
+    // Perform AJAX forgot-password on form submit
+    jQuery("#forgot-password-form").on("submit", function(e) {
+
+        jQuery.ajax({
+            type: "POST",
+            dataType: "json",
+            url: ajax_register_login_object.ajaxurl,
+            data: {
+                "action": "ajaxforgotpassword", //calls wp_ajax_nopriv_ajaxlogin
+                "email": jQuery("#forgot-password-form #vifonic_email").val(),
+                "security": jQuery("#forgot-password-form #vifonic_forgot_password_security").val() },
+            success: function(response){
+                clearTimeout(btn_timeout);
+                jQuery('#forgot-password-form .vifonic-ajax-button').button('reset');
+
+                if (response.success == true){
+                    jQuery("#forgot-password-form .status").html(response.message);
+                    location.reload(true);
+                } else {
+                    jQuery("#forgot-password-form .status").html(response.error);
+                    console.log(response.error);
+                }
+            }
+        });
+        e.preventDefault();
+        return false;
+    });
 });

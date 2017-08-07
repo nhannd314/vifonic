@@ -21,7 +21,7 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                     </div>
-                    <span class="rating-text">0 <?php _e('review', 'vifonic'); ?></span>
+                    <span class="rating-text"><?php comments_number(__('0 review', 'vifonic'), __('1 review', 'vifonic'), __('% review', 'vifonic')); ?></span>
                 </div>
                 <?php printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), get_field( 'teacher_name', get_the_ID()) ); ?>
 				<?php
@@ -38,13 +38,16 @@
 
 						printf('<div class="course-price"><span class="price_1"></span><i class="fa fa-money" aria-hidden="true"></i><span class="price_2">%1$s</span></div>', $regular_price);
 					}
-					?>
-                    <div class="course-add-to-cart">
-                        <button type="button" class="btn btn-warning btn-add-to-cart">
-							<?php _e('BUY NOW', 'vifonic'); ?>
-                        </button>
+                    ?>
+                    <div class="course-cart">
+                        <form action="/order/detail/" method="post" role="form">
+                            <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
+                            <button type="submit" class="btn btn-warning btn-buy-now">
+								<?php _e('BUY NOW', 'vifonic'); ?>
+                            </button>
+                        </form>
                     </div>
-					<?php
+                    <?php
 				} else {
 					?>
                     <div class="course-price">
@@ -52,10 +55,10 @@
                         <img class="free-tag" src="<?php echo get_stylesheet_directory_uri(); ?>/img/free.png" width="32px" alt="Miễn phí">
                         <span class="regular-price"><?php _e('Free', 'vifonic'); ?></span>
                     </div>
-                    <div class="course-add-to-cart">
-                        <button type="button" class="btn btn-warning btn-add-to-cart">
+                    <div class="course-cart">
+                        <a href="<?php the_permalink(); ?>" class="btn btn-warning btn-add-to-cart">
 							<?php _e('See More', 'vifonic'); ?>
-                        </button>
+                        </a>
                     </div>
 					<?php
 				}

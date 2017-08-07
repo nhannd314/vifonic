@@ -57,10 +57,10 @@ if (!function_exists('vifonic_validate_data')) {
 		$username = $arr[0];
 
 		$password = $post['password'];
-		$password_comfirm = $post['password_comfirm'];
+		$password_confirm = $post['password_confirm'];
 		$email = $post['email'];
 
-		if ( empty( $username ) || empty( $password ) || empty( $password_comfirm ) || empty( $email ) ) {
+		if ( empty( $username ) || empty( $password ) || empty( $password_confirm ) || empty( $email ) ) {
 			array_push($error, __('This field is required!', 'vifonic'));
 		}
 		// if ( 5 > strlen( $username ) ) {
@@ -75,8 +75,8 @@ if (!function_exists('vifonic_validate_data')) {
 		if ( 7 > strlen( $password ) ) {
 			array_push($error, __('Passwords must be greater than 7 characters!', 'vifonic') );
 		}
-		if ($password != $password_comfirm) {
-			array_push($error, __('Password incorrect!', 'vifonic') );
+		if ($password != $password_confirm) {
+			array_push($error, __('Password confirm incorrect!', 'vifonic') );
 		}
 		if ( !is_email( $email ) ) {
 			array_push($error, __('Invalid email!', 'vifonic') );
@@ -173,9 +173,12 @@ if (!function_exists('vifonic_ajax_register')) {
 				update_user_meta($new_user_id, 'active_key', $key);
 				update_user_meta($new_user_id, 'active_time', $time);
 
+				// Update PROFILE DATA
+				update_user_meta($new_user_id, 'profile_mobile', $_POST['mobile']);
+
 				// send mail to active account
 				if (vifonic_send_mail_active($new_user_id, $new_user_email, $key)) {
-					echo json_encode(array('success' => true));
+					echo json_encode(array('success' => true, 'message' => __("Account registration successful! Please check your email to confirm your registration!", 'vifonic')));
 				} else {
 					echo json_encode(array('success' => false, 'error' => array(__('Can not send email. Please check your email or use another email!', 'vifonic'))));
 				}
@@ -237,13 +240,74 @@ if (!function_exists('vifonic_activate_user_page')) {
 	}
 }
 
-//-----Template function
-if (!function_exists('vifonic_')) {
-	function vifonic_(){
-
-	}
-}
-
 // ========================================================
 
 // ============================ LOGIN ============================
+//Check activated or not
+add_filter('wp_authenticate_user', function($user) {
+	if (get_user_meta($user->ID, 'is_active', true) == 1 || $user->ID == 1) {
+		return $user;
+	}
+	return new WP_Error('wp_signon', __('Account not activated, please check email again!', 'vifonic'));
+}, 10, 2);
+
+if (!function_exists('vifonic_ajax_login')) {
+	function vifonic_ajax_login()
+	{
+		// First check the nonce, if it fails the function will break
+		check_ajax_referer( 'ajax-login-nonce', 'security' );
+
+		// Nonce is checked, get the POST data and sign user on
+		$username = $_POST['email'];
+		$password = $_POST['password'];
+		if ( empty( $username ) || empty( $password ) ) {
+			echo json_encode( array( 'success' => false, 'error' => __('This field is required!', 'vifonic') ) );
+			die();
+		}
+		if (filter_var($username, FILTER_VALIDATE_EMAIL)) { //Invalid Email
+			$user = get_user_by('email', $username);
+		} else {
+			$user = get_user_by('login', $username);
+		}
+		$info = array();
+		if ($user && wp_check_password( $password, $user->data->user_pass, $user->ID)) {
+			$info['user_login'] = $user->data->user_login;
+			$info['user_password'] = $password;
+			$info['remember'] = true;
+		}
+
+		$user_signon = wp_signon( $info, false );
+		if ( is_wp_error($user_signon) ){
+			if (!wp_check_password( $password, $user->data->user_pass, $user->ID)) {
+				echo json_encode( array( 'success' => false, 'error' => __('The email or password is incorrect, please input again!', 'vifonic') ) );
+			} else {
+				echo json_encode( array( 'success' => false, 'error' => $user_signon->get_error_message() ) );
+			}
+		} else {
+			echo json_encode(array('success' => true, 'message' => __('Logged in successfully. Redirecting ...', 'vifonic')));
+		}
+
+		die();
+	}
+}
+
+// ============================ FORGOT PASSWORD ============================
+if (!function_exists('vifonic_ajax_forgot_password')) {
+	//add_action( 'login_form_lostpassword', 'vifonic_ajax_forgot_password' );
+	function vifonic_ajax_forgot_password() {
+		// First check the nonce, if it fails the function will break
+		check_ajax_referer( 'ajax-forgot-password-nonce', 'security' );
+
+		$errors = retrieve_password();
+
+		var_dump($errors);
+
+		if ( is_wp_error( $errors ) ) {
+			echo json_encode( array( 'success' => false, 'error' => $errors->get_error_message() ) );
+		} else {
+			echo json_encode(array('success' => true, 'message' => __('Requested successfully. Please check your email to confirm your resetting password!', 'vifonic')));
+		}
+
+		die();
+	}
+}

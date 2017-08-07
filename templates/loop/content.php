@@ -6,7 +6,7 @@
 
 <article class="clearfix" role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
-	<?php vifonic_thumbnail('post-thumbnail') ?>
+	<?php vifonic_post_thumbnail('post-thumbnail') ?>
 
 	<h3 class="post-title title" itemprop="name">
 		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">

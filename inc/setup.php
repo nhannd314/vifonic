@@ -275,6 +275,10 @@ function vifonic_enqueue_scripts()
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), $vifonic_version, true);
     wp_enqueue_script('owl-carousel-js', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), $vifonic_version, true);
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), $vifonic_version, true);
+	//Date picker
+	wp_enqueue_script( 'jquery-ui-datepicker' );
+	wp_register_style( 'jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css' );
+	wp_enqueue_style( 'jquery-ui' );
 }
 
 // ============ Change archive title ===========

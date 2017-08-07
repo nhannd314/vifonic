@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-07 10:13+0000\n"
+"POT-Creation-Date: 2017-08-05 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -114,9 +114,7 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: header.php:185 templates/members/content-my-course.php:26
-#: templates/members/content-my-course.php:30
-#: templates/members/page-user-dashboard.php:29
+#: header.php:185 templates/members/page-user-dashboard.php:29
 msgid "My Course"
 msgstr ""
 
@@ -267,17 +265,17 @@ msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:64
 #: inc/func/vifonic-register-login-function.php:271
-#: inc/func/vifonic-user-dashboard-function.php:64
+#: inc/func/vifonic-user-dashboard-function.php:112
 msgid "This field is required!"
 msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:76
-#: inc/func/vifonic-user-dashboard-function.php:73
+#: inc/func/vifonic-user-dashboard-function.php:121
 msgid "Passwords must be greater than 7 characters!"
 msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:79
-#: inc/func/vifonic-user-dashboard-function.php:76
+#: inc/func/vifonic-user-dashboard-function.php:124
 msgid "Password confirm incorrect!"
 msgstr ""
 
@@ -341,47 +339,37 @@ msgid ""
 "password!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:69
+#: inc/func/vifonic-user-dashboard-function.php:117
 msgid "Current password incorrect!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:116
+#: inc/func/vifonic-user-dashboard-function.php:164
 msgid ""
 "Profile update successful! Your password has been changed, please log in "
 "again!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:120
+#: inc/func/vifonic-user-dashboard-function.php:168
 msgid "Profile update successful!"
 msgstr ""
 
 #: templates/loop/content-course.php:24
-#: templates/loop/content-single-course.php:33
-msgid "0 review"
-msgstr ""
-
-#: templates/loop/content-course.php:24
-#: templates/loop/content-single-course.php:33
-msgid "1 review"
-msgstr ""
-
-#: templates/loop/content-course.php:24
-#: templates/loop/content-single-course.php:33
-msgid "% review"
+#: templates/loop/content-single-course.php:22
+msgid "review"
 msgstr ""
 
 #: templates/loop/content-course.php:26
-#: templates/loop/content-single-course.php:35
+#: templates/loop/content-single-course.php:24
 msgid "Teacher:"
 msgstr ""
 
 #: templates/loop/content-course.php:44
-#: templates/loop/content-single-course.php:74
+#: templates/loop/content-single-course.php:63
 msgid "BUY NOW"
 msgstr ""
 
 #: templates/loop/content-course.php:53
-#: templates/loop/content-single-course.php:65
+#: templates/loop/content-single-course.php:54
 msgid "Free"
 msgstr ""
 
@@ -393,38 +381,28 @@ msgstr ""
 msgid "Nothing found!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:79
+#: templates/loop/content-single-course.php:68
 msgid "ADD TO CART"
 msgstr ""
 
-#: templates/loop/content-single-course.php:83
+#: templates/loop/content-single-course.php:72
 msgid "Input coupon code here..."
 msgstr ""
 
-#: templates/loop/content-single-course.php:84
+#: templates/loop/content-single-course.php:73
 msgid "Apply"
 msgstr ""
 
-#: templates/loop/content-single-course.php:89
+#: templates/loop/content-single-course.php:78
 msgid "Error!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:95
+#: templates/loop/content-single-course.php:81
 msgid "Lesson"
 msgstr ""
 
-#: templates/loop/content-single-course.php:95
+#: templates/loop/content-single-course.php:82
 msgid "Lesson duration"
-msgstr ""
-
-#: templates/members/content-my-course.php:24
-#: templates/members/content-profile.php:27
-msgid "Home"
-msgstr ""
-
-#: templates/members/content-my-course.php:25
-#: templates/members/content-profile.php:28
-msgid "Member"
 msgstr ""
 
 #: templates/members/content-profile.php:19
@@ -435,6 +413,14 @@ msgstr ""
 #: templates/members/content-profile.php:20
 #: templates/members/content-profile.php:102
 msgid "Female"
+msgstr ""
+
+#: templates/members/content-profile.php:27
+msgid "Home"
+msgstr ""
+
+#: templates/members/content-profile.php:28
+msgid "Member"
 msgstr ""
 
 #: templates/members/content-profile.php:45

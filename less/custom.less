@@ -40,73 +40,20 @@ img {
     .right {
 
     }
+
+    .textwidget {
+        p {
+            margin: 0;
+        }
+    }
 }
 
 @header-height: 90px;
 
-#header-1 {
+#header {
     min-height: @header-height;
     padding:20px 0;
-
-    @media screen and (max-width: 1024px) and (min-width: 768px) {
-        padding:0;
-        .header-left {
-            .course-nav {
-                .course-menu {
-                    top: calc(~"100% + 50px");
-                }
-            }
-            .search-box {
-                margin-left:0 !important;
-            }
-        }
-        .header-center {
-            padding:20px 15px;
-        }
-        .header-right{
-            .register-login {
-                float: right;
-                line-height: 40px;
-            }
-            .active-course {
-                float: right !important;
-            }
-            .cart {
-                float: right !important;
-                margin-right: 25px;
-            }
-        }
-    }
-    @media screen and (max-width: 767px) {
-        padding:0;
-        .header-left {
-            .course-nav {
-                .course-menu {
-                    top: calc(~"100% + 5px") !important;
-                }
-            }
-            .search-box {
-                float: right !important;
-            }
-        }
-        .header-center {
-            padding:20px 15px;
-        }
-        .header-right{
-            .register-login {
-                float: left;
-                line-height: 36px;
-            }
-            .active-course {
-                float: right !important;
-                margin-right: 0 !important;
-            }
-            .cart {
-                float: right !important;
-                margin-right: 25px;
-            }
-        }
-    }
+    border-bottom: 5px solid @brand-second;
 
     .header-left {
         padding-top: 10px;
@@ -132,7 +79,7 @@ img {
                 top: calc(~"100% + 30px"); left: 0;
                 margin: 0; padding: 0;
                 border-top: solid 5px @brand-second !important;
-                border: solid 1px @brand-second !important;
+                border: solid 1px @brand-second;
                 list-style: none;
                 min-width: 220px;
                 background: #fff;
@@ -189,7 +136,7 @@ img {
                 max-height: 60px;
             }
         }
-    }
+    } //End center
     .header-right {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -245,38 +192,20 @@ img {
                 margin: 130px auto 0;
             }
             margin-top: 130px;
-
         }
-    }
-}
 
-#header {
-    min-height: @header-height;
-    .left {
-        width: 40%;
-        .course-nav {
+        //Account Menu
+        #account-nav-btn {
             position: relative;
-            .nav-btn {
-                padding: 33px 0;
-                font-size: 16px;
-                cursor: pointer;
-                i {
-                    font-size: 21px;
-                    margin-right: 10px;
-                    color: @brand-primary;
-                }
-                span {
-                    position: relative;
-                    top: -2px;
-                }
-            }
-            .course-menu {
+            .account-menu {
                 position: absolute;
-                top: 100%; left: 0;
+                top: calc(~"100% + 32px"); left: 0;
                 margin: 0; padding: 0;
-                border-top: solid 5px @brand-second;
+                border-top: solid 5px @brand-second !important;
+                border: solid 1px @brand-second;
                 list-style: none;
-                min-width: 220px;
+                min-width: 260px;
+                max-width: 300px;
                 background: #fff;
                 display: none;
                 z-index:2;
@@ -299,89 +228,88 @@ img {
                         }
                     }
                 }
-            }
-        }
-        .search-box {
-            padding-top: 25px;
-            margin-left: 50px;
-            .search-form {
-                position: relative;
-                .form-control {
-                    box-shadow: none;
-                    border-color: #ddd;
-                    height: 40px;
-                    min-width: 200px;
-                    &:focus {
-                        box-shadow: none;
+                .acc-header {
+                    text-align: center;
+                    a {
+                        color: @brand-primary;
+                        font-weight: 700;
+                        font-size: 18px;
+                        img.avatar {
+                            border-radius: 100%;
+                            margin-right: 10px;
+                        }
                     }
                 }
-                .btn {
-                    position: absolute;
-                    top: 0; right: 0;
-                    width: 40px; height: 40px;
-                    background: transparent;
-                    border: none;
-                    color: @brand-second;
+            }
+        }
+
+    } //End right
+
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+        padding:0;
+        .header-left {
+            .course-nav {
+                .course-menu {
+                    top: calc(~"100% + 50px");
+                }
+            }
+            .search-box {
+                margin-left:0 !important;
+            }
+        }
+        .header-center {
+            padding:20px 15px;
+        }
+        .header-right{
+            .register-login {
+                float: right;
+                line-height: 40px;
+            }
+            .active-course {
+                float: right !important;
+            }
+            .cart {
+                margin-right: 15px;
+            }
+        }
+    }
+    @media screen and (max-width: 767px) {
+        padding:0;
+        .header-left {
+            .course-nav {
+                .course-menu {
+                    top: calc(~"100% + 5px") !important;
+                }
+            }
+            .search-box {
+                float: right !important;
+            }
+        }
+        .header-center {
+            padding:20px 15px;
+        }
+        .header-right{
+            .register-login {
+                float: left;
+                line-height: 36px;
+            }
+            .active-course {
+                float: right !important;
+                margin-right: 0 !important;
+            }
+            .cart {
+                margin-right: 25px;
+            }
+            #account-nav-btn {
+                .account-menu {
+                    top: calc(~"100% + 11px") !important;
                 }
             }
         }
-    } // end left
-    .center {
-        width: 30%;
-        .logo {
-            img {
-                max-height: 60px;
-                margin-top: 15px;
-            }
-        }
     }
-    .right {
-        width: 30%;
-        .register-login {
-            display: inline-block;
-            margin-right: 20px;
-            padding-top: 33px;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-        .cart {
-            width: 36px;
-            height: 36px;
-            line-height: 32px;
-            display: inline-block;
-            border-radius: 50%;
-            border: solid 2px @brand-primary;
-            text-align: center;
-            position: relative;
-            #cart-count {
-                position: absolute;
-                top: -3px;
-                right: -9px;
-                background: @brand-primary;
-                width: 18px;
-                height: 18px;
-                line-height: 18px;
-                font-size: 10px;
-                color: #fff;
-                border-radius: 50%;
-            }
-        }
-        .active-course {
-            margin-right: 20px;
-            background: @brand-second;
-            color: #fff;
-            border-radius: 15px;
-            display: inline-block;
-            padding: 5px 15px;
-            .transition(background .3s);
-            &:hover {
-                background: darken(@brand-second, 10%);
-            }
-        }
-    }
-}
 
+
+}
 //--------------------------- MAIN -------------------------
 
 //Title
@@ -428,6 +356,13 @@ img {
 .vifonic-button {
     font-weight:700;
     font-size: 16px;
+}
+//Divider
+.vifonic-divider {
+    width: 85%;
+    height: 1px;
+    margin: 0 auto;
+    border-top: 1px solid @brand-second;
 }
 //Section
 .vifonic-section {
@@ -508,7 +443,6 @@ main.full-width {
 
 //Template: Homepage
 main.page-home{
-    border-top: 10px solid #ff6c00;
     .reason_row {
         text-align: center;
         i:before {
@@ -520,10 +454,139 @@ main.page-home{
 
 //Course Category
 main.main-course_category {
-    
+
 }
 
+//----------------------- DASHBOARD ----------------------------
+main.page-dashboard {
+    border-top: 1px solid @brand-second;
+    background-color: #F0F0F0;
+    .sidebar-left {
+        @media only screen and (min-width: 1200px) {
+            padding-left: 0;
+        }
+    }
+    .dashboard-menu {
+        background-color: @brand-second;
+        color: #fff;
+        .user-info {
+            padding: 15px;
+            .user-avatar {
+                display: inline-block;
+                img.avatar {
+                    border-radius: 100%;
+                    margin-right: 10px;
+                }
+            }
+            .user-name {
+                display: inline-block;
+            }
+        }
+        .user-menu {
+            label {
+                text-align: center;
+                width: 100%;
+                padding: 0 15px;
+                margin: 0;
+                line-height: 30px;
+            }
+            .user-menu-title {
+                margin: 0 0 15px;
+                padding: 5px 15px;
+                font-size: 16px;
+                background-color: darken(@brand-second, 10%);
+            }
+            ul.student-menu {
+                list-style-type: none;
+                padding:0;
+                li {
+                    padding: 0 15px;
+                    a {
+                        color: #fff;
+                        padding: 7px 0px;
+                        display: block;
+                        i{
+                            margin-right: 10px;
+                        }
+                    }
+                    &:hover {
+                        a {
+                            color: @brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dashboard-content {
+        padding:15px 0;
+        ul.breadcrumb {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            margin: 20px 0;
+            list-style-type: none;
+            li {
+                display: inline-block;
+            }
+            >li+li:before {
+                padding: 0 5px;
+                color: #ccc;
+                content: "/\00a0";
+            }
+            li.active {
+                color: #333;
+            }
+        }
+        .main-inner{
+            background: #fff;
+            border-radius: 5px;
+            padding-bottom: 15px;
+            .user-page-header {
+                font-size: 18px;
+                font-weight:700;
+                margin: 0;
+                padding: 15px;
+                color: #000;
+                text-transform: uppercase;
+                border-bottom: 1px solid #e1e1e1;
+                i{
+                    color: @brand-primary;
+                    margin-right: 10px;
+                }
+            }
+            .update-profile-link i{
+                margin-right: 5px;
+            }
+            #modal-update-profile {
+                .modal-dialog {
+                    @media screen and (min-width: 450px){
+                        width: 480px;
+                        margin: 80px auto 0;
+                    }
+                    margin-top: 130px;
+                    #update-profile-form {
+                        .update-password-wrapper {
+                            .update-password-link {
+                                color: @brand-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//------------------------ CART ------------------------------
+main.page-cart {
+    padding:30px 0;
+}
 //----------------------- Course ----------------------------
+.vifonic-course-list {
+ padding: 15px 0;
+}
+
 .single-course-item {
     border: 1px solid #f3f3f3;
     -webkit-border-radius: 1px;
@@ -587,7 +650,7 @@ main.main-course_category {
                     font-weight:700;
                 }
             }
-            .course-add-to-cart {
+            .course-cart {
                 text-align: center;
                 margin-bottom: 10px;
                 button.btn-add-to-cart {
@@ -683,12 +746,13 @@ main.main-single-course {
                     font-weight:700;
                 }
             }
-            .course-add-to-cart {
+            .course-cart {
                 text-align: left;
                 margin-bottom: 15px;
+                display: inline-block;
                 button {
                     min-width: 100px;
-                    margin-right: 10px;
+                    margin-right: 25px;
                 }
             }
             .course-warning-error {

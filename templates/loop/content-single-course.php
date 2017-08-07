@@ -4,6 +4,17 @@
  */
 ?>
 
+<?php
+$course_chapter = get_field('course_chapter');
+$count_lesson = 0;
+if( !empty($course_chapter) ){
+	foreach ($course_chapter as $chapter) {
+		$lesson = $chapter['course_lesson'];
+		$count_lesson += count($lesson);
+	}
+}
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
     <div class="row single-course-heading">
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
@@ -19,7 +30,7 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                 </div>
-                <span class="rating-text">0 <?php _e('review', 'vifonic'); ?></span>
+                <span class="rating-text"><?php comments_number(__('0 review', 'vifonic'), __('1 review', 'vifonic'), __('% review', 'vifonic')); ?></span>
             </div>
 			<?php printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), get_field( 'teacher_name', get_the_ID()) ); ?>
         </div>
@@ -56,30 +67,34 @@
 				<?php
 			}
 			?>
-            <form id="order-form" action="" method="post" role="form">
-                <div class="course-add-to-cart form-group form-inline">
-                    <button type="button" class="btn btn-warning btn-buy-now">
-                        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-						<?php _e('BUY NOW', 'vifonic'); ?>
+            <div class="course-cart form-group form-inline">
+                <form action="/order/detail/" method="post" role="form" style="display: inline-block;">
+                    <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
+                    <button type="submit" class="btn btn-warning btn-buy-now">
+			            <?php _e('BUY NOW', 'vifonic'); ?>
                     </button>
-                    <!--<div class="clearfix"><br></div>-->
-                    <button type="button" class="btn btn-primary btn-add-to-cart">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-						<?php _e('ADD TO CART', 'vifonic'); ?>
-                    </button>
-                </div>
-                <div class="course-coupon form-group form-inline">
-                    <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="<?php _e('Input coupon code here...', 'vifonic') ?>">
-                    <button type="submit" class="btn btn-primary"><?php _e('Apply', 'vifonic'); ?></button>
-                </div>
-            </form>
+                </form>
+                <!--<div class="clearfix"><br></div>-->
+                <button type="button" class="btn btn-primary btn-add-to-cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					<?php _e('ADD TO CART', 'vifonic'); ?>
+                </button>
+            </div>
+            <div class="course-coupon form-group form-inline">
+                <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="<?php _e('Input coupon code here...', 'vifonic') ?>">
+                <button type="submit" class="btn btn-primary"><?php _e('Apply', 'vifonic'); ?></button>
+            </div>
+
             <div class="course-warning-error">
                 <button type="submit" class="btn btn-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 					<?php _e('Error!', 'vifonic'); ?></button>
             </div>
             <div class="course-lesson-time">
-                <p><span class="lesson-time"><i class="fa fa-file-text-o" aria-hidden="true"></i>10</span> <?php _e('Lesson', 'vifonic'); ?></p>
-                <p><span class="lesson-time"><i class="fa fa-clock-o" aria-hidden="true"></i>2h30p</span> <?php _e('Lesson duration', 'vifonic'); ?></p>
+				<?php
+				printf('<p><span class="lesson-time"><i class="fa fa-file-text-o" aria-hidden="true"></i>%1$s</span> %2$s</p>
+                                    <p><span class="lesson-time"><i class="fa fa-clock-o" aria-hidden="true"></i>%3$s</span> %4$s</p>'
+					, $count_lesson, __('Lesson', 'vifonic'), '2h30p', __('Lesson duration', 'vifonic'));
+				?>
             </div>
             <div class="course-social-share">
 				<?php vifonic_social_links(); ?>
