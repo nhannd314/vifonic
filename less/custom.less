@@ -53,7 +53,7 @@ img {
 #header {
     min-height: @header-height;
     padding:20px 0;
-    border-bottom: 5px solid @brand-second;
+    //border-bottom: 5px solid @brand-second;
 
     .header-left {
         padding-top: 10px;
@@ -172,6 +172,9 @@ img {
             border: solid 2px @brand-primary;
             text-align: center;
             position: relative;
+            i {
+                line-height: 32px;
+            }
             #cart-count {
                 position: absolute;
                 top: -3px;
@@ -426,11 +429,12 @@ img {
 //Breadcrumb
 #breadcrumbs-wrapper {
     background-color: @brand-primary;
-    padding: 30px 0;
+    padding: 25px 0;
     #breadcrumbs {
-        color: #fff;
+        color: #FFF;
+        font-size: 18px;
         a {
-            color: @brand-second;
+            color: #FFF;
         }
     }
 }
@@ -440,7 +444,9 @@ main.full-width {
         padding: 0;
     }
 }
-
+main.main {
+    background-color: #F3F3F3;
+}
 //Template: Homepage
 main.page-home{
     .reason_row {
@@ -581,6 +587,228 @@ main.page-dashboard {
 //------------------------ CART ------------------------------
 main.page-cart {
     padding:30px 0;
+    background-color: #F3f3f3;
+    .cart-wrapper {
+        background-color: #fff;
+        padding: 15px 0;
+        border-radius: 5px;
+        .cart-table{
+            padding: 30px;
+            .cart-item {
+                margin-bottom: 25px;
+                .item-image {
+                    position: relative;
+                    .btn-remove-item {
+                        position: absolute;
+                        top: -15px;
+                        left: 0px;
+                        border-radius: 100%;
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+                .item-name {
+                    h3 {
+                        margin: 0 0 15px;
+                    }
+
+                }
+                .item-price {
+                    .course-price {
+                        margin-bottom: 15px;
+                        font-size: 16px;
+                        text-align: left;
+                        .sale-price { text-decoration: line-through; }
+                        i {
+                            color: @brand-second;
+                            width: 15px;
+                        }
+                        span {
+                            margin-left: 10px;
+                        }
+                        .free-tag {
+                            width: 32px;
+                            margin-top: -6px;
+                            margin-bottom: -6px;
+                            display: inline-block;
+                        }
+                        .regular-price {
+                            font-weight:700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//------------------------ ORDER -----------------------------
+main.page-order {
+    padding:30px 0;
+    background-color: #F3f3f3;
+    .order-wrapper {
+        background-color: #fff;
+        padding: 15px 0;
+        border-radius: 5px;
+        .payment-step {
+            ul.order-step {
+                padding: 0;
+                list-style-type: none;
+                width: 100%;
+                margin: 30px auto;
+                height: 6px;
+                border-radius: 7px;
+                background-color: @brand-second;
+                li {
+                    display: inline-block;
+                    float: left;
+                    width: 33%;
+                    text-align: center;
+                    margin-top: -15px;
+                    a{
+                        position: relative;
+                        font-size: 20px;
+                        color: @brand-primary;
+                        span{
+                            color: #fff;
+                            font-size: 20px;
+                            font-weight: normal;
+                            height: 35px;
+                            width: 35px;
+                            border-radius: 100%;
+                            border: solid 2px @brand-second;
+                            display: block;
+                            text-align: center;
+                            line-height: 30px;
+                            margin: 0 auto 10px;
+                            background-color: @brand-primary;
+                        }
+                    }
+                    a.active {
+                        span {
+                            background-color: @brand-second;
+                            height: 40px;
+                            width: 40px;
+                            line-height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .step-wrapper {
+            margin-top: 30px;
+            .order-table {
+                border:1px solid @brand-primary;
+                h3.order-title {
+                    width: 100%;
+                    height:40px;
+                    line-height: 40px;
+                    font-size: 20px;
+                    margin: 0 0 15px;
+                    color: #fff;
+                    text-align: center;
+                    font-weight:700;
+                    background-color: @brand-primary;
+                }
+                .cart-item {
+                    margin: 0 0 10px;
+                    .item-name p {
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                    .item-price {
+                        .course-price {
+                            margin-bottom: 0px;
+                            font-size: 14px;
+                            text-align: left;
+                            .sale-price { text-decoration: line-through; }
+                            i {
+                                color: @brand-second;
+                                width: 15px;
+                            }
+                            span {
+                                margin-left: 10px;
+                            }
+                            .free-tag {
+                                width: 32px;
+                                margin-top: -6px;
+                                margin-bottom: -6px;
+                                display: inline-block;
+                            }
+                            .regular-price {
+                                font-weight:400;
+                            }
+                        }
+                    }
+                }
+                .total-order {
+                    margin: 0;
+                    border-top: 1px solid @brand-primary;
+                    line-height:30px;
+                    p.subtotal {
+                        margin: 0;
+                        font-size: 16px;
+                        font-weight:500;
+                    }
+                    .subtotal-price {
+                        font-size: 16px;
+                        color: #000;
+                        font-weight: 500;
+                    }
+
+                    p.total {
+                        margin: 0;
+                        font-size: 18px;
+                        font-weight:700;
+                    }
+                    .total-price {
+                        font-size: 18px;
+                        color: #ff0000;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            //Step 1
+            #info-form {
+                margin-bottom: 15px;
+                .form-title {
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 40px;
+                    margin: 0 0 15px;
+                }
+                button.btn-submit-order {
+                    width: 100%;
+                    font-size: 20px;
+                    line-height: 26px;
+                    i {
+                        font-size: 23px;
+                        font-weight: 700;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            //Step 2
+            .step-2 {
+                .form-title {
+                    line-height: 40px;
+                    font-size: 20px;
+                    margin: 0 0 15px;
+                    text-align: center;
+                }
+                .payment-method {
+                    .collapse {
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+        }
+    }
 }
 //----------------------- Course ----------------------------
 .vifonic-course-list {
@@ -604,7 +832,7 @@ main.page-cart {
     }
     .course-detail {
         .wrapper {
-            padding:10px 15px;
+            padding:10px;
             color: @text-color;
             .course-title {
                 margin: 0;
@@ -635,10 +863,13 @@ main.page-cart {
             .course-price {
                 margin-bottom: 20px;
                 text-align: center;
-                .price_1 { text-decoration: line-through; }
+                .sale-price { text-decoration: line-through; }
                 i {
                     color: @brand-second;
-                    margin:0 10px;
+                    width: 15px;
+                }
+                span {
+                    margin-left: 10px;
                 }
                 .free-tag {
                     width: 32px;
@@ -646,7 +877,7 @@ main.page-cart {
                     margin-bottom: -6px;
                     display: inline-block;
                 }
-                .price_2 {
+                .regular-price {
                     font-weight:700;
                 }
             }
@@ -666,6 +897,9 @@ main.page-cart {
 .courses-slider {
     border-bottom: 1px solid #ddd;
     margin-bottom: 30px;
+    .course-item {
+        padding: 0 5px;
+    }
     .owl-controls {
         position: absolute;
         top: 40%;
@@ -686,11 +920,11 @@ main.page-cart {
         }
         .owl-prev {
             float: left;
-            margin-left: -15px !important;
+            margin-left: -25px !important;
         }
         .owl-next {
             float: right;
-            margin-right: -15px !important;
+            margin-right: -25px !important;
         }
 
     }
@@ -733,16 +967,19 @@ main.main-single-course {
             .course-price {
                 margin-bottom: 15px;
                 text-align: left;
-                .price_1 { text-decoration: line-through; }
+                .sale-price { text-decoration: line-through; }
                 i {
                     color: @brand-second;
-                    margin:0 10px;
+                    width: 15px;
+                }
+                span {
+                    margin-left: 10px;
                 }
                 .free-tag {
                     width: 32px;
                     display: inline-block;
                 }
-                .price_2 {
+                .regular-price {
                     font-weight:700;
                 }
             }
@@ -809,8 +1046,10 @@ main.main-single-course {
 //---------------------- Email Subcribe ----------------------
 .vifonic_email_subcribe {
     padding:10px 0;
-    background-color: @brand-second;
+    //background-color: @brand-primary;
+    background-color: darken(@brand-primary, 10%);
     text-align: center;
+    border-bottom: 1px solid #fff;
     p {
         margin: 0;
     }
@@ -828,6 +1067,8 @@ main.main-single-course {
         padding: 0 15px;
         height: 30px;
         font-weight: 700;
+        border: 2px solid #fff;
+        margin-left: 5px;
     }
 }
 
@@ -884,8 +1125,8 @@ main.main-single-course {
             article.comment-body {
                 margin-right: -1px;
                 .comment-meta {
-                    background-color: @brand-second;
-                    color: #fff;
+                    //background-color: @brand-second;
+                    //color: #fff;
                     position: relative;
                     min-height: 32px;
                     padding: 6px 0 0 40px;
@@ -918,7 +1159,7 @@ main.main-single-course {
                     .comment-metadata {
                         display: inline-block;
                         a {
-                            color: #fff;
+                            color: #000;
                         }
                         span.edit-link a.comment-edit-link {
                             color: @brand-primary;
@@ -984,8 +1225,6 @@ main.main-single-course {
             }
         }
     }
-
-
 }
 
 //--------------------------- FOOTER -------------------------

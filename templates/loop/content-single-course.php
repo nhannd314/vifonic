@@ -51,12 +51,41 @@ if( !empty($course_chapter) ){
 				if ($sale_price > 0){
 					$regular_price = vifonic_price_format($regular_price);
 					$sale_price = vifonic_price_format($sale_price);
-					printf('<div class="course-price"><span class="price_1">%1$s</span><i class="fa fa-money" aria-hidden="true"></i><span class="price_2">%2$s</span></div>', $regular_price, $sale_price);
+					printf('<div class="course-price"><i class="fa fa-money" aria-hidden="true"></i><span class="regular-price">%1$s</span><span class="sale-price">%2$s</span></div>', $sale_price, $regular_price);
 				} else {
 					$regular_price = vifonic_price_format($regular_price);
 
-					printf('<div class="course-price"><span class="price_1"></span><i class="fa fa-money" aria-hidden="true"></i><span class="price_2">%1$s</span></div>', $regular_price);
+					printf('<div class="course-price"><i class="fa fa-money" aria-hidden="true"></i><span class="regular-price">%1$s</span></div>', $regular_price);
 				}
+				?>
+                <div class="course-cart form-group form-inline">
+                    <form class="buy-now-form" action="/order/detail/" method="post" style="display: inline-block;" role="form">
+                        <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
+						<?php wp_nonce_field( 'ajax-add-to-cart-nonce', 'vifonic_add_to_cart_security' ); ?>
+                        <button type="submit" class="btn btn-warning btn-buy-now vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('BUY NOW', 'vifonic') ?>">
+							<?php _e('BUY NOW', 'vifonic'); ?>
+                        </button>
+                    </form>
+                    <!--<div class="clearfix"><br></div>-->
+                    <form class="add-to-cart-form" action="/cart/" method="post" style="display: inline-block;" role="form">
+                        <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
+						<?php wp_nonce_field( 'ajax-add-to-cart-nonce', 'vifonic_add_to_cart_security' ); ?>
+                        <button type="submit" class="btn btn-primary btn-add-to-cart vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('ADD TO CART', 'vifonic'); ?>">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<?php _e('ADD TO CART', 'vifonic'); ?>
+                        </button>
+                    </form>
+                </div>
+                <!--Form add coupon-->
+                <form id="add-coupon-form" action="/order/detail/" method="post" role="form">
+                    <div class="course-coupon form-group form-inline">
+                        <input type="text" class="form-control" name="vifonic_coupon" id="vifonic_coupon" placeholder="<?php _e('Input coupon code here...', 'vifonic') ?>" >
+						<?php wp_nonce_field( 'ajax-add-coupon-nonce', 'vifonic_add_coupon_security' ); ?>
+                        <button type="button" class="btn btn-primary btn-add-coupon vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('Apply', 'vifonic') ?>" ><?php _e('Apply', 'vifonic') ?></button>
+                        <p class="status text-danger"></p>
+                    </div>
+                </form>
+				<?php
 			} else {
 				?>
                 <div class="course-price">
@@ -64,27 +93,14 @@ if( !empty($course_chapter) ){
                     <img class="free-tag" src="<?php echo get_stylesheet_directory_uri(); ?>/img/free.png" width="32px" alt="Miễn phí">
                     <span class="regular-price"><?php _e('Free', 'vifonic'); ?></span>
                 </div>
+                <div class="course-cart">
+                    <a href="#" class="btn btn-primary">
+						<?php _e('LEARN NOW', 'vifonic'); ?>
+                    </a>
+                </div>
 				<?php
 			}
 			?>
-            <div class="course-cart form-group form-inline">
-                <form action="/order/detail/" method="post" role="form" style="display: inline-block;">
-                    <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
-                    <button type="submit" class="btn btn-warning btn-buy-now">
-			            <?php _e('BUY NOW', 'vifonic'); ?>
-                    </button>
-                </form>
-                <!--<div class="clearfix"><br></div>-->
-                <button type="button" class="btn btn-primary btn-add-to-cart">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-					<?php _e('ADD TO CART', 'vifonic'); ?>
-                </button>
-            </div>
-            <div class="course-coupon form-group form-inline">
-                <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="<?php _e('Input coupon code here...', 'vifonic') ?>">
-                <button type="submit" class="btn btn-primary"><?php _e('Apply', 'vifonic'); ?></button>
-            </div>
-
             <div class="course-warning-error">
                 <button type="submit" class="btn btn-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
 					<?php _e('Error!', 'vifonic'); ?></button>

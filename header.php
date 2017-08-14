@@ -193,7 +193,19 @@
 				?>
                 <a class="active-course" href="#"><?php _e('Active Course', 'vifonic') ?></a>
                 <a class="cart" href="/cart" data-toggle="tooltip" data-placement="top" title="<?php _e('View your cart', 'vifonic' ) ?>">
-                    <i class="fa fa-shopping-basket"></i><span id="cart-count">0</span>
+                    <i class="fa fa-shopping-basket"></i>
+                    <span id="cart-count">
+                        <?php
+                        if(isset($_COOKIE['cart_list'])){
+	                        $cookie = $_COOKIE['cart_list'];
+	                        $cookie = stripslashes($cookie);
+	                        $cart_list = json_decode($cookie, true);
+	                        echo count($cart_list);
+                        } else {
+                            echo '0';
+                        }
+                        ?>
+                    </span>
                 </a>
             </div>
         </div>

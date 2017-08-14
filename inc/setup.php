@@ -84,6 +84,7 @@ function vifonic_create_custom_taxonomies()
 
 function vifonic_create_custom_post_types()
 {
+	// Course
     register_post_type('course', array(
         'labels' => array(
             'name' => __('Courses', 'vifonic'),
@@ -108,8 +109,7 @@ function vifonic_create_custom_post_types()
         'capability_type' => 'post',
         'rewrite'            => array( 'slug' => 'khoa-hoc' ),
     ));
-
-    //Slider
+    // Slider
 	register_post_type('vifonic-slider', array(
 		'labels' => array(
 			'name' => __('Slider', 'vifonic'),
@@ -134,7 +134,7 @@ function vifonic_create_custom_post_types()
 		'capability_type' => 'post',
 		'rewrite'            => array( 'slug' => 'vslider' ),
 	));
-
+	// Teacher
 	register_post_type('teacher', array(
 		'labels' => array(
 			'name' => __('Teachers', 'vifonic'),
@@ -158,6 +158,57 @@ function vifonic_create_custom_post_types()
 		'publicly_queryable' => true,
 		'capability_type' => 'post',
 		'rewrite'            => array( 'slug' => 'giang-vien' ),
+	));
+	// Order
+	register_post_type('orders', array(
+		'labels' => array(
+			'name' => __('Orders', 'vifonic'),
+			'singular_name' => __('Order', 'vifonic')
+		),
+		'description' => __('Orders', 'vifonic'),
+		'supports' => array(
+			'title',
+		),
+
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_admin_bar' => false,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-clipboard',
+		'can_export' => true,
+		'has_archive' => true,
+		'exclude_from_search' => true,
+		'publicly_queryable' => false,
+		'capability_type' => 'post',
+		'rewrite'            => array( 'slug' => 'don-hang' ),
+	));
+
+	// Coupon
+	register_post_type('coupon', array(
+		'labels' => array(
+			'name' => __('Coupons', 'vifonic'),
+			'singular_name' => __('Coupon', 'vifonic')
+		),
+		'description' => __('Coupons', 'vifonic'),
+		'supports' => array(
+			'title', 'editor',
+		),
+
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'show_in_admin_bar' => false,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-tickets-alt',
+		'can_export' => true,
+		'has_archive' => true,
+		'exclude_from_search' => true,
+		'publicly_queryable' => false,
+		'capability_type' => 'post',
+		'rewrite'            => array( 'slug' => 'ma-khuyen-mai' ),
 	));
 }
 

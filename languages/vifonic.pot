@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-07 10:13+0000\n"
+"POT-Creation-Date: 2017-08-12 17:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -51,18 +51,24 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: header.php:78 templates/members/content-profile.php:41
+#: header.php:78 templates/cart-order/content-order-detail.php:44
+#: templates/cart-order/content-order-payment.php:40
+#: templates/members/content-profile.php:41
 #: templates/members/content-profile.php:77
 #: templates/members/content-profile.php:78
 msgid "Full Name"
 msgstr ""
 
 #: header.php:82 header.php:125 header.php:160
+#: templates/cart-order/content-order-detail.php:48
+#: templates/cart-order/content-order-payment.php:44
 #: templates/members/content-profile.php:54
 msgid "Email"
 msgstr ""
 
-#: header.php:86 templates/members/content-profile.php:58
+#: header.php:86 templates/cart-order/content-order-detail.php:52
+#: templates/cart-order/content-order-payment.php:48
+#: templates/members/content-profile.php:58
 #: templates/members/content-profile.php:85
 #: templates/members/content-profile.php:86
 msgid "Mobile"
@@ -157,11 +163,11 @@ msgstr ""
 msgid "Course Category"
 msgstr ""
 
-#: inc/setup.php:89 inc/setup.php:92
+#: inc/setup.php:90 inc/setup.php:93
 msgid "Courses"
 msgstr ""
 
-#: inc/setup.php:90
+#: inc/setup.php:91
 msgid "Course"
 msgstr ""
 
@@ -177,35 +183,54 @@ msgstr ""
 msgid "Teacher"
 msgstr ""
 
-#: inc/setup.php:170
+#: inc/setup.php:165 inc/setup.php:168
+msgid "Orders"
+msgstr ""
+
+#: inc/setup.php:166
+msgid "Order"
+msgstr ""
+
+#: inc/setup.php:191 inc/setup.php:194
+msgid "Coupons"
+msgstr ""
+
+#: inc/setup.php:192 templates/cart-order/content-order-detail.php:82
+#: templates/cart-order/content-order-detail.php:162
+#: templates/cart-order/content-order-payment.php:120
+#: templates/cart-order/page-cart.php:58
+msgid "Coupon"
+msgstr ""
+
+#: inc/setup.php:221
 msgid "Main Sidebar"
 msgstr ""
 
-#: inc/setup.php:180
+#: inc/setup.php:231
 msgid "Page Sidebar"
 msgstr ""
 
-#: inc/setup.php:190
+#: inc/setup.php:241
 msgid "Top Left Sidebar"
 msgstr ""
 
-#: inc/setup.php:200
+#: inc/setup.php:251
 msgid "Top Right Sidebar"
 msgstr ""
 
-#: inc/setup.php:210
+#: inc/setup.php:261
 msgid "Footer Sidebar 1"
 msgstr ""
 
-#: inc/setup.php:220
+#: inc/setup.php:271
 msgid "Footer Sidebar 2"
 msgstr ""
 
-#: inc/setup.php:230
+#: inc/setup.php:281
 msgid "Footer Sidebar 3"
 msgstr ""
 
-#: inc/setup.php:240
+#: inc/setup.php:291
 msgid "Footer Sidebar 4"
 msgstr ""
 
@@ -241,7 +266,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: inc/structure.php:205
+#: inc/structure.php:205 templates/cart-order/content-order-detail.php:59
 msgid "Next"
 msgstr ""
 
@@ -265,8 +290,40 @@ msgstr ""
 msgid "Category id"
 msgstr ""
 
+#: inc/func/vifonic-cart-order-function.php:56
+msgid "Cart created! Course has been add to cart!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:66
+msgid "Course has been add to cart!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:70
+msgid "Course not exists!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:93
+msgid "Course has been deleted!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:120
+msgid "Coupon has been expired!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:127
+msgid "Coupon added!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:137
+msgid "Coupon has been applied!"
+msgstr ""
+
+#: inc/func/vifonic-cart-order-function.php:141
+msgid "Coupon not exists!"
+msgstr ""
+
 #: inc/func/vifonic-register-login-function.php:64
-#: inc/func/vifonic-register-login-function.php:271
+#: inc/func/vifonic-register-login-function.php:264
 #: inc/func/vifonic-user-dashboard-function.php:64
 msgid "This field is required!"
 msgstr ""
@@ -323,19 +380,19 @@ msgstr ""
 msgid "Incorrect activation code! Please check again!"
 msgstr ""
 
-#: inc/func/vifonic-register-login-function.php:258
+#: inc/func/vifonic-register-login-function.php:251
 msgid "Account not activated, please check email again!"
 msgstr ""
 
-#: inc/func/vifonic-register-login-function.php:289
+#: inc/func/vifonic-register-login-function.php:282
 msgid "The email or password is incorrect, please input again!"
 msgstr ""
 
-#: inc/func/vifonic-register-login-function.php:294
+#: inc/func/vifonic-register-login-function.php:287
 msgid "Logged in successfully. Redirecting ..."
 msgstr ""
 
-#: inc/func/vifonic-register-login-function.php:315
+#: inc/func/vifonic-register-login-function.php:308
 msgid ""
 "Requested successfully. Please check your email to confirm your resetting "
 "password!"
@@ -355,65 +412,175 @@ msgstr ""
 msgid "Profile update successful!"
 msgstr ""
 
-#: templates/loop/content-course.php:24
+#: templates/cart-order/content-order-detail.php:28
+#: templates/cart-order/content-order-payment.php:18
+#: templates/cart-order/content-order-success.php:161
+msgid "Order detail"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:29
+#: templates/cart-order/content-order-payment.php:19
+#: templates/cart-order/content-order-success.php:162
+msgid "Payment"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:30
+#: templates/cart-order/content-order-payment.php:20
+#: templates/cart-order/content-order-payment.php:64
+#: templates/cart-order/content-order-payment.php:79
+#: templates/cart-order/content-order-payment.php:95
+#: templates/cart-order/content-order-success.php:163
+msgid "Finish"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:36
+msgid "Ordering Guide"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:41
+msgid "Delivery information"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:56
+#: templates/cart-order/content-order-payment.php:52
+msgid "Address"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:65
+#: templates/cart-order/content-order-payment.php:103
+msgid "ORDER DETAIL"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:122
+#: templates/cart-order/content-order-payment.php:160
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:58
+#: templates/loop/content-single-course.php:94
+msgid "Free"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:135
+#: templates/cart-order/content-order-payment.php:173
+msgid "SUBTOTAL"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:145
+#: templates/cart-order/content-order-payment.php:183
+msgid "TOTAL"
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:163
+#: templates/loop/content-single-course.php:82
+msgid "Input coupon code here..."
+msgstr ""
+
+#: templates/cart-order/content-order-detail.php:165
+#: templates/cart-order/content-order-detail.php:165
+#: templates/loop/content-single-course.php:84
+#: templates/loop/content-single-course.php:84
+msgid "Apply"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:26
+msgid "Free shipping with order of 500,000 VND or more"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:29
+msgid "SELECT PAYMENT METHOD"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:33
+msgid "COD Payment"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:37
+msgid "Deliver activation code and collect money (COD)"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:56
+msgid "Note"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:70
+msgid "Bank Transfer Payment (Fee?)"
+msgstr ""
+
+#: templates/cart-order/content-order-payment.php:85
+msgid "Payment at the central office"
+msgstr ""
+
+#: templates/cart-order/content-order-success.php:142
+msgid "Can't create order!"
+msgstr ""
+
+#: templates/cart-order/content-order-success.php:146
+msgid "Cart is empty!"
+msgstr ""
+
+#: templates/cart-order/page-cart.php:34
+msgid "Are you sure?"
+msgstr ""
+
+#: templates/cart-order/page-cart.php:82
+msgid "There are no course in your cart"
+msgstr ""
+
+#: templates/cart-order/page-cart.php:88
+msgid "SEE MORE"
+msgstr ""
+
+#: templates/cart-order/page-cart.php:91
+msgid "PROCESS TO CHECKOUT"
+msgstr ""
+
+#: templates/loop/content-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "0 review"
 msgstr ""
 
-#: templates/loop/content-course.php:24
+#: templates/loop/content-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "1 review"
 msgstr ""
 
-#: templates/loop/content-course.php:24
+#: templates/loop/content-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "% review"
 msgstr ""
 
-#: templates/loop/content-course.php:26
+#: templates/loop/content-course.php:27
 #: templates/loop/content-single-course.php:35
 msgid "Teacher:"
 msgstr ""
 
-#: templates/loop/content-course.php:44
-#: templates/loop/content-single-course.php:74
+#: templates/loop/content-course.php:47 templates/loop/content-course.php:48
+#: templates/loop/content-single-course.php:65
+#: templates/loop/content-single-course.php:66
 msgid "BUY NOW"
 msgstr ""
 
-#: templates/loop/content-course.php:53
-#: templates/loop/content-single-course.php:65
-msgid "Free"
-msgstr ""
-
-#: templates/loop/content-course.php:57
-msgid "See More"
+#: templates/loop/content-course.php:62
+#: templates/loop/content-single-course.php:98
+msgid "LEARN NOW"
 msgstr ""
 
 #: templates/loop/content-none.php:10
 msgid "Nothing found!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:79
+#: templates/loop/content-single-course.php:73
+#: templates/loop/content-single-course.php:75
 msgid "ADD TO CART"
 msgstr ""
 
-#: templates/loop/content-single-course.php:83
-msgid "Input coupon code here..."
-msgstr ""
-
-#: templates/loop/content-single-course.php:84
-msgid "Apply"
-msgstr ""
-
-#: templates/loop/content-single-course.php:89
+#: templates/loop/content-single-course.php:106
 msgid "Error!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:95
+#: templates/loop/content-single-course.php:112
 msgid "Lesson"
 msgstr ""
 
-#: templates/loop/content-single-course.php:95
+#: templates/loop/content-single-course.php:112
 msgid "Lesson duration"
 msgstr ""
 

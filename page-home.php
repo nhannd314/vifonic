@@ -16,7 +16,7 @@ vifonic_slider();
 				while (have_posts()):
 					the_post(); ?>
 
-                    <section id="section_CoursesList" class="vifonic-section" style="background-color: #F3F3F3;">
+                    <section id="section_CoursesList" class="vifonic-section">
                         <?php
                         //Call function
                         vifonic_title("KHÓA HỌC NHA KHOA", "Các khóa học Nha Khoa nổi bật");

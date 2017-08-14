@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 10:20+0000\n"
-"PO-Revision-Date: 2017-08-05 10:21+0000\n"
+"POT-Creation-Date: 2017-08-12 03:09+0000\n"
+"PO-Revision-Date: 2017-08-12 03:11+0000\n"
 "Last-Translator: Y Khoa Admin <cuongiview@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,13 +13,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: inc/func/vifonic-user-dashboard-function.php:164
-msgid ""
-"Profile update successful! Your password has been changed, please log in "
-"again!"
-msgstr ""
-"Cập nhật thông tin thành công! Mật khẩu của bạn đã được thay đổi, hãy đăng "
-"nhập lại!"
+#: inc/func/vifonic-cart-order-function.php:120
+msgid "Coupon has been expired!"
+msgstr "Mã khuyến mãi đã hết hạn!"
+
+#: inc/func/vifonic-cart-order-function.php:137
+msgid "Coupon has been applied!"
+msgstr "Mã khuyến mãi đã được áp dụng!"
+
+#: inc/func/vifonic-cart-order-function.php:141
+msgid "Coupon not exists!"
+msgstr "Mã khuyến mãi không tồn tại!"
+
+#: templates/cart-order/content-order-payment.php:204
+msgid "Applied Coupon"
+msgstr "Mã khuyến mãi đã áp dụng"
 
 #: 404.php:18
 msgid "404. Page not found!"
@@ -58,18 +66,24 @@ msgstr "Chuyên mục"
 msgid "Register"
 msgstr "Đăng ký"
 
-#: header.php:78 templates/members/content-profile.php:41
+#: header.php:78 templates/cart-order/content-order-detail.php:46
+#: templates/cart-order/content-order-payment.php:40
+#: templates/members/content-profile.php:41
 #: templates/members/content-profile.php:77
 #: templates/members/content-profile.php:78
 msgid "Full Name"
 msgstr "Họ và tên"
 
 #: header.php:82 header.php:125 header.php:160
+#: templates/cart-order/content-order-detail.php:50
+#: templates/cart-order/content-order-payment.php:44
 #: templates/members/content-profile.php:54
 msgid "Email"
 msgstr "Email"
 
-#: header.php:86 templates/members/content-profile.php:58
+#: header.php:86 templates/cart-order/content-order-detail.php:54
+#: templates/cart-order/content-order-payment.php:48
+#: templates/members/content-profile.php:58
 #: templates/members/content-profile.php:85
 #: templates/members/content-profile.php:86
 msgid "Mobile"
@@ -123,7 +137,9 @@ msgstr "Đặt lại mật khẩu"
 msgid "Profile"
 msgstr "Thông tin cá nhân"
 
-#: header.php:185 templates/members/page-user-dashboard.php:29
+#: header.php:185 templates/members/content-my-course.php:26
+#: templates/members/content-my-course.php:30
+#: templates/members/page-user-dashboard.php:29
 msgid "My Course"
 msgstr "Khóa học của tôi"
 
@@ -164,11 +180,11 @@ msgstr "Danh mục khóa học"
 msgid "Course Category"
 msgstr "Danh mục khóa học"
 
-#: inc/setup.php:89 inc/setup.php:92
+#: inc/setup.php:90 inc/setup.php:93
 msgid "Courses"
 msgstr "Khóa học"
 
-#: inc/setup.php:90
+#: inc/setup.php:91
 msgid "Course"
 msgstr "Khóa học"
 
@@ -184,35 +200,54 @@ msgstr "Giảng viên"
 msgid "Teacher"
 msgstr "Giảng viên"
 
-#: inc/setup.php:170
+#: inc/setup.php:165 inc/setup.php:168
+msgid "Orders"
+msgstr "Đơn hàng"
+
+#: inc/setup.php:166
+msgid "Order"
+msgstr "Đơn hàng"
+
+#: inc/setup.php:191 inc/setup.php:194
+msgid "Coupons"
+msgstr "Mã khuyến mãi"
+
+#: inc/setup.php:192 templates/cart-order/content-order-detail.php:84
+#: templates/cart-order/content-order-detail.php:164
+#: templates/cart-order/content-order-payment.php:120
+#: templates/cart-order/page-cart.php:58
+msgid "Coupon"
+msgstr "Mã khuyến mãi"
+
+#: inc/setup.php:221
 msgid "Main Sidebar"
 msgstr "Main Sidebar"
 
-#: inc/setup.php:180
+#: inc/setup.php:231
 msgid "Page Sidebar"
 msgstr "Page Sidebar"
 
-#: inc/setup.php:190
+#: inc/setup.php:241
 msgid "Top Left Sidebar"
 msgstr "Top Left Sidebar"
 
-#: inc/setup.php:200
+#: inc/setup.php:251
 msgid "Top Right Sidebar"
 msgstr "Top Right Sidebar"
 
-#: inc/setup.php:210
+#: inc/setup.php:261
 msgid "Footer Sidebar 1"
 msgstr "Footer Sidebar 1"
 
-#: inc/setup.php:220
+#: inc/setup.php:271
 msgid "Footer Sidebar 2"
 msgstr "Footer Sidebar 2"
 
-#: inc/setup.php:230
+#: inc/setup.php:281
 msgid "Footer Sidebar 3"
 msgstr "Footer Sidebar 3"
 
-#: inc/setup.php:240
+#: inc/setup.php:291
 msgid "Footer Sidebar 4"
 msgstr "Footer Sidebar 4"
 
@@ -248,7 +283,7 @@ msgstr "Bình luận Facebook"
 msgid "Previous"
 msgstr "Trước"
 
-#: inc/structure.php:205
+#: inc/structure.php:205 templates/cart-order/content-order-detail.php:61
 msgid "Next"
 msgstr "Tiếp"
 
@@ -272,19 +307,39 @@ msgstr "Số lượng"
 msgid "Category id"
 msgstr "ID danh mục"
 
+#: inc/func/vifonic-cart-order-function.php:56
+msgid "Cart created! Course has been add to cart!"
+msgstr "Giỏ hàng mới! Khóa học đã được thêm vào giỏ hàng!"
+
+#: inc/func/vifonic-cart-order-function.php:66
+msgid "Course has been add to cart!"
+msgstr "Khóa học đã được thêm vào giỏ hàng!"
+
+#: inc/func/vifonic-cart-order-function.php:70
+msgid "Course not exists!"
+msgstr "Khóa học không tồn tại!"
+
+#: inc/func/vifonic-cart-order-function.php:93
+msgid "Course has been deleted!"
+msgstr "Khóa học đã được xóa khỏi giỏ hàng!"
+
+#: inc/func/vifonic-cart-order-function.php:127
+msgid "Coupon added!"
+msgstr "Mã khuyến mãi đã được thêm!"
+
 #: inc/func/vifonic-register-login-function.php:64
-#: inc/func/vifonic-register-login-function.php:271
-#: inc/func/vifonic-user-dashboard-function.php:112
+#: inc/func/vifonic-register-login-function.php:264
+#: inc/func/vifonic-user-dashboard-function.php:64
 msgid "This field is required!"
 msgstr "Dữ liệu bắt buộc nhập"
 
 #: inc/func/vifonic-register-login-function.php:76
-#: inc/func/vifonic-user-dashboard-function.php:121
+#: inc/func/vifonic-user-dashboard-function.php:73
 msgid "Passwords must be greater than 7 characters!"
 msgstr "Mật khẩu phải lớn hơn hoặc bằng 7 kí tự"
 
 #: inc/func/vifonic-register-login-function.php:79
-#: inc/func/vifonic-user-dashboard-function.php:124
+#: inc/func/vifonic-user-dashboard-function.php:76
 msgid "Password confirm incorrect!"
 msgstr "Mật khẩu xác nhận không chính xác!"
 
@@ -332,19 +387,19 @@ msgstr "Đăng ký thành công! Đăng nhập tài khoản để sử dung ngay
 msgid "Incorrect activation code! Please check again!"
 msgstr "Mã kích hoạt không chính xác! Hãy thử lại!"
 
-#: inc/func/vifonic-register-login-function.php:258
+#: inc/func/vifonic-register-login-function.php:251
 msgid "Account not activated, please check email again!"
 msgstr "Tài khoản chưa được kích hoạt, hãy thử kiểm tra lại email!"
 
-#: inc/func/vifonic-register-login-function.php:289
+#: inc/func/vifonic-register-login-function.php:282
 msgid "The email or password is incorrect, please input again!"
 msgstr "Email hoặc mật khẩu không chính xác, hãy thử nhập lại!"
 
-#: inc/func/vifonic-register-login-function.php:294
+#: inc/func/vifonic-register-login-function.php:287
 msgid "Logged in successfully. Redirecting ..."
 msgstr "Đăng nhập thành công. Đang chuyển hướng ..."
 
-#: inc/func/vifonic-register-login-function.php:315
+#: inc/func/vifonic-register-login-function.php:308
 msgid ""
 "Requested successfully. Please check your email to confirm your resetting "
 "password!"
@@ -352,35 +407,171 @@ msgstr ""
 "Yêu cầu thành công. Hãy kiểm tra email để xác nhận việc đặt lại mật khẩu của "
 "bạn!"
 
-#: inc/func/vifonic-user-dashboard-function.php:117
+#: inc/func/vifonic-user-dashboard-function.php:69
 msgid "Current password incorrect!"
 msgstr "Mật khẩu hiện tại không chính xác!"
 
-#: inc/func/vifonic-user-dashboard-function.php:168
+#: inc/func/vifonic-user-dashboard-function.php:116
+msgid ""
+"Profile update successful! Your password has been changed, please log in "
+"again!"
+msgstr ""
+"Cập nhật thông tin thành công! Mật khẩu của bạn đã được thay đổi, hãy đăng "
+"nhập lại!"
+
+#: inc/func/vifonic-user-dashboard-function.php:120
 msgid "Profile update successful!"
 msgstr "Cập nhật thông tin cá nhân thành công!"
 
-#: templates/loop/content-course.php:24
-#: templates/loop/content-single-course.php:22
-msgid "review"
-msgstr "đánh giá"
+#: templates/cart-order/content-order-detail.php:30
+#: templates/cart-order/content-order-payment.php:18
+#: templates/cart-order/content-order-success.php:149
+msgid "Order detail"
+msgstr "Thông tin giỏ hàng"
 
-#: templates/loop/content-course.php:26
-#: templates/loop/content-single-course.php:24
-msgid "Teacher:"
-msgstr "Giảng viên:"
+#: templates/cart-order/content-order-detail.php:31
+#: templates/cart-order/content-order-payment.php:19
+#: templates/cart-order/content-order-success.php:150
+msgid "Payment"
+msgstr "Thanh toán"
 
-#: templates/loop/content-course.php:44
-#: templates/loop/content-single-course.php:63
-msgid "BUY NOW"
-msgstr "MUA NGAY"
+#: templates/cart-order/content-order-detail.php:32
+#: templates/cart-order/content-order-payment.php:20
+#: templates/cart-order/content-order-payment.php:64
+#: templates/cart-order/content-order-payment.php:79
+#: templates/cart-order/content-order-payment.php:95
+#: templates/cart-order/content-order-success.php:151
+msgid "Finish"
+msgstr "Hoàn thành"
 
-#: templates/loop/content-course.php:53
-#: templates/loop/content-single-course.php:54
+#: templates/cart-order/content-order-detail.php:38
+msgid "Ordering Guide"
+msgstr "Hướng dẫn đặt hàng"
+
+#: templates/cart-order/content-order-detail.php:43
+msgid "Delivery information"
+msgstr "Thông tin giao hàng"
+
+#: templates/cart-order/content-order-detail.php:58
+#: templates/cart-order/content-order-payment.php:52
+msgid "Address"
+msgstr "Địa chỉ của bạn"
+
+#: templates/cart-order/content-order-detail.php:67
+#: templates/cart-order/content-order-payment.php:103
+msgid "ORDER DETAIL"
+msgstr "THÔNG TIN ĐƠN HÀNG"
+
+#: templates/cart-order/content-order-detail.php:124
+#: templates/cart-order/content-order-payment.php:160
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:58
+#: templates/loop/content-single-course.php:65
 msgid "Free"
 msgstr "Miễn phí"
 
-#: templates/loop/content-course.php:57
+#: templates/cart-order/content-order-detail.php:137
+#: templates/cart-order/content-order-payment.php:173
+msgid "SUBTOTAL"
+msgstr "TỔNG PHỤ"
+
+#: templates/cart-order/content-order-detail.php:147
+#: templates/cart-order/content-order-payment.php:183
+msgid "TOTAL"
+msgstr "THÀNH TIỀN"
+
+#: templates/cart-order/content-order-detail.php:165
+#: templates/loop/content-single-course.php:91
+msgid "Input coupon code here..."
+msgstr "Nhập mã khuyến mãi..."
+
+#: templates/cart-order/content-order-detail.php:167
+#: templates/cart-order/content-order-detail.php:167
+#: templates/loop/content-single-course.php:93
+#: templates/loop/content-single-course.php:93
+msgid "Apply"
+msgstr "Áp dụng"
+
+#: templates/cart-order/content-order-payment.php:26
+msgid "Free shipping with order of 500,000 VND or more"
+msgstr "Miễn phí giao hàng với hóa đơn trên 500,000đ"
+
+#: templates/cart-order/content-order-payment.php:29
+msgid "SELECT PAYMENT METHOD"
+msgstr "LỰA CHỌN PHƯƠNG THỨC THANH TOÁN"
+
+#: templates/cart-order/content-order-payment.php:33
+msgid "COD Payment"
+msgstr "Thanh toán COD tận nơi"
+
+#: templates/cart-order/content-order-payment.php:37
+msgid "Deliver activation code and collect money (COD)"
+msgstr "Giao mã kích hoạt tận nơi và thu tiền tận nơi (COD)"
+
+#: templates/cart-order/content-order-payment.php:56
+msgid "Note"
+msgstr "Ghi chú"
+
+#: templates/cart-order/content-order-payment.php:70
+msgid "Bank Transfer Payment (Fee?)"
+msgstr "Thanh toán chuyển khoản ngân hàng ( Phí?)"
+
+#: templates/cart-order/content-order-payment.php:85
+msgid "Payment at the central office"
+msgstr "Thanh toán tại văn phòng của Trung tâm"
+
+#: templates/cart-order/content-order-success.php:130
+msgid "Can't create order!"
+msgstr "Không thể tạo đơn hàng"
+
+#: templates/cart-order/content-order-success.php:134
+msgid "Cart is empty!"
+msgstr ""
+"Giỏ hàng đang trống! Hãy thêm các khóa học khác vào giỏ để tiến hành đặt "
+"hàng."
+
+#: templates/cart-order/page-cart.php:34
+msgid "Are you sure?"
+msgstr "Bạn có chắc chắn muốn xóa?"
+
+#: templates/cart-order/page-cart.php:82
+msgid "There are no course in your cart"
+msgstr "Không có khóa học nào trong giỏ hàng"
+
+#: templates/cart-order/page-cart.php:88
+msgid "SEE MORE"
+msgstr "XEM THÊM KHÓA HỌC"
+
+#: templates/cart-order/page-cart.php:91
+msgid "PROCESS TO CHECKOUT"
+msgstr "TIẾN HÀNH THANH TOÁN"
+
+#: templates/loop/content-course.php:25
+#: templates/loop/content-single-course.php:33
+msgid "0 review"
+msgstr "0 đánh giá"
+
+#: templates/loop/content-course.php:25
+#: templates/loop/content-single-course.php:33
+msgid "1 review"
+msgstr "1 đánh giá"
+
+#: templates/loop/content-course.php:25
+#: templates/loop/content-single-course.php:33
+msgid "% review"
+msgstr "% đánh giá"
+
+#: templates/loop/content-course.php:27
+#: templates/loop/content-single-course.php:35
+msgid "Teacher:"
+msgstr "Giảng viên:"
+
+#: templates/loop/content-course.php:47 templates/loop/content-course.php:48
+#: templates/loop/content-single-course.php:74
+#: templates/loop/content-single-course.php:75
+msgid "BUY NOW"
+msgstr "MUA NGAY"
+
+#: templates/loop/content-course.php:62
 msgid "See More"
 msgstr "Xem thêm"
 
@@ -388,29 +579,32 @@ msgstr "Xem thêm"
 msgid "Nothing found!"
 msgstr "Không tìm thấy kết quả phù hợp!"
 
-#: templates/loop/content-single-course.php:68
+#: templates/loop/content-single-course.php:82
+#: templates/loop/content-single-course.php:84
 msgid "ADD TO CART"
 msgstr "THÊM VÀO GIỎ"
 
-#: templates/loop/content-single-course.php:72
-msgid "Input coupon code here..."
-msgstr "Nhập mã khuyến mãi..."
-
-#: templates/loop/content-single-course.php:73
-msgid "Apply"
-msgstr "Áp dụng"
-
-#: templates/loop/content-single-course.php:78
+#: templates/loop/content-single-course.php:101
 msgid "Error!"
 msgstr "Báo lỗi!"
 
-#: templates/loop/content-single-course.php:81
+#: templates/loop/content-single-course.php:107
 msgid "Lesson"
 msgstr "Số lượng bài giảng"
 
-#: templates/loop/content-single-course.php:82
+#: templates/loop/content-single-course.php:107
 msgid "Lesson duration"
 msgstr "Thời lượng bài giảng"
+
+#: templates/members/content-my-course.php:24
+#: templates/members/content-profile.php:27
+msgid "Home"
+msgstr "Trang chủ"
+
+#: templates/members/content-my-course.php:25
+#: templates/members/content-profile.php:28
+msgid "Member"
+msgstr "Học viên"
 
 #: templates/members/content-profile.php:19
 #: templates/members/content-profile.php:99
@@ -421,14 +615,6 @@ msgstr "Nam"
 #: templates/members/content-profile.php:102
 msgid "Female"
 msgstr "Nữ"
-
-#: templates/members/content-profile.php:27
-msgid "Home"
-msgstr "Trang chủ"
-
-#: templates/members/content-profile.php:28
-msgid "Member"
-msgstr "Học viên"
 
 #: templates/members/content-profile.php:45
 #: templates/members/content-profile.php:81
