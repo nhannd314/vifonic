@@ -88,7 +88,13 @@ get_header();
 						<?php printf('<a class="btn btn-warning pull-left" href="%1$s"><i class="fa fa-arrow-left" aria-hidden="true"></i> %2$s</a>', get_post_type_archive_link( 'course' ), __('SEE MORE', 'vifonic')); ?>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-						<?php printf('<a class="btn btn-primary pull-right" href="%1$s">%2$s <i class="fa fa-arrow-right" aria-hidden="true"></i></a>', '/order/detail/', __('PROCESS TO CHECKOUT', 'vifonic')); ?>
+                        <?php
+                            if (!is_user_logged_in()){
+	                            printf('<a class="btn btn-default pull-right" data-toggle="modal" href="%1$s">%2$s <i class="fa fa-arrow-right" aria-hidden="true"></i></a>', '#modal-login', __('Please login or sign up to process to checkout!', 'vifonic'));
+                            } else {
+	                            printf('<a class="btn btn-primary pull-right" href="%1$s">%2$s <i class="fa fa-arrow-right" aria-hidden="true"></i></a>', '/order/detail/', __('PROCESS TO CHECKOUT', 'vifonic'));
+                            }
+                        ?>
                     </div>
 
                 </div>

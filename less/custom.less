@@ -146,6 +146,8 @@ img {
             img.avatar {
                 border-radius: 100%;
                 border: 2px solid @brand-primary;
+                object-fit: cover;
+                height: 36px;
             }
             &:hover {
                 text-decoration: underline;
@@ -240,6 +242,8 @@ img {
                         img.avatar {
                             border-radius: 100%;
                             margin-right: 10px;
+                            object-fit: cover;
+                            height: 36px;
                         }
                     }
                 }
@@ -438,6 +442,36 @@ img {
         }
     }
 }
+ul.breadcrumb {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    margin: 20px 0;
+    list-style-type: none;
+    li {
+        display: inline-block;
+    }
+    >li+li:before {
+        padding: 0 5px;
+        color: #ccc;
+        content: "/\00a0";
+    }
+    li.active {
+        color: #333;
+    }
+}
+
+//Alert Message
+.alert {
+    margin: 10px 0;
+    i {
+        margin-right: 5px;
+    }
+    .alert-message{
+
+    }
+}
+
 
 main.full-width {
     .container-fluid{
@@ -480,8 +514,12 @@ main.page-dashboard {
             .user-avatar {
                 display: inline-block;
                 img.avatar {
+                    background-color: #fff;
+                    border: 1px solid #fff;
                     border-radius: 100%;
                     margin-right: 10px;
+                    object-fit: cover;
+                    height: 40px;
                 }
             }
             .user-name {
@@ -526,24 +564,7 @@ main.page-dashboard {
     }
     .dashboard-content {
         padding:15px 0;
-        ul.breadcrumb {
-            background: none;
-            padding: 0;
-            border-radius: 0;
-            margin: 20px 0;
-            list-style-type: none;
-            li {
-                display: inline-block;
-            }
-            >li+li:before {
-                padding: 0 5px;
-                color: #ccc;
-                content: "/\00a0";
-            }
-            li.active {
-                color: #333;
-            }
-        }
+
         .main-inner{
             background: #fff;
             border-radius: 5px;
@@ -580,6 +601,32 @@ main.page-dashboard {
                     }
                 }
             }
+            //Active page
+            .active-row{
+                padding: 30px 0 10px;
+                #active-course-form {
+                    input#vifonic_acive_course_code {
+                        margin-top: 15px;
+                        @media screen and (min-width: 768px){
+                            min-width: 300px;
+                        }
+                    }
+                    .btn-active-course {
+                        margin-top: 15px;
+                    }
+                }
+                .alert {
+                    display: inline-block;
+                    margin: 0;
+                    i {
+                        margin-right: 5px;
+                    }
+                    .alert-message{
+
+                    }
+                }
+            }
+
         }
     }
 }
@@ -956,11 +1003,45 @@ main.main-single-course {
             text-align: left;
         }
     }
+    .course_chapter {
+        ul.chapter-list {
+            list-style-type: none;
+            font-size: 16px;
+            padding-left: 20px;
+            line-height: 25px;
+            li.chapter-item {
+                &:before {
+                    font-family:FontAwesome;
+                    content: '\f02e';
+                    margin-right: 5px;
+                }
+                ul.lesson-list {
+                    list-style-type: none;
+                    li.lesson-item {
+                        line-height: 25px;
+                        span {
+                            font-size: 16px;
+                        }
+                        &:before {
+                            font-family:FontAwesome;
+                            content: '\f0f6';
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .single-course-primary {
         margin-bottom: 30px;
         .course-video-demo {
             .course-video-wrapper {
+                margin-bottom: 15px;
                 border: 1px solid @brand-primary;
+                iframe{
+                    display: inherit;
+                }
             }
         }
         .course-information {
@@ -1012,29 +1093,23 @@ main.main-single-course {
     }
     .single-course-secondary {
         margin-bottom: 30px;
-        .course-tabs {
-            margin-bottom: 20px;
-            .course_chapter {
-                ul.chapter-list {
-                    list-style-type: none;
-                    font-size: 16px;
-                    padding-left: 20px;
-                    line-height: 25px;
-                    li.chapter-item {
-                        &:before {
-                            font-family:FontAwesome;
-                            content: '\f02e';
+    }
+
+    .course-tabs-wrapper {
+        margin-bottom: 20px;
+        .tab-content {
+            .tab-pane {
+                background-color: #fff;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-top-color: transparent;
+
+                .file-list {
+                    p {
+                        margin: 0;
+                        line-height: 25px;
+                        i{
                             margin-right: 5px;
-                        }
-                        ul.lesson-list {
-                            list-style-type: none;
-                            li.lesson-item {
-                                &:before {
-                                    font-family:FontAwesome;
-                                    content: '\f0f6';
-                                    margin-right: 5px;
-                                }
-                            }
                         }
                     }
                 }
@@ -1042,6 +1117,9 @@ main.main-single-course {
         }
     }
 }
+
+
+
 
 //---------------------- Email Subcribe ----------------------
 .vifonic_email_subcribe {
@@ -1112,13 +1190,32 @@ main.main-single-course {
 #comments {
     clear: both;
     margin-bottom: 30px;
+
     .comments-title {
         display: none;
     }
     .comment-list {
-        padding-left: 20px;
+        padding: 15px 0 0 25px;
         list-style: none;
         margin-top: 25px;
+        height: 500px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+            background-color: #F5F5F5;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: -webkit-linear-gradient(top,@brand-primary 0%, lighten(@brand-primary, 10%) 50%, lighten(@brand-primary, 10%) 51%, @brand-primary 100%);
+        }
         li.comment {
             border: 2px solid @brand-second;
             margin-bottom: 21px;

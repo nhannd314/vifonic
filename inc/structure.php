@@ -1,15 +1,21 @@
 <?php
-
+if (!function_exists('vifonic_breadcrumb')){
+	function vifonic_breadcrumb(){
+		if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('<div id="breadcrumbs">','</div>');
+		}
+	}
+}
 // ============== Display post thumbnail ===========
 
 if (!function_exists('vifonic_post_thumbnail'))
 {
-    function vifonic_post_thumbnail($size = 'thumbnail', $args = array())
-    {
-        if (has_post_thumbnail() && !post_password_required() || has_post_format('image')): ?>
-            <?php the_post_thumbnail($size, $args); ?>
-        <?php endif;
-    }
+	function vifonic_post_thumbnail($size = 'thumbnail', $args = array())
+	{
+		if (has_post_thumbnail() && !post_password_required() || has_post_format('image')): ?>
+			<?php the_post_thumbnail($size, $args); ?>
+		<?php endif;
+	}
 }
 
 
@@ -17,18 +23,18 @@ if (!function_exists('vifonic_post_thumbnail'))
 
 if (!function_exists('vifonic_entry_meta'))
 {
-    function vifonic_entry_meta($is_single = false)
-    {
-        ?>
+	function vifonic_entry_meta($is_single = false)
+	{
+		?>
         <div class="post-meta">
             <span class="author">Posted by <?php the_author_posts_link(); ?></span> |
             <span itemprop="datePublished"><?php the_time('m/d/Y') ?></span>
-            <?php if ($is_single): ?>
+			<?php if ($is_single): ?>
                 | <span class="list-categories"><?php echo get_the_category_list(', ') ?></span>
-            <?php endif; ?>
+			<?php endif; ?>
         </div>
-        <?php
-    }
+		<?php
+	}
 }
 
 // ============== Facebook SDK ================
@@ -60,11 +66,11 @@ if (!function_exists('vifonic_facebook_sdk')) {
 
 if (!function_exists('vifonic_social_links'))
 {
-    function vifonic_social_links()
-    {
-        $title = get_the_title();
-        $link = get_permalink();
-        ?>
+	function vifonic_social_links()
+	{
+		$title = get_the_title();
+		$link = get_permalink();
+		?>
 
         <ul class="vifonic-social-share list-inline clearfix">
             <li>
@@ -87,8 +93,8 @@ if (!function_exists('vifonic_social_links'))
             </li>
         </ul>
 
-        <?php
-    }
+		<?php
+	}
 }
 
 
@@ -96,20 +102,20 @@ if (!function_exists('vifonic_social_links'))
 
 if (!function_exists('vifonic_comment_facebook'))
 {
-    function vifonic_comment_facebook($link = '')
-    {
-        if ($link == '') $link = home_url('/');
-        ?>
+	function vifonic_comment_facebook($link = '')
+	{
+		if ($link == '') $link = home_url('/');
+		?>
         <div class="clearfix"></div>
         <div class="facebook-comment responsive" style="border: 1px solid #3B5998;">
             <h4 class="title" style="background-color: #3B5998;padding: 5px 20px;color: #fff;font-weight: 700;margin-top: 0;">
                 <i class="fa fa-comment-o" aria-hidden="true" style="margin-right: 5px;"></i>
-			    <?php _e('Your comment', 'vifonic') ?>
+				<?php _e('Your comment', 'vifonic') ?>
             </h4>
             <div class="fb-comments" data-href="<?php echo $link ?>" data-width="100%" data-numposts="20"></div>
         </div>
-        <?php
-    }
+		<?php
+	}
 }
 
 
@@ -117,25 +123,25 @@ if (!function_exists('vifonic_comment_facebook'))
 
 function vifonic_related_posts($ID, $content_template = '')
 {
-    $terms = wp_get_post_tags($ID);
-    if ($terms) {
-        $term_ids = array();
-        foreach ($terms as $item) $term_ids[] = $item->term_id;
-        $args = array(
-            'tag__in' => $term_ids,
-            'post__not_in' => array($ID),
-            'posts_per_page' => 8,
-            'ignore_sticky_posts' => 1
-        );
-        query_posts($args);
-        if (have_posts()) {
-            while (have_posts()) {
-                the_post();
-                get_template_part('templates/loop/content', $content_template);
-            }
-        }
-        wp_reset_query();
-    }
+	$terms = wp_get_post_tags($ID);
+	if ($terms) {
+		$term_ids = array();
+		foreach ($terms as $item) $term_ids[] = $item->term_id;
+		$args = array(
+			'tag__in' => $term_ids,
+			'post__not_in' => array($ID),
+			'posts_per_page' => 8,
+			'ignore_sticky_posts' => 1
+		);
+		query_posts($args);
+		if (have_posts()) {
+			while (have_posts()) {
+				the_post();
+				get_template_part('templates/loop/content', $content_template);
+			}
+		}
+		wp_reset_query();
+	}
 }
 
 
@@ -143,116 +149,116 @@ function vifonic_related_posts($ID, $content_template = '')
 
 function vifonic_get_the_excerpt($limit = 30)
 {
-    $excerpt = explode(' ', get_the_excerpt(), $limit);
-    if (count($excerpt) >= $limit) {
-        array_pop($excerpt);
-        $excerpt = implode(" ", $excerpt) . ' ...';
-    } else {
-        $excerpt = implode(" ", $excerpt);
-    }
+	$excerpt = explode(' ', get_the_excerpt(), $limit);
+	if (count($excerpt) >= $limit) {
+		array_pop($excerpt);
+		$excerpt = implode(" ", $excerpt) . ' ...';
+	} else {
+		$excerpt = implode(" ", $excerpt);
+	}
 //    $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-    return $excerpt;
+	return $excerpt;
 }
 
 function vifonic_the_excerpt($limit = 30)
 {
-    echo vifonic_get_the_excerpt($limit);
+	echo vifonic_get_the_excerpt($limit);
 }
 
 // ================ Pagination ===============
 
 function vifonic_pagination()
 {
-    global $wp_query;
-    if ($wp_query->max_num_pages > 1) : ?>
+	global $wp_query;
+	if ($wp_query->max_num_pages > 1) : ?>
         <div class="pagination">
-            <?php
-            if (get_previous_posts_link()) echo '<li class="archive-nav-newer">' . get_previous_posts_link('&larr; ' . __('Previous', 'vifonic')) . '</li>';
-            $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
-            $max = intval($wp_query->max_num_pages);
-            /**    Add current page to the array */
-            if ($paged >= 1)
-                $links[] = $paged;
-            /**    Add the pages around the current page to the array */
-            if ($paged >= 3) {
-                $links[] = $paged - 1;
-                $links[] = $paged - 2;
-            }
-            if (($paged + 2) <= $max) {
-                $links[] = $paged + 2;
-                $links[] = $paged + 1;
-            }
-            /**    Link to first page, plus ellipses if necessary */
-            if (!in_array(1, $links)) {
-                $class = 1 == $paged ? ' active' : '';
-                printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
-                if (!in_array(2, $links))
-                    echo '<li>...</li>';
-            }
-            /**    Link to current page, plus 2 pages in either direction if necessary */
-            sort($links);
-            foreach ((array)$links as $link) {
-                $class = $paged == $link ? ' active' : '';
-                printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), $link);
-            }
-            /**    Link to last page, plus ellipses if necessary */
-            if (!in_array($max, $links)) {
-                if (!in_array($max - 1, $links))
-                    echo '<li class="number">...</li>' . "\n";
-                $class = $paged == $max ? ' active' : '';
-                printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), $max);
-            }
-            if (get_next_posts_link()) echo '<li class="archive-nav-older">' . get_next_posts_link(__('Next', 'vifonic') . ' &rarr;') . '</li>';
-            ?>
+			<?php
+			if (get_previous_posts_link()) echo '<li class="archive-nav-newer">' . get_previous_posts_link('&larr; ' . __('Previous', 'vifonic')) . '</li>';
+			$paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+			$max = intval($wp_query->max_num_pages);
+			/**    Add current page to the array */
+			if ($paged >= 1)
+				$links[] = $paged;
+			/**    Add the pages around the current page to the array */
+			if ($paged >= 3) {
+				$links[] = $paged - 1;
+				$links[] = $paged - 2;
+			}
+			if (($paged + 2) <= $max) {
+				$links[] = $paged + 2;
+				$links[] = $paged + 1;
+			}
+			/**    Link to first page, plus ellipses if necessary */
+			if (!in_array(1, $links)) {
+				$class = 1 == $paged ? ' active' : '';
+				printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
+				if (!in_array(2, $links))
+					echo '<li>...</li>';
+			}
+			/**    Link to current page, plus 2 pages in either direction if necessary */
+			sort($links);
+			foreach ((array)$links as $link) {
+				$class = $paged == $link ? ' active' : '';
+				printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), $link);
+			}
+			/**    Link to last page, plus ellipses if necessary */
+			if (!in_array($max, $links)) {
+				if (!in_array($max - 1, $links))
+					echo '<li class="number">...</li>' . "\n";
+				$class = $paged == $max ? ' active' : '';
+				printf('<li class="number%s"><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), $max);
+			}
+			if (get_next_posts_link()) echo '<li class="archive-nav-older">' . get_next_posts_link(__('Next', 'vifonic') . ' &rarr;') . '</li>';
+			?>
             <div class="clear"></div>
         </div> <!-- /archive-nav -->
-    <?php endif;
+	<?php endif;
 }
 
 // ============== Site favicon ============
 
 function vifonic_site_favicon() {
-    global $vifonic_options;
-    return $vifonic_options['site_favicon']['url'];
+	global $vifonic_options;
+	return $vifonic_options['site_favicon']['url'];
 }
 
 function vifonic_site_logo() {
-    global $vifonic_options;
-    return '<img src="' . $vifonic_options['site_logo']['url'] .'" alt="' . get_bloginfo('name') .'" />';
+	global $vifonic_options;
+	return '<img src="' . $vifonic_options['site_logo']['url'] .'" alt="' . get_bloginfo('name') .'" />';
 }
 
 
 // ============== Title ============
 if (!function_exists('vifonic_title'))
 {
-    function vifonic_title($main_title = 'Main Title', $sub_title = '', $text_align = 'center'){
-        ?>
+	function vifonic_title($main_title = 'Main Title', $sub_title = '', $text_align = 'center'){
+		?>
         <div class="section-title-container">
             <h2 class="section-title section-title-<?php echo $text_align ?>">
                 <span class="section-title-main"><?php echo __($main_title); ?></span>
             </h2>
-            <?php
-                if ($sub_title != '') {
-                    echo '<p class="section-title-sub section-title-center">'.__($sub_title).'</p>';
-                }
-            ?>
+			<?php
+			if ($sub_title != '') {
+				echo '<p class="section-title-sub section-title-center">'.__($sub_title).'</p>';
+			}
+			?>
         </div>
-        <?php
-    }
+		<?php
+	}
 }
 
 // ============== Button ============
 if (!function_exists('vifonic_button'))
 {
-    function vifonic_button($link = '#', $button_text = 'Button Text', $text_align = 'center', $is_icon = false){
-        ?>
+	function vifonic_button($link = '#', $button_text = 'Button Text', $text_align = 'center', $is_icon = false){
+		?>
         <div class="text-<?php echo $text_align ?>">
             <a href="<?php echo esc_url($link); ?>"  class="btn btn-primary vifonic-button">
                 <span class="<?php if ($is_icon)  echo esc_attr('has-icon'); ?>"><?php echo __($button_text); ?></span>
             </a>
         </div>
-        <?php
-    }
+		<?php
+	}
 }
 
 // ============== Price =============
@@ -267,40 +273,40 @@ if (!function_exists('vifonic_price_format'))
 // ============== Show list Courses ============
 if (!function_exists('vifonic_show_list_courses_by_category'))
 {
-    function vifonic_show_list_courses_by_category($course_cat = '', $number_of_course = 8){
-        $args = array(
-            'post_type' => 'course',
-            'posts_per_page' => $number_of_course,
-            'post_status' => 'publish',
-        );
-	    if ($course_cat != ''){
-		    $args['tax_query'] = array(
-			    array(
-				    'taxonomy' => 'course_category',
-				    'field'    => 'slug',
-				    'terms'    => array( $course_cat ),
-			    ),
-		    );
-	    }
+	function vifonic_show_list_courses_by_category($course_cat = '', $number_of_course = 8){
+		$args = array(
+			'post_type' => 'course',
+			'posts_per_page' => $number_of_course,
+			'post_status' => 'publish',
+		);
+		if ($course_cat != ''){
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'slug',
+					'terms'    => array( $course_cat ),
+				),
+			);
+		}
 
-        $queryCourse = new WP_Query($args);
-        if ($queryCourse->have_posts()){
-            echo '<div class="container"><div class="row">';
-	        $i = 0;
-            while ($queryCourse->have_posts()) {
-                $queryCourse->the_post();
+		$queryCourse = new WP_Query($args);
+		if ($queryCourse->have_posts()){
+			echo '<div class="container"><div class="row">';
+			$i = 0;
+			while ($queryCourse->have_posts()) {
+				$queryCourse->the_post();
 
-                echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
-                get_template_part('templates/loop/content', 'course');
-                echo '</div>';
+				echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+				get_template_part('templates/loop/content', 'course');
+				echo '</div>';
 
-	            $i++;
-	            if ($i%4==0){ echo '<div class="clearfix"></div>'; }
-            }
-            echo '</div></div>';
-	        vifonic_button(get_term_link($course_cat, 'course_category'),'XEM TẤT CẢ', 'center', true);
-        }
-    }
+				$i++;
+				if ($i%4==0){ echo '<div class="clearfix"></div>'; }
+			}
+			echo '</div></div>';
+			vifonic_button(get_term_link($course_cat, 'course_category'),'XEM TẤT CẢ', 'center', true);
+		}
+	}
 }
 
 // ============== Show Featured Courses ============
@@ -312,23 +318,23 @@ if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
 			'posts_per_page' => $number_of_course,
 			'post_status' => 'publish',
 //Khóa học nổi bật
-            'meta_query' => array (
-                array(
-	                'key'     => 'featured_course',
-	                'value'   => '1',
-	                'compare' => '=='
-                ),
-            ),
+			'meta_query' => array (
+				array(
+					'key'     => 'featured_course',
+					'value'   => '1',
+					'compare' => '=='
+				),
+			),
 		);
 		if ($course_cat != ''){
-		    $args['tax_query'] = array(
-			    array(
-				    'taxonomy' => 'course_category',
-				    'field'    => 'slug',
-				    'terms'    => array( $course_cat ),
-			    ),
-		    );
-        }
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'slug',
+					'terms'    => array( $course_cat ),
+				),
+			);
+		}
 
 		$queryCourse = new WP_Query($args);
 		if ($queryCourse->have_posts()){
@@ -381,13 +387,13 @@ if (!function_exists('vifonic_show_free_courses_slider_by_category'))
 			'posts_per_page' => $number_of_course,
 			'post_status' => 'publish',
 //Khóa học nổi bật
-            'meta_query' => array (
-                array(
-	                'key'     => 'free_course',
-	                'value'   => '1',
-	                'compare' => '=='
-                ),
-            ),
+			'meta_query' => array (
+				array(
+					'key'     => 'free_course',
+					'value'   => '1',
+					'compare' => '=='
+				),
+			),
 		);
 		if ($course_cat != ''){
 			$args['tax_query'] = array(
@@ -523,11 +529,11 @@ if (!function_exists('vifonic_slider'))
 			while ($querySlider->have_posts()) {
 				$querySlider->the_post();
 				?>
-				<div class="slide-item">
-				    <?php the_post_thumbnail('slider-size'); ?>
-				    <div class="caption"><?php the_content(); ?></div>
-				</div>
-                <?php
+                <div class="slide-item">
+					<?php the_post_thumbnail('slider-size'); ?>
+                    <div class="caption"><?php the_content(); ?></div>
+                </div>
+				<?php
 			}
 			echo '</div>';
 			echo '<script>

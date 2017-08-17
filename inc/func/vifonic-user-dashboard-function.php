@@ -8,6 +8,25 @@
 
 //============================================================
 //--------------------- Update Profile -----------------------
+//Custom Avatar
+function be_gravatar_filter($avatar, $id_or_email, $size, $default, $alt) {
+
+	// If provided an email and it doesn't exist as WP user, return avatar since there can't be a custom avatar
+	$email = is_object( $id_or_email ) ? $id_or_email->comment_author_email : $id_or_email;
+	if( is_email( $email ) && ! email_exists( $email ) )
+		return $avatar;
+
+	$custom_avatar = get_field('profile_avatar', 'user_'.get_current_user_id());
+	if ($custom_avatar)
+		$return = '<img alt="'.$alt.'" src="'.$custom_avatar.'" srcset="'.$custom_avatar.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
+	elseif ($avatar)
+		$return = $avatar;
+	else
+		$return = '<img alt="'.$alt.'" src="'.$default.'" srcset="'.$custom_avatar.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
+	return $return;
+}
+add_filter('get_avatar', 'be_gravatar_filter', 10, 5);
+
 
 //AJAX
 function ajax_update_profile_init(){
@@ -142,8 +161,8 @@ if (!function_exists('vifonic_show_list_courses_by_id'))
 			while ($queryCourse->have_posts()) {
 				$queryCourse->the_post();
 
-				echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
-				get_template_part('templates/loop/content', 'course');
+				echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 course-item">';
+				get_template_part('templates/loop/content', 'my-course');
 				echo '</div>';
 
 				$i++;

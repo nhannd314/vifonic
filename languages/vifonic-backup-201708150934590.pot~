@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-12 03:09+0000\n"
+"POT-Creation-Date: 2017-08-15 03:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: header.php:78 templates/cart-order/content-order-detail.php:46
+#: header.php:78 templates/cart-order/content-order-detail.php:44
 #: templates/cart-order/content-order-payment.php:40
 #: templates/members/content-profile.php:41
 #: templates/members/content-profile.php:77
@@ -60,13 +60,13 @@ msgid "Full Name"
 msgstr ""
 
 #: header.php:82 header.php:125 header.php:160
-#: templates/cart-order/content-order-detail.php:50
+#: templates/cart-order/content-order-detail.php:48
 #: templates/cart-order/content-order-payment.php:44
 #: templates/members/content-profile.php:54
 msgid "Email"
 msgstr ""
 
-#: header.php:86 templates/cart-order/content-order-detail.php:54
+#: header.php:86 templates/cart-order/content-order-detail.php:52
 #: templates/cart-order/content-order-payment.php:48
 #: templates/members/content-profile.php:58
 #: templates/members/content-profile.php:85
@@ -120,13 +120,16 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: header.php:185 templates/members/content-my-course.php:26
+#: header.php:185 templates/learning/page-learning-course.php:15
+#: templates/members/content-my-course.php:26
 #: templates/members/content-my-course.php:30
 #: templates/members/page-user-dashboard.php:29
 msgid "My Course"
 msgstr ""
 
-#: header.php:186 header.php:194 templates/members/page-user-dashboard.php:30
+#: header.php:186 header.php:194 templates/members/content-active-course.php:12
+#: templates/members/content-active-course.php:16
+#: templates/members/page-user-dashboard.php:30
 msgid "Active Course"
 msgstr ""
 
@@ -179,7 +182,7 @@ msgstr ""
 msgid "Teachers"
 msgstr ""
 
-#: inc/setup.php:141
+#: inc/setup.php:141 templates/loop/content-single-course.php:149
 msgid "Teacher"
 msgstr ""
 
@@ -195,8 +198,8 @@ msgstr ""
 msgid "Coupons"
 msgstr ""
 
-#: inc/setup.php:192 templates/cart-order/content-order-detail.php:84
-#: templates/cart-order/content-order-detail.php:164
+#: inc/setup.php:192 templates/cart-order/content-order-detail.php:82
+#: templates/cart-order/content-order-detail.php:162
 #: templates/cart-order/content-order-payment.php:120
 #: templates/cart-order/page-cart.php:58
 msgid "Coupon"
@@ -234,39 +237,39 @@ msgstr ""
 msgid "Footer Sidebar 4"
 msgstr ""
 
-#: inc/structure.php:71 inc/structure.php:71
+#: inc/structure.php:77 inc/structure.php:77
 msgid "Share on Facebook"
 msgstr ""
 
-#: inc/structure.php:74 inc/structure.php:74
+#: inc/structure.php:80 inc/structure.php:80
 msgid "Share on Twitter"
 msgstr ""
 
-#: inc/structure.php:77 inc/structure.php:77
+#: inc/structure.php:83 inc/structure.php:83
 msgid "Share on Google +"
 msgstr ""
 
-#: inc/structure.php:80 inc/structure.php:80
+#: inc/structure.php:86 inc/structure.php:86
 msgid "Share on Linkedin"
 msgstr ""
 
-#: inc/structure.php:83 inc/structure.php:83
+#: inc/structure.php:89 inc/structure.php:89
 msgid "Share on Tumblr"
 msgstr ""
 
-#: inc/structure.php:86 inc/structure.php:86
+#: inc/structure.php:92 inc/structure.php:92
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: inc/structure.php:107
+#: inc/structure.php:113
 msgid "Your comment"
 msgstr ""
 
-#: inc/structure.php:170
+#: inc/structure.php:176
 msgid "Previous"
 msgstr ""
 
-#: inc/structure.php:205 templates/cart-order/content-order-detail.php:61
+#: inc/structure.php:211 templates/cart-order/content-order-detail.php:59
 msgid "Next"
 msgstr ""
 
@@ -412,71 +415,71 @@ msgstr ""
 msgid "Profile update successful!"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:30
+#: templates/cart-order/content-order-detail.php:28
 #: templates/cart-order/content-order-payment.php:18
-#: templates/cart-order/content-order-success.php:149
+#: templates/cart-order/content-order-success.php:177
 msgid "Order detail"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:31
+#: templates/cart-order/content-order-detail.php:29
 #: templates/cart-order/content-order-payment.php:19
-#: templates/cart-order/content-order-success.php:150
+#: templates/cart-order/content-order-success.php:178
 msgid "Payment"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:32
+#: templates/cart-order/content-order-detail.php:30
 #: templates/cart-order/content-order-payment.php:20
 #: templates/cart-order/content-order-payment.php:64
 #: templates/cart-order/content-order-payment.php:79
 #: templates/cart-order/content-order-payment.php:95
-#: templates/cart-order/content-order-success.php:151
+#: templates/cart-order/content-order-success.php:179
 msgid "Finish"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:38
+#: templates/cart-order/content-order-detail.php:36
 msgid "Ordering Guide"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:43
+#: templates/cart-order/content-order-detail.php:41
 msgid "Delivery information"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:58
+#: templates/cart-order/content-order-detail.php:56
 #: templates/cart-order/content-order-payment.php:52
 msgid "Address"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:67
+#: templates/cart-order/content-order-detail.php:65
 #: templates/cart-order/content-order-payment.php:103
 msgid "ORDER DETAIL"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:124
+#: templates/cart-order/content-order-detail.php:122
 #: templates/cart-order/content-order-payment.php:160
-#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:58
-#: templates/loop/content-single-course.php:65
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:78
+#: templates/loop/content-single-course.php:113
 msgid "Free"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:137
+#: templates/cart-order/content-order-detail.php:135
 #: templates/cart-order/content-order-payment.php:173
 msgid "SUBTOTAL"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:147
+#: templates/cart-order/content-order-detail.php:145
 #: templates/cart-order/content-order-payment.php:183
 msgid "TOTAL"
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:165
-#: templates/loop/content-single-course.php:91
+#: templates/cart-order/content-order-detail.php:163
+#: templates/loop/content-single-course.php:101
 msgid "Input coupon code here..."
 msgstr ""
 
-#: templates/cart-order/content-order-detail.php:167
-#: templates/cart-order/content-order-detail.php:167
-#: templates/loop/content-single-course.php:93
-#: templates/loop/content-single-course.php:93
+#: templates/cart-order/content-order-detail.php:165
+#: templates/cart-order/content-order-detail.php:165
+#: templates/loop/content-single-course.php:103
+#: templates/loop/content-single-course.php:103
 msgid "Apply"
 msgstr ""
 
@@ -508,15 +511,11 @@ msgstr ""
 msgid "Payment at the central office"
 msgstr ""
 
-#: templates/cart-order/content-order-payment.php:204
-msgid "Applied Coupon"
-msgstr ""
-
-#: templates/cart-order/content-order-success.php:130
+#: templates/cart-order/content-order-success.php:158
 msgid "Can't create order!"
 msgstr ""
 
-#: templates/cart-order/content-order-success.php:134
+#: templates/cart-order/content-order-success.php:162
 msgid "Cart is empty!"
 msgstr ""
 
@@ -532,69 +531,136 @@ msgstr ""
 msgid "SEE MORE"
 msgstr ""
 
-#: templates/cart-order/page-cart.php:91
+#: templates/cart-order/page-cart.php:93
+msgid "Please login or sign up to process to checkout!"
+msgstr ""
+
+#: templates/cart-order/page-cart.php:95
 msgid "PROCESS TO CHECKOUT"
 msgstr ""
 
-#: templates/loop/content-course.php:25
+#: templates/learning/page-learning-course.php:14
+#: templates/members/content-active-course.php:10
+#: templates/members/content-my-course.php:24
+#: templates/members/content-profile.php:27
+msgid "Home"
+msgstr ""
+
+#: templates/learning/page-learning-course.php:32
+#: templates/loop/content-single-course.php:145
+#: templates/loop/content-single-course.php:148
+msgid "Curriculum"
+msgstr ""
+
+#: templates/learning/page-learning-course.php:33
+msgid "Document"
+msgstr ""
+
+#: templates/learning/page-learning-course.php:34
+msgid "Discussion"
+msgstr ""
+
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "0 review"
 msgstr ""
 
-#: templates/loop/content-course.php:25
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "1 review"
 msgstr ""
 
-#: templates/loop/content-course.php:25
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "% review"
 msgstr ""
 
-#: templates/loop/content-course.php:27
+#: templates/loop/content-course.php:27 templates/loop/content-my-course.php:27
 #: templates/loop/content-single-course.php:35
 msgid "Teacher:"
 msgstr ""
 
-#: templates/loop/content-course.php:47 templates/loop/content-course.php:48
-#: templates/loop/content-single-course.php:74
-#: templates/loop/content-single-course.php:75
-msgid "BUY NOW"
+#: templates/loop/content-course.php:44 templates/loop/content-course.php:82
+#: templates/loop/content-my-course.php:44
+#: templates/loop/content-single-course.php:61
+#: templates/loop/content-single-course.php:117
+msgid "LEARN NOW"
 msgstr ""
 
-#: templates/loop/content-course.php:62
-msgid "See More"
+#: templates/loop/content-course.php:46 templates/loop/content-my-course.php:46
+#: templates/loop/content-single-course.php:63
+msgid "ACTIVATE YOUR COURSE"
+msgstr ""
+
+#: templates/loop/content-course.php:67 templates/loop/content-course.php:68
+#: templates/loop/content-single-course.php:84
+#: templates/loop/content-single-course.php:85
+msgid "BUY NOW"
 msgstr ""
 
 #: templates/loop/content-none.php:10
 msgid "Nothing found!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:82
-#: templates/loop/content-single-course.php:84
+#: templates/loop/content-single-course.php:92
+#: templates/loop/content-single-course.php:94
 msgid "ADD TO CART"
 msgstr ""
 
-#: templates/loop/content-single-course.php:101
+#: templates/loop/content-single-course.php:126
 msgid "Error!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:107
+#: templates/loop/content-single-course.php:132
 msgid "Lesson"
 msgstr ""
 
-#: templates/loop/content-single-course.php:107
+#: templates/loop/content-single-course.php:132
 msgid "Lesson duration"
 msgstr ""
 
-#: templates/members/content-my-course.php:24
-#: templates/members/content-profile.php:27
-msgid "Home"
+#: templates/loop/content-single-course.php:146
+msgid "Target"
 msgstr ""
 
+#: templates/loop/content-single-course.php:147
+msgid "Aim"
+msgstr ""
+
+#: templates/members/content-active-course.php:11
 #: templates/members/content-my-course.php:25
 #: templates/members/content-profile.php:28
 msgid "Member"
+msgstr ""
+
+#: templates/members/content-active-course.php:22
+msgid "Note!"
+msgstr ""
+
+#: templates/members/content-active-course.php:23
+msgid ""
+"Each course only needs to be activated once. Do not repeat this step the "
+"next time."
+msgstr ""
+
+#: templates/members/content-active-course.php:27
+msgid "Input active code here..."
+msgstr ""
+
+#: templates/members/content-active-course.php:28
+msgid "Active now"
+msgstr ""
+
+#: templates/members/content-active-course.php:43
+msgid "Activation successful!"
+msgstr ""
+
+#: templates/members/content-active-course.php:45
+msgid "This activation code has been activated for your course!"
+msgstr ""
+
+#: templates/members/content-active-course.php:51
+msgid "This activation code was not found!"
 msgstr ""
 
 #: templates/members/content-profile.php:19

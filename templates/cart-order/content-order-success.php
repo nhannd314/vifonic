@@ -105,6 +105,23 @@ if ( !empty($cart_list) && $order_success != '' ){
 
 			$i = add_row('order_course_list', $row);
 			array_push($repeater_value, $row);
+
+			if (is_user_logged_in()){
+				$repeater_my_course = array();
+				//Create Active key and add to user
+				$course_key = md5('User'.get_current_user_id().'Order'.$order_id.'Course'.$course_id);
+
+				$my_course_row = array(
+					'profile_my_course' => $course_id,
+					'profile_my_course_key' => $course_key,
+					'profile_is_active_course' => 0,
+				);
+
+				$i = add_row('order_course_list', $row);
+				array_push($repeater_my_course, $my_course_row);
+
+				update_field('profile_my_course_list', $repeater_my_course, 'user_'.get_current_user_id());
+            }
 		}
 
 		update_field('order_course_list', $repeater_value,$order_id);
@@ -122,7 +139,6 @@ if ( !empty($cart_list) && $order_success != '' ){
 			$update_post['meta_input']['order_address'] = $address;
 			$update_post['meta_input']['order_note'] = $note;
 		}
-
 
 		$post_update_id = wp_update_post($update_post, true);
 		if (is_wp_error($post_update_id)) {

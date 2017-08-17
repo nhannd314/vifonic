@@ -29,6 +29,7 @@ function vifonic_set_query_var($vars) {
 	array_push($vars, 'is_cart_page');
 	array_push($vars, 'is_order_page');
 	array_push($vars, 'order_page');
+
 	return $vars;
 }
 
@@ -37,7 +38,6 @@ function vifonic_include_template($template){
 	$new_template = '';
 	if(get_query_var('is_user_page') && is_user_logged_in()){
 		$new_template = locate_template( array( 'templates/members/page-user-dashboard.php' ) );
-
 	} elseif (get_query_var('is_cart_page')){
 		$new_template = locate_template( array( 'templates/cart-order/page-cart.php' ) );
 	} elseif (get_query_var('is_order_page')){

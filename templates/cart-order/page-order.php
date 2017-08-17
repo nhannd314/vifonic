@@ -6,6 +6,12 @@
  * Time: 10:46 SA
  */
 
+if (!is_user_logged_in()){
+	wp_redirect(home_url().'/cart/');
+	exit();
+}
+
+
 $order_page = (null !== get_query_var('order_page')) ? get_query_var('order_page') : '';
 
 switch ($order_page){

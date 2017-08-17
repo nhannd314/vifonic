@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-12 17:24+0000\n"
-"PO-Revision-Date: 2017-08-12 17:24+0000\n"
+"POT-Creation-Date: 2017-08-15 09:35+0000\n"
+"PO-Revision-Date: 2017-08-15 09:35+0000\n"
 "Last-Translator: Y Khoa Admin <cuongiview@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,10 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: templates/loop/content-course.php:62
-#: templates/loop/content-single-course.php:98
-msgid "LEARN NOW"
-msgstr "HỌC NGAY"
+#: templates/loop/content-single-course.php:149
+msgid "Introduce"
+msgstr "Giới thiệu"
 
 #: 404.php:18
 msgid "404. Page not found!"
@@ -126,13 +125,16 @@ msgstr "Đặt lại mật khẩu"
 msgid "Profile"
 msgstr "Thông tin cá nhân"
 
-#: header.php:185 templates/members/content-my-course.php:26
+#: header.php:185 templates/learning/page-learning-course.php:45
+#: templates/members/content-my-course.php:26
 #: templates/members/content-my-course.php:30
 #: templates/members/page-user-dashboard.php:29
 msgid "My Course"
 msgstr "Khóa học của tôi"
 
-#: header.php:186 header.php:194 templates/members/page-user-dashboard.php:30
+#: header.php:186 header.php:194 templates/members/content-active-course.php:12
+#: templates/members/content-active-course.php:16
+#: templates/members/page-user-dashboard.php:30
 msgid "Active Course"
 msgstr "Kích hoạt khóa học"
 
@@ -185,7 +187,7 @@ msgstr "Slider"
 msgid "Teachers"
 msgstr "Giảng viên"
 
-#: inc/setup.php:141
+#: inc/setup.php:141 templates/loop/content-single-course.php:153
 msgid "Teacher"
 msgstr "Giảng viên"
 
@@ -240,39 +242,39 @@ msgstr "Footer Sidebar 3"
 msgid "Footer Sidebar 4"
 msgstr "Footer Sidebar 4"
 
-#: inc/structure.php:71 inc/structure.php:71
+#: inc/structure.php:77 inc/structure.php:77
 msgid "Share on Facebook"
 msgstr "Chia sẻ trên Facebook"
 
-#: inc/structure.php:74 inc/structure.php:74
+#: inc/structure.php:80 inc/structure.php:80
 msgid "Share on Twitter"
 msgstr "Chia sẻ trên Twitter"
 
-#: inc/structure.php:77 inc/structure.php:77
+#: inc/structure.php:83 inc/structure.php:83
 msgid "Share on Google +"
 msgstr "Chia sẻ trên Google +"
 
-#: inc/structure.php:80 inc/structure.php:80
+#: inc/structure.php:86 inc/structure.php:86
 msgid "Share on Linkedin"
 msgstr "Chia sẻ trên Linkedin"
 
-#: inc/structure.php:83 inc/structure.php:83
+#: inc/structure.php:89 inc/structure.php:89
 msgid "Share on Tumblr"
 msgstr "Chia sẻ trên Tumblr"
 
-#: inc/structure.php:86 inc/structure.php:86
+#: inc/structure.php:92 inc/structure.php:92
 msgid "Pin on Pinterest"
 msgstr "Ghim lên Pinterest"
 
-#: inc/structure.php:107
+#: inc/structure.php:113
 msgid "Your comment"
 msgstr "Bình luận Facebook"
 
-#: inc/structure.php:170
+#: inc/structure.php:176
 msgid "Previous"
 msgstr "Trước"
 
-#: inc/structure.php:205 templates/cart-order/content-order-detail.php:59
+#: inc/structure.php:211 templates/cart-order/content-order-detail.php:59
 msgid "Next"
 msgstr "Tiếp"
 
@@ -426,13 +428,13 @@ msgstr "Cập nhật thông tin cá nhân thành công!"
 
 #: templates/cart-order/content-order-detail.php:28
 #: templates/cart-order/content-order-payment.php:18
-#: templates/cart-order/content-order-success.php:161
+#: templates/cart-order/content-order-success.php:177
 msgid "Order detail"
 msgstr "Thông tin giỏ hàng"
 
 #: templates/cart-order/content-order-detail.php:29
 #: templates/cart-order/content-order-payment.php:19
-#: templates/cart-order/content-order-success.php:162
+#: templates/cart-order/content-order-success.php:178
 msgid "Payment"
 msgstr "Thanh toán"
 
@@ -441,7 +443,7 @@ msgstr "Thanh toán"
 #: templates/cart-order/content-order-payment.php:64
 #: templates/cart-order/content-order-payment.php:79
 #: templates/cart-order/content-order-payment.php:95
-#: templates/cart-order/content-order-success.php:163
+#: templates/cart-order/content-order-success.php:179
 msgid "Finish"
 msgstr "Hoàn thành"
 
@@ -465,8 +467,8 @@ msgstr "THÔNG TIN ĐƠN HÀNG"
 
 #: templates/cart-order/content-order-detail.php:122
 #: templates/cart-order/content-order-payment.php:160
-#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:58
-#: templates/loop/content-single-course.php:94
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:82
+#: templates/loop/content-single-course.php:117
 msgid "Free"
 msgstr "Miễn phí"
 
@@ -481,14 +483,14 @@ msgid "TOTAL"
 msgstr "THÀNH TIỀN"
 
 #: templates/cart-order/content-order-detail.php:163
-#: templates/loop/content-single-course.php:82
+#: templates/loop/content-single-course.php:103
 msgid "Input coupon code here..."
 msgstr "Nhập mã khuyến mãi..."
 
 #: templates/cart-order/content-order-detail.php:165
 #: templates/cart-order/content-order-detail.php:165
-#: templates/loop/content-single-course.php:84
-#: templates/loop/content-single-course.php:84
+#: templates/loop/content-single-course.php:105
+#: templates/loop/content-single-course.php:105
 msgid "Apply"
 msgstr "Áp dụng"
 
@@ -520,11 +522,11 @@ msgstr "Thanh toán chuyển khoản ngân hàng ( Phí?)"
 msgid "Payment at the central office"
 msgstr "Thanh toán tại văn phòng của Trung tâm"
 
-#: templates/cart-order/content-order-success.php:142
+#: templates/cart-order/content-order-success.php:158
 msgid "Can't create order!"
 msgstr "Không thể tạo đơn hàng"
 
-#: templates/cart-order/content-order-success.php:146
+#: templates/cart-order/content-order-success.php:162
 msgid "Cart is empty!"
 msgstr ""
 "Giỏ hàng đang trống! Hãy thêm các khóa học khác vào giỏ để tiến hành đặt "
@@ -542,33 +544,69 @@ msgstr "Không có khóa học nào trong giỏ hàng"
 msgid "SEE MORE"
 msgstr "XEM THÊM KHÓA HỌC"
 
-#: templates/cart-order/page-cart.php:91
+#: templates/cart-order/page-cart.php:93
+msgid "Please login or sign up to process to checkout!"
+msgstr "Hãy đăng nhập hoặc đăng ký để tiến hành thanh toán!"
+
+#: templates/cart-order/page-cart.php:95
 msgid "PROCESS TO CHECKOUT"
 msgstr "TIẾN HÀNH THANH TOÁN"
 
-#: templates/loop/content-course.php:25
+#: templates/learning/page-learning-course.php:44
+#: templates/members/content-active-course.php:10
+#: templates/members/content-my-course.php:24
+#: templates/members/content-profile.php:27
+msgid "Home"
+msgstr "Trang chủ"
+
+#: templates/learning/page-learning-course.php:74
+#: templates/loop/content-single-course.php:152
+msgid "Curriculum"
+msgstr "Giáo trình"
+
+#: templates/learning/page-learning-course.php:75
+msgid "Document"
+msgstr "Tài liệu"
+
+#: templates/learning/page-learning-course.php:76
+msgid "Discussion"
+msgstr "Thảo luận"
+
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "0 review"
 msgstr "0 đánh giá"
 
-#: templates/loop/content-course.php:25
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "1 review"
 msgstr "1 đánh giá"
 
-#: templates/loop/content-course.php:25
+#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
 msgid "% review"
 msgstr "% đánh giá"
 
-#: templates/loop/content-course.php:27
+#: templates/loop/content-course.php:27 templates/loop/content-my-course.php:27
 #: templates/loop/content-single-course.php:35
 msgid "Teacher:"
 msgstr "Giảng viên:"
 
-#: templates/loop/content-course.php:47 templates/loop/content-course.php:48
+#: templates/loop/content-course.php:46 templates/loop/content-course.php:86
+#: templates/loop/content-my-course.php:46
+#: templates/loop/content-single-course.php:63
+#: templates/loop/content-single-course.php:121
+msgid "LEARN NOW"
+msgstr "HỌC NGAY"
+
+#: templates/loop/content-course.php:48 templates/loop/content-my-course.php:48
 #: templates/loop/content-single-course.php:65
-#: templates/loop/content-single-course.php:66
+msgid "ACTIVATE YOUR COURSE"
+msgstr "KÍCH HOẠT KHÓA HỌC"
+
+#: templates/loop/content-course.php:69 templates/loop/content-course.php:70
+#: templates/loop/content-single-course.php:86
+#: templates/loop/content-single-course.php:87
 msgid "BUY NOW"
 msgstr "MUA NGAY"
 
@@ -576,32 +614,68 @@ msgstr "MUA NGAY"
 msgid "Nothing found!"
 msgstr "Không tìm thấy kết quả phù hợp!"
 
-#: templates/loop/content-single-course.php:73
-#: templates/loop/content-single-course.php:75
+#: templates/loop/content-single-course.php:94
+#: templates/loop/content-single-course.php:96
 msgid "ADD TO CART"
 msgstr "THÊM VÀO GIỎ"
 
-#: templates/loop/content-single-course.php:106
+#: templates/loop/content-single-course.php:130
 msgid "Error!"
 msgstr "Báo lỗi!"
 
-#: templates/loop/content-single-course.php:112
+#: templates/loop/content-single-course.php:136
 msgid "Lesson"
 msgstr "Số lượng bài giảng"
 
-#: templates/loop/content-single-course.php:112
+#: templates/loop/content-single-course.php:136
 msgid "Lesson duration"
 msgstr "Thời lượng bài giảng"
 
-#: templates/members/content-my-course.php:24
-#: templates/members/content-profile.php:27
-msgid "Home"
-msgstr "Trang chủ"
+#: templates/loop/content-single-course.php:150
+msgid "Target"
+msgstr "Đối tượng"
 
+#: templates/loop/content-single-course.php:151
+msgid "Aim"
+msgstr "Mục tiêu"
+
+#: templates/members/content-active-course.php:11
 #: templates/members/content-my-course.php:25
 #: templates/members/content-profile.php:28
 msgid "Member"
 msgstr "Học viên"
+
+#: templates/members/content-active-course.php:22
+msgid "Note!"
+msgstr "Lưu ý"
+
+#: templates/members/content-active-course.php:23
+msgid ""
+"Each course only needs to be activated once. Do not repeat this step the "
+"next time."
+msgstr ""
+"Mỗi khóa học chỉ cần được kích hoạt một lần. Đừng lặp lại bước này trong lần "
+"tiếp theo."
+
+#: templates/members/content-active-course.php:27
+msgid "Input active code here..."
+msgstr "Nhập mã kích hoạt tại đây..."
+
+#: templates/members/content-active-course.php:28
+msgid "Active now"
+msgstr "Kích hoạt ngay"
+
+#: templates/members/content-active-course.php:43
+msgid "Activation successful!"
+msgstr "Kích hoạt thành công!"
+
+#: templates/members/content-active-course.php:45
+msgid "This activation code has been activated for your course!"
+msgstr "Mã kích hoạt này đã được kích hoạt cho khóa học của bạn!"
+
+#: templates/members/content-active-course.php:51
+msgid "This activation code was not found!"
+msgstr "Không tìm thấy mã kích hoạt này!"
 
 #: templates/members/content-profile.php:19
 #: templates/members/content-profile.php:99

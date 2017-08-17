@@ -15,7 +15,7 @@ if (have_rows('profile_my_course_list', 'user_'.$user->ID)) {
         the_row();
 	    $profile_my_course = get_sub_field('profile_my_course', 'user_'.$user->ID);
 	    $profile_my_course_key = get_sub_field('profile_my_course_key', 'user_'.$user->ID);
-	    array_push($my_course_id_list, $profile_my_course->ID);
+	    array_push($my_course_id_list, $profile_my_course);
     }
 }
 ?>
