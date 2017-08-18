@@ -67,7 +67,7 @@ get_header(); ?>
 								}
 							}
 						} else {
-						    $case = 'none';
+						    $case = '';
                         }
 
                         switch ($case){

@@ -22,7 +22,7 @@ function be_gravatar_filter($avatar, $id_or_email, $size, $default, $alt) {
 	elseif ($avatar)
 		$return = $avatar;
 	else
-		$return = '<img alt="'.$alt.'" src="'.$default.'" srcset="'.$custom_avatar.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
+		$return = '<img alt="'.$alt.'" src="'.$default.'" srcset="'.$default.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
 	return $return;
 }
 add_filter('get_avatar', 'be_gravatar_filter', 10, 5);
