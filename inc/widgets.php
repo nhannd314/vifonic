@@ -15,11 +15,11 @@ if (!class_exists('Vifonic_Recent_Posts_Widget'))
     {
         function __construct() {
             /* Widget settings. */
-            $widget_ops = array( 'classname' => 'vifonic-recent-posts-widget', 'description' => 'Recent Posts Widget, recent posts with thumbnail' );
+            $widget_ops = array( 'classname' => 'vifonic-recent-posts-widget', 'description' => __('Vifonic Recent Posts Widget with thumbnail', 'vifonic') );
             /* Widget control settings. */
             $control_ops = array( 'id_base' => 'vifonic-recent-posts-widget' );
             /* Create the widget. */
-            parent::__construct('vifonic-recent-posts-widget', 'Recent Posts Widget', $widget_ops, $control_ops);
+            parent::__construct('vifonic-recent-posts-widget', __('Vifonic Recent Posts Widget', 'vifonic'), $widget_ops, $control_ops);
         }
 
         function form( $instance ) {
@@ -81,9 +81,20 @@ if (!class_exists('Vifonic_Recent_Posts_Widget'))
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                         <li class="clearfix small-thumbnail-left">
-                            <?php vifonic_post_thumbnail('small') ?>
-                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-                            <div class="post-meta"><?php the_time('d/M/Y') ?></div>
+                            <div class="post-image">
+                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+			                        <?php vifonic_post_thumbnail('small') ?>
+                                </a>
+                            </div>
+                            <div class="post-text">
+                                <h5 class="post-title title" itemprop="name">
+                                    <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+				                        <?php the_title(); ?>
+                                    </a>
+                                </h5>
+
+		                        <?php vifonic_entry_meta() ?>
+                            </div>
                         </li>
 
                     <?php endwhile; endif; ?>

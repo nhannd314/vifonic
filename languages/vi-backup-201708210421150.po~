@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-15 03:32+0000\n"
-"PO-Revision-Date: 2017-08-15 03:33+0000\n"
+"POT-Creation-Date: 2017-08-15 09:35+0000\n"
+"PO-Revision-Date: 2017-08-15 09:35+0000\n"
 "Last-Translator: Y Khoa Admin <cuongiview@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,27 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: templates/learning/page-learning-course.php:32
-#: templates/loop/content-single-course.php:145
-#: templates/loop/content-single-course.php:148
-msgid "Curriculum"
-msgstr "Giáo trình"
-
-#: templates/learning/page-learning-course.php:33
-msgid "Document"
-msgstr "Tài liệu"
-
-#: templates/learning/page-learning-course.php:34
-msgid "Discussion"
-msgstr "Thảo luận"
-
-#: templates/loop/content-single-course.php:146
-msgid "Target"
-msgstr "Đối tượng"
-
-#: templates/loop/content-single-course.php:147
-msgid "Aim"
-msgstr "Mục tiêu"
+#: templates/loop/content-single-course.php:149
+msgid "Introduce"
+msgstr "Giới thiệu"
 
 #: 404.php:18
 msgid "404. Page not found!"
@@ -143,7 +125,7 @@ msgstr "Đặt lại mật khẩu"
 msgid "Profile"
 msgstr "Thông tin cá nhân"
 
-#: header.php:185 templates/learning/page-learning-course.php:15
+#: header.php:185 templates/learning/page-learning-course.php:45
 #: templates/members/content-my-course.php:26
 #: templates/members/content-my-course.php:30
 #: templates/members/page-user-dashboard.php:29
@@ -205,7 +187,7 @@ msgstr "Slider"
 msgid "Teachers"
 msgstr "Giảng viên"
 
-#: inc/setup.php:141 templates/loop/content-single-course.php:149
+#: inc/setup.php:141 templates/loop/content-single-course.php:153
 msgid "Teacher"
 msgstr "Giảng viên"
 
@@ -485,8 +467,8 @@ msgstr "THÔNG TIN ĐƠN HÀNG"
 
 #: templates/cart-order/content-order-detail.php:122
 #: templates/cart-order/content-order-payment.php:160
-#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:78
-#: templates/loop/content-single-course.php:113
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:82
+#: templates/loop/content-single-course.php:117
 msgid "Free"
 msgstr "Miễn phí"
 
@@ -501,14 +483,14 @@ msgid "TOTAL"
 msgstr "THÀNH TIỀN"
 
 #: templates/cart-order/content-order-detail.php:163
-#: templates/loop/content-single-course.php:101
+#: templates/loop/content-single-course.php:103
 msgid "Input coupon code here..."
 msgstr "Nhập mã khuyến mãi..."
 
 #: templates/cart-order/content-order-detail.php:165
 #: templates/cart-order/content-order-detail.php:165
-#: templates/loop/content-single-course.php:103
-#: templates/loop/content-single-course.php:103
+#: templates/loop/content-single-course.php:105
+#: templates/loop/content-single-course.php:105
 msgid "Apply"
 msgstr "Áp dụng"
 
@@ -570,12 +552,25 @@ msgstr "Hãy đăng nhập hoặc đăng ký để tiến hành thanh toán!"
 msgid "PROCESS TO CHECKOUT"
 msgstr "TIẾN HÀNH THANH TOÁN"
 
-#: templates/learning/page-learning-course.php:14
+#: templates/learning/page-learning-course.php:44
 #: templates/members/content-active-course.php:10
 #: templates/members/content-my-course.php:24
 #: templates/members/content-profile.php:27
 msgid "Home"
 msgstr "Trang chủ"
+
+#: templates/learning/page-learning-course.php:74
+#: templates/loop/content-single-course.php:152
+msgid "Curriculum"
+msgstr "Giáo trình"
+
+#: templates/learning/page-learning-course.php:75
+msgid "Document"
+msgstr "Tài liệu"
+
+#: templates/learning/page-learning-course.php:76
+msgid "Discussion"
+msgstr "Thảo luận"
 
 #: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course.php:33
@@ -597,21 +592,21 @@ msgstr "% đánh giá"
 msgid "Teacher:"
 msgstr "Giảng viên:"
 
-#: templates/loop/content-course.php:44 templates/loop/content-course.php:82
-#: templates/loop/content-my-course.php:44
-#: templates/loop/content-single-course.php:61
-#: templates/loop/content-single-course.php:117
+#: templates/loop/content-course.php:46 templates/loop/content-course.php:86
+#: templates/loop/content-my-course.php:46
+#: templates/loop/content-single-course.php:63
+#: templates/loop/content-single-course.php:121
 msgid "LEARN NOW"
 msgstr "HỌC NGAY"
 
-#: templates/loop/content-course.php:46 templates/loop/content-my-course.php:46
-#: templates/loop/content-single-course.php:63
+#: templates/loop/content-course.php:48 templates/loop/content-my-course.php:48
+#: templates/loop/content-single-course.php:65
 msgid "ACTIVATE YOUR COURSE"
 msgstr "KÍCH HOẠT KHÓA HỌC"
 
-#: templates/loop/content-course.php:67 templates/loop/content-course.php:68
-#: templates/loop/content-single-course.php:84
-#: templates/loop/content-single-course.php:85
+#: templates/loop/content-course.php:69 templates/loop/content-course.php:70
+#: templates/loop/content-single-course.php:86
+#: templates/loop/content-single-course.php:87
 msgid "BUY NOW"
 msgstr "MUA NGAY"
 
@@ -619,22 +614,30 @@ msgstr "MUA NGAY"
 msgid "Nothing found!"
 msgstr "Không tìm thấy kết quả phù hợp!"
 
-#: templates/loop/content-single-course.php:92
 #: templates/loop/content-single-course.php:94
+#: templates/loop/content-single-course.php:96
 msgid "ADD TO CART"
 msgstr "THÊM VÀO GIỎ"
 
-#: templates/loop/content-single-course.php:126
+#: templates/loop/content-single-course.php:130
 msgid "Error!"
 msgstr "Báo lỗi!"
 
-#: templates/loop/content-single-course.php:132
+#: templates/loop/content-single-course.php:136
 msgid "Lesson"
 msgstr "Số lượng bài giảng"
 
-#: templates/loop/content-single-course.php:132
+#: templates/loop/content-single-course.php:136
 msgid "Lesson duration"
 msgstr "Thời lượng bài giảng"
+
+#: templates/loop/content-single-course.php:150
+msgid "Target"
+msgstr "Đối tượng"
+
+#: templates/loop/content-single-course.php:151
+msgid "Aim"
+msgstr "Mục tiêu"
 
 #: templates/members/content-active-course.php:11
 #: templates/members/content-my-course.php:25

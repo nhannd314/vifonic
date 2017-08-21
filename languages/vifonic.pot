@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-15 09:34+0000\n"
+"POT-Creation-Date: 2017-08-21 04:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -120,8 +120,7 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: header.php:185 templates/learning/page-learning-course.php:45
-#: templates/members/content-my-course.php:26
+#: header.php:185 templates/members/content-my-course.php:26
 #: templates/members/content-my-course.php:30
 #: templates/members/page-user-dashboard.php:29
 msgid "My Course"
@@ -150,6 +149,14 @@ msgstr ""
 msgid "Search results for: \"%1$s\""
 msgstr ""
 
+#: single-course.php:81
+msgid "This course has not been activated!"
+msgstr ""
+
+#: single-course.php:85 templates/loop/content-none.php:10
+msgid "Nothing found!"
+msgstr ""
+
 #: inc/options.php:63 inc/options.php:64
 msgid "Theme options"
 msgstr ""
@@ -158,119 +165,132 @@ msgstr ""
 msgid "Main Nav"
 msgstr ""
 
-#: inc/setup.php:69 inc/setup.php:71
+#: inc/setup.php:70 inc/setup.php:72
 msgid "Course Categories"
 msgstr ""
 
-#: inc/setup.php:70
+#: inc/setup.php:71
 msgid "Course Category"
 msgstr ""
 
-#: inc/setup.php:90 inc/setup.php:93
+#: inc/setup.php:91 inc/setup.php:94
 msgid "Courses"
 msgstr ""
 
-#: inc/setup.php:91
+#: inc/setup.php:92
 msgid "Course"
 msgstr ""
 
-#: inc/setup.php:115 inc/setup.php:116 inc/setup.php:118
+#: inc/setup.php:116 inc/setup.php:117 inc/setup.php:119
 msgid "Slider"
 msgstr ""
 
-#: inc/setup.php:140 inc/setup.php:143
+#: inc/setup.php:141 inc/setup.php:144
 msgid "Teachers"
 msgstr ""
 
-#: inc/setup.php:141 templates/loop/content-single-course.php:153
+#: inc/setup.php:142 templates/loop/content-single-course-learning.php:66
+#: templates/loop/content-single-course.php:149
 msgid "Teacher"
 msgstr ""
 
-#: inc/setup.php:165 inc/setup.php:168
+#: inc/setup.php:166 inc/setup.php:169
 msgid "Orders"
 msgstr ""
 
-#: inc/setup.php:166
+#: inc/setup.php:167
 msgid "Order"
 msgstr ""
 
-#: inc/setup.php:191 inc/setup.php:194
+#: inc/setup.php:192 inc/setup.php:195
 msgid "Coupons"
 msgstr ""
 
-#: inc/setup.php:192 templates/cart-order/content-order-detail.php:82
+#: inc/setup.php:193 templates/cart-order/content-order-detail.php:82
 #: templates/cart-order/content-order-detail.php:162
 #: templates/cart-order/content-order-payment.php:120
 #: templates/cart-order/page-cart.php:58
 msgid "Coupon"
 msgstr ""
 
-#: inc/setup.php:221
+#: inc/setup.php:222
 msgid "Main Sidebar"
 msgstr ""
 
-#: inc/setup.php:231
+#: inc/setup.php:232
 msgid "Page Sidebar"
 msgstr ""
 
-#: inc/setup.php:241
+#: inc/setup.php:242
 msgid "Top Left Sidebar"
 msgstr ""
 
-#: inc/setup.php:251
+#: inc/setup.php:252
 msgid "Top Right Sidebar"
 msgstr ""
 
-#: inc/setup.php:261
+#: inc/setup.php:262
 msgid "Footer Sidebar 1"
 msgstr ""
 
-#: inc/setup.php:271
+#: inc/setup.php:272
 msgid "Footer Sidebar 2"
 msgstr ""
 
-#: inc/setup.php:281
+#: inc/setup.php:282
 msgid "Footer Sidebar 3"
 msgstr ""
 
-#: inc/setup.php:291
+#: inc/setup.php:292
 msgid "Footer Sidebar 4"
 msgstr ""
 
-#: inc/structure.php:77 inc/structure.php:77
+#: inc/structure.php:79 inc/structure.php:79
 msgid "Share on Facebook"
 msgstr ""
 
-#: inc/structure.php:80 inc/structure.php:80
+#: inc/structure.php:82 inc/structure.php:82
 msgid "Share on Twitter"
 msgstr ""
 
-#: inc/structure.php:83 inc/structure.php:83
+#: inc/structure.php:85 inc/structure.php:85
 msgid "Share on Google +"
 msgstr ""
 
-#: inc/structure.php:86 inc/structure.php:86
+#: inc/structure.php:88 inc/structure.php:88
 msgid "Share on Linkedin"
 msgstr ""
 
-#: inc/structure.php:89 inc/structure.php:89
+#: inc/structure.php:91 inc/structure.php:91
 msgid "Share on Tumblr"
 msgstr ""
 
-#: inc/structure.php:92 inc/structure.php:92
+#: inc/structure.php:94 inc/structure.php:94
 msgid "Pin on Pinterest"
 msgstr ""
 
-#: inc/structure.php:113
+#: inc/structure.php:115
 msgid "Your comment"
 msgstr ""
 
-#: inc/structure.php:176
+#: inc/structure.php:140
+msgid "Related Post"
+msgstr ""
+
+#: inc/structure.php:183
 msgid "Previous"
 msgstr ""
 
-#: inc/structure.php:211 templates/cart-order/content-order-detail.php:59
+#: inc/structure.php:218 templates/cart-order/content-order-detail.php:59
 msgid "Next"
+msgstr ""
+
+#: inc/widgets.php:18
+msgid "Vifonic Recent Posts Widget with thumbnail"
+msgstr ""
+
+#: inc/widgets.php:22
+msgid "Vifonic Recent Posts Widget"
 msgstr ""
 
 #: inc/widgets.php:28
@@ -327,17 +347,17 @@ msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:64
 #: inc/func/vifonic-register-login-function.php:264
-#: inc/func/vifonic-user-dashboard-function.php:64
+#: inc/func/vifonic-user-dashboard-function.php:83
 msgid "This field is required!"
 msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:76
-#: inc/func/vifonic-user-dashboard-function.php:73
+#: inc/func/vifonic-user-dashboard-function.php:92
 msgid "Passwords must be greater than 7 characters!"
 msgstr ""
 
 #: inc/func/vifonic-register-login-function.php:79
-#: inc/func/vifonic-user-dashboard-function.php:76
+#: inc/func/vifonic-user-dashboard-function.php:95
 msgid "Password confirm incorrect!"
 msgstr ""
 
@@ -401,17 +421,17 @@ msgid ""
 "password!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:69
+#: inc/func/vifonic-user-dashboard-function.php:88
 msgid "Current password incorrect!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:116
+#: inc/func/vifonic-user-dashboard-function.php:135
 msgid ""
 "Profile update successful! Your password has been changed, please log in "
 "again!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:120
+#: inc/func/vifonic-user-dashboard-function.php:139
 msgid "Profile update successful!"
 msgstr ""
 
@@ -456,8 +476,8 @@ msgstr ""
 
 #: templates/cart-order/content-order-detail.php:122
 #: templates/cart-order/content-order-payment.php:160
-#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:82
-#: templates/loop/content-single-course.php:117
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:80
+#: templates/loop/content-single-course.php:115
 msgid "Free"
 msgstr ""
 
@@ -539,55 +559,39 @@ msgstr ""
 msgid "PROCESS TO CHECKOUT"
 msgstr ""
 
-#: templates/learning/page-learning-course.php:44
-#: templates/members/content-active-course.php:10
-#: templates/members/content-my-course.php:24
-#: templates/members/content-profile.php:27
-msgid "Home"
-msgstr ""
-
-#: templates/learning/page-learning-course.php:74
-#: templates/loop/content-single-course.php:152
-msgid "Curriculum"
-msgstr ""
-
-#: templates/learning/page-learning-course.php:75
-msgid "Document"
-msgstr ""
-
-#: templates/learning/page-learning-course.php:76
-msgid "Discussion"
-msgstr ""
-
 #: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:33
 msgid "0 review"
 msgstr ""
 
 #: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:33
 msgid "1 review"
 msgstr ""
 
 #: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:33
 msgid "% review"
 msgstr ""
 
 #: templates/loop/content-course.php:27 templates/loop/content-my-course.php:27
+#: templates/loop/content-single-course-learning.php:43
 #: templates/loop/content-single-course.php:35
 msgid "Teacher:"
 msgstr ""
 
-#: templates/loop/content-course.php:46 templates/loop/content-course.php:86
-#: templates/loop/content-my-course.php:46
-#: templates/loop/content-single-course.php:63
-#: templates/loop/content-single-course.php:121
+#: templates/loop/content-course.php:45 templates/loop/content-course.php:83
+#: templates/loop/content-my-course.php:44
+#: templates/loop/content-single-course.php:62
+#: templates/loop/content-single-course.php:118
 msgid "LEARN NOW"
 msgstr ""
 
-#: templates/loop/content-course.php:48 templates/loop/content-my-course.php:48
-#: templates/loop/content-single-course.php:65
+#: templates/loop/content-course.php:47 templates/loop/content-my-course.php:46
+#: templates/loop/content-single-course.php:64
 msgid "ACTIVATE YOUR COURSE"
 msgstr ""
 
@@ -597,8 +601,28 @@ msgstr ""
 msgid "BUY NOW"
 msgstr ""
 
-#: templates/loop/content-none.php:10
-msgid "Nothing found!"
+#: templates/loop/content-single-course-learning.php:59
+#: templates/loop/content-single-course.php:148
+msgid "Curriculum"
+msgstr ""
+
+#: templates/loop/content-single-course-learning.php:60
+msgid "Document"
+msgstr ""
+
+#: templates/loop/content-single-course-learning.php:62
+#: templates/loop/content-single-course.php:145
+msgid "Introduce"
+msgstr ""
+
+#: templates/loop/content-single-course-learning.php:63
+#: templates/loop/content-single-course.php:146
+msgid "Target"
+msgstr ""
+
+#: templates/loop/content-single-course-learning.php:64
+#: templates/loop/content-single-course.php:147
+msgid "Aim"
 msgstr ""
 
 #: templates/loop/content-single-course.php:94
@@ -606,28 +630,22 @@ msgstr ""
 msgid "ADD TO CART"
 msgstr ""
 
-#: templates/loop/content-single-course.php:130
+#: templates/loop/content-single-course.php:126
 msgid "Error!"
 msgstr ""
 
-#: templates/loop/content-single-course.php:136
+#: templates/loop/content-single-course.php:132
 msgid "Lesson"
 msgstr ""
 
-#: templates/loop/content-single-course.php:136
+#: templates/loop/content-single-course.php:132
 msgid "Lesson duration"
 msgstr ""
 
-#: templates/loop/content-single-course.php:149
-msgid "Introduce"
-msgstr ""
-
-#: templates/loop/content-single-course.php:150
-msgid "Target"
-msgstr ""
-
-#: templates/loop/content-single-course.php:151
-msgid "Aim"
+#: templates/members/content-active-course.php:10
+#: templates/members/content-my-course.php:24
+#: templates/members/content-profile.php:27
+msgid "Home"
 msgstr ""
 
 #: templates/members/content-active-course.php:11

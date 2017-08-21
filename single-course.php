@@ -49,22 +49,24 @@ get_header(); ?>
 
 								$user = wp_get_current_user();
 								$my_course_list = get_field('profile_my_course_list', 'user_'.$user->ID);
-								foreach ($my_course_list as $my_course) {
-									if (get_the_ID() == $my_course['profile_my_course']) {
-										if ( $my_course['profile_is_active_course'] == true ) {
-											if ( 0 < intval($lesson_id)
-											     && intval($lesson_id) <= $count_lesson && $count_lesson > 0 ) {
-												$case = 'learning';
-											} else {
-												$case = 'none';
+								if ($my_course_list){
+									foreach ($my_course_list as $my_course) {
+										if (get_the_ID() == $my_course['profile_my_course']) {
+											if ( $my_course['profile_is_active_course'] == true ) {
+												if ( 0 < intval($lesson_id)
+												     && intval($lesson_id) <= $count_lesson && $count_lesson > 0 ) {
+													$case = 'learning';
+												} else {
+													$case = 'none';
+												}
+												break;
+											} elseif ( $my_course['profile_is_active_course'] == false){
+												$case = 'not_active';
+												break;
 											}
-											break;
-										} elseif ( $my_course['profile_is_active_course'] == false){
-											$case = 'not_active';
-											break;
 										}
 									}
-								}
+                                }
 							}
 						} else {
 						    $case = '';

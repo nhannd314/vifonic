@@ -12,9 +12,11 @@ if (!function_exists('vifonic_post_thumbnail'))
 {
 	function vifonic_post_thumbnail($size = 'thumbnail', $args = array())
 	{
-		if (has_post_thumbnail() && !post_password_required() || has_post_format('image')): ?>
-			<?php the_post_thumbnail($size, $args); ?>
-		<?php endif;
+		if (has_post_thumbnail() && !post_password_required() || has_post_format('image')) {
+			the_post_thumbnail($size, $args);
+        } else {
+            echo '<img class="post-none-image" src="'.get_stylesheet_directory_uri().'/img/none-image.jpg">';
+        }
 	}
 }
 
@@ -27,8 +29,8 @@ if (!function_exists('vifonic_entry_meta'))
 	{
 		?>
         <div class="post-meta">
-            <span class="author">Posted by <?php the_author_posts_link(); ?></span> |
-            <span itemprop="datePublished"><?php the_time('m/d/Y') ?></span>
+            <span class="author"><?php the_author_posts_link(); ?></span> |
+            <span itemprop="datePublished"><?php the_time('d/m/Y') ?></span>
 			<?php if ($is_single): ?>
                 | <span class="list-categories"><?php echo get_the_category_list(', ') ?></span>
 			<?php endif; ?>
@@ -130,15 +132,20 @@ function vifonic_related_posts($ID, $content_template = '')
 		$args = array(
 			'tag__in' => $term_ids,
 			'post__not_in' => array($ID),
-			'posts_per_page' => 8,
+			'posts_per_page' => 3,
 			'ignore_sticky_posts' => 1
 		);
 		query_posts($args);
 		if (have_posts()) {
+			vifonic_title(__('Related Post', 'vifonic'), '','left');
+		    echo '<div class="row related-posts">';
 			while (have_posts()) {
 				the_post();
+				echo '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">';
 				get_template_part('templates/loop/content', $content_template);
+				echo '</div>';
 			}
+			echo '</div>';
 		}
 		wp_reset_query();
 	}

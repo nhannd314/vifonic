@@ -14,7 +14,7 @@ jQuery(document).ready(function() {
     // Ajax buy now
     jQuery("button.btn-buy-now").on("click", function(e) {
             var btn_buynow = jQuery(this);
-
+        console.log(btn_buynow);
             jQuery.ajax({
                 type: "POST",
                 dataType: "json",
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
                     clearTimeout(btn_timeout);
                     btn_buynow.button('reset');
 
-                    if (response.success == true){
+                    if (response.success === true){
                         window.location.href = '/order/detail/';
                     } else {
                         console.log(response.error);
@@ -93,9 +93,12 @@ jQuery(document).ready(function() {
                 clearTimeout(btn_timeout);
                 $this.button('reset');
 
-                if (response.success == true){
+                if (response.success === true){
                     $this.closest(".cart-item").remove();
                     //alert(response.message);
+                    var x = parseInt(jQuery('#cart-count').html());
+                    var y = --x;
+                    jQuery('#cart-count').html( y );
                 } else {
                     console.log(response.error);
                     alert(response.error);
@@ -125,7 +128,7 @@ jQuery(document).ready(function() {
                 clearTimeout(btn_timeout);
                 btn_addcoupon.button('reset');
 
-                if (response.success == true){
+                if (response.success === true){
                     jQuery('form#add-coupon-form p.status').html(response.message);
                     alert(response.message);
                     window.location.reload();
