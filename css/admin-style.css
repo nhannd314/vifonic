@@ -1,3 +1,3 @@
-.post-type-orders .acf-postbox:not(.acf-hidden) .acf-readonly input{
-
+.mce-container.mce-panel.mce-floatpanel {
+    z-index: 999999999 !important;
 }

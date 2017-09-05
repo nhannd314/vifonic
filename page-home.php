@@ -20,7 +20,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
                     <?php
 
                     ?>
-                    <section id="section_CoursesList" class="vifonic-section" style="padding-bottom: 0;">
+                    <section class="vifonic-section" style="padding-bottom: 0;">
                         <?php
                         //Call function
                         vifonic_title("KHÓA HỌC MUA NHIỀU NHẤT", "Các khóa học bán chạy nhất");
@@ -28,7 +28,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
                         ?>
                     </section>
 
-                    <section id="section_CoursesList" class="vifonic-section">
+                    <section class="vifonic-section">
                         <?php
                         //Call function
                         vifonic_title("KHÓA HỌC NHA KHOA", "Các khóa học Nha Khoa nổi bật");
@@ -36,7 +36,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
                         ?>
                     </section>
 
-                    <section id="section_CoursesList" class="vifonic-section">
+                    <section class="vifonic-section">
                         <?php
                         //Call function
                         vifonic_title("KHÓA HỌC ĐA KHOA", "Các khóa học Đa Khoa nổi bật");
@@ -44,7 +44,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
                         ?>
                     </section>
 
-                    <section id="section_CoursesList" class="vifonic-section">
+                    <section class="vifonic-section">
 						<?php
 						//Call function
 						vifonic_title("PHỤC HỒI CHỨC NĂNG", "Các khóa học Phục hồi chức năng nổi bật");
@@ -52,7 +52,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
 						?>
                     </section>
 
-                    <section id="section_CoursesList" class="vifonic-section">
+                    <section class="vifonic-section">
 						<?php
 						//Call function
 						vifonic_title("KHÓA HỌC Y KHOA MIẾN PHÍ", "Các khóa học Y Khoa miễn phí nổi bật");
@@ -60,7 +60,7 @@ echo do_shortcode('[rev_slider alias="main-slider"]');
 						?>
                     </section>
 
-                    <section id="section_TeacherList" class="vifonic-section">
+                    <section class="vifonic-section">
 						<?php
 						//Call function
 						vifonic_title("DANH SÁCH GIẢNG VIÊN");

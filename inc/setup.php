@@ -53,7 +53,6 @@ if (!function_exists('vifonic_setup'))
 	    add_image_size( 'course-thumbnail', 261, 161, true );
 	    add_image_size( 'teacher-thumbnail', 261, 348, true );
 	    add_image_size( 'post-thumbnail', 387, 239, true );
-	    add_image_size( 'slider-size', 1350, 300, true );
     }
 }
 // ===== end function vifonic_setup =====

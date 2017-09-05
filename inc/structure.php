@@ -626,7 +626,7 @@ if (!function_exists('vifonic_slider'))
 			echo '</div>';
 			echo '<script>
                     jQuery(document).ready(function(){
-                        jQuery(".owl-carousel").owlCarousel({
+                        jQuery("#vifonic_slider").owlCarousel({
                             loop:true,
                             margin:10,
                             autoplay: true,

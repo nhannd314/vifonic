@@ -99,7 +99,7 @@ img {
                 top: calc(~"100% + 30px"); left: 0;
                 margin: 0; padding: 0;
                 border-top: solid 5px @brand-second !important;
-                border: solid 1px @brand-second;
+                box-shadow: 1px 1px 10px -3px rgba(0, 0, 0, 0.5);
                 list-style: none;
                 min-width: 220px;
                 background: #fff;
@@ -135,7 +135,6 @@ img {
                         left: 100%;
                         width: 100%;
                         background-color: #fff;
-                        border: 1px solid @brand-second;
                     }
                     > a {
                         position: relative;
@@ -254,6 +253,9 @@ img {
         //Account Menu
         #account-nav-btn {
             position: relative;
+            img {
+                cursor: pointer;
+            }
             .account-menu {
                 position: absolute;
                 top: calc(~"100% + 32px"); left: 0;
@@ -375,12 +377,14 @@ img {
 .section-title-container {
     .section-title {
         margin-top: 0;
+        margin-bottom: 20px;
         .section-title-main {
             font-size: @font-size-h3;
+            font-weight: 400;
             &:after {
                 content: '';
                 display: block;
-                border-bottom: 3px solid @brand-second;
+                border-bottom: 2px solid @brand-second;
                 width: 130px;
                 margin: 5px 0;
             }
@@ -388,9 +392,10 @@ img {
     }
 
     .section-title-sub {
+        display: none;
         color: @text-color;
         font-size: @font-size-base;
-        font-weight: 500;
+        font-weight: 300;
     }
 
     .section-title-center {
@@ -425,7 +430,7 @@ img {
 }
 //Section
 .vifonic-section {
-    padding: 30px 0;
+    padding: 20px 0;
     span.has-icon:after {
         content: '\f105';
         font-family: 'FontAwesome';
@@ -438,7 +443,7 @@ img {
         position: relative;
         img {
             width:100%;
-            max-height:300px;
+            max-height:500px;
             object-fit: cover;
         }
         .caption {
@@ -1099,8 +1104,8 @@ main.page-order {
             color: @text-color;
             .course-title {
                 margin: 0;
-                font-weight: 700;
-                font-size: 16px;
+                font-weight: 500;
+                font-size: 15px;
                 min-height: 40px;
             }
             .course-rating {
@@ -1204,6 +1209,7 @@ main.main-single-course {
     .single-course-heading {
         .course-title {
             font-size: 32px;
+            font-weight:300;
         }
         .course-rating {
             padding:5px 0;
@@ -1465,8 +1471,8 @@ main.main-single-course {
             color: @text-color;
             .teacher-title {
                 margin: 0;
-                font-weight: 700;
-                font-size: 16px;
+                font-weight: 500;
+                font-size: 15px;
                 min-height: 40px;
             }
         }

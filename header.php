@@ -197,7 +197,7 @@
                     echo '</ul></div>';
 				}
 				?>
-                <a class="active-course" href="#"><?php _e('Active Course', 'vifonic') ?></a>
+                <a class="active-course" href="/user/active-course"><?php _e('Active Course', 'vifonic') ?></a>
                 <a class="cart" href="/cart" data-toggle="tooltip" data-placement="top" title="<?php _e('View your cart', 'vifonic' ) ?>">
                     <i class="fa fa-shopping-basket"></i>
                     <span id="cart-count">
