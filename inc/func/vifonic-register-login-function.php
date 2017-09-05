@@ -22,6 +22,7 @@ function ajax_register_login_init(){
 	// Enable the user with no privileges to run ajax_login() in AJAX
 	add_action( 'wp_ajax_nopriv_ajaxlogin', 'vifonic_ajax_login' );
 	add_action( 'wp_ajax_nopriv_ajaxregister', 'vifonic_ajax_register' );
+//	add_action( 'wp_ajax_nopriv_ajaxforgotpassword', 'vifonic_ajax_forgot_password' );
 }
 
 // Execute the action only if the user isn't logged in
@@ -101,31 +102,6 @@ if (!function_exists('vifonic_check_user_exists')) {
 	}
 }
 
-
-function vifonic_is_localhost() {
-	$server_name = strtolower( $_SERVER['SERVER_NAME'] );
-	return in_array( $server_name, array( 'localhost', '127.0.0.1' ) );
-}
-
-function vifonic_from_email() {
-	$admin_email = get_option( 'admin_email' );
-	$sitename = strtolower( $_SERVER['SERVER_NAME'] );
-
-	if ( vifonic_is_localhost() ) {
-		return $admin_email;
-	}
-
-	if ( substr( $sitename, 0, 4 ) == 'www.' ) {
-		$sitename = substr( $sitename, 4 );
-	}
-
-	if ( strpbrk( $admin_email, '@' ) == '@' . $sitename ) {
-		return $admin_email;
-	}
-
-	return 'wordpress@' . $sitename;
-}
-
 //Send Mail Active
 if (!function_exists('vifonic_send_mail_active')) {
 	function vifonic_send_mail_active( $user_id, $user_email, $key ) {
@@ -137,12 +113,13 @@ if (!function_exists('vifonic_send_mail_active')) {
 		$header .= "Content-Type: text/html; charset=utf-8\n";
 		$header .= "From:" . $email_address;
 
-		$subject = "Account registration successful on ".get_home_url();
+		$subject = __('Account registration successful on ', 'vifonic').get_home_url();
 		$subject = "=?utf-8?B?" . base64_encode( $subject ) . "?=";
 		$to      = $user_email;
 
 		$link    = add_query_arg( array( 'key' => $key, 'user' => $user_id ), home_url( '/active-user' ) );
-		$message = 'Congratulations on successfully registering your account. To activate the account please click on the following link to confirm: '. $link;
+		$message = __('Congratulations on successfully registering your account. To activate the account please click on the following link to confirm: ', 'vifonic');
+		$message .= $link;
 
 		// send the email using wp_mail()
 		return wp_mail( $to, $subject, $message, $header );
@@ -293,14 +270,12 @@ if (!function_exists('vifonic_ajax_login')) {
 
 // ============================ FORGOT PASSWORD ============================
 if (!function_exists('vifonic_ajax_forgot_password')) {
-	//add_action( 'login_form_lostpassword', 'vifonic_ajax_forgot_password' );
+//	add_action( 'login_form_lostpassword', 'vifonic_ajax_forgot_password' );
 	function vifonic_ajax_forgot_password() {
 		// First check the nonce, if it fails the function will break
 		check_ajax_referer( 'ajax-forgot-password-nonce', 'security' );
 
 		$errors = retrieve_password();
-
-		var_dump($errors);
 
 		if ( is_wp_error( $errors ) ) {
 			echo json_encode( array( 'success' => false, 'error' => $errors->get_error_message() ) );

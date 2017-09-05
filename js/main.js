@@ -1,10 +1,69 @@
 jQuery(document).ready(function ()
 {
+    //Sidebar scroll
+    if(jQuery('.course-information').length != 0){
+        jQuery(window).scroll(function () {
+            if (jQuery(this).width() < 1200){
+                return;
+            }
+            var scroll = jQuery(this).scrollTop();
+
+            var height1 = jQuery('.course-information').height();
+            var height2 = jQuery('.course-information').offset().top;
+            var height3 = jQuery('.info-wrapper').height();
+            var length = height1+height2-height3;
+            var height = jQuery('.info-wrapper').height() + 'px';
+
+            /*console.log("Scroll:"+scroll);
+            console.log("Length:"+length);*/
+
+            if (scroll < jQuery('.course-information').offset().top) {
+
+                jQuery('.info-wrapper').css({
+                    'position': 'absolute',
+                    'top': '0',
+                    'bottom': 'auto'
+                });
+
+            } else if (scroll > length ) {
+
+                jQuery('.info-wrapper').css({
+                    'position': 'absolute',
+                    'bottom': '0',
+                    'top': 'auto'
+                });
+
+            } else if(scroll > jQuery('.course-information').offset().top && scroll < length) {
+
+                jQuery('.info-wrapper').css({
+                    'position': 'fixed',
+                    'top': '50px',
+                    'bottom': 'auto',
+                    'height': height
+                });
+            }
+        });
+    }
+
+    //Up to top
+    jQuery(window).scroll(function () {
+        var scroll = jQuery(this).scrollTop();
+        if (scroll > 100){
+            jQuery('#up-to-top').fadeIn("slow");
+        } else {
+            jQuery('#up-to-top').fadeOut("slow");
+        }
+    });
+    jQuery('#up-to-top').click(function () {
+        jQuery("html, body").animate({ scrollTop: 0 }, 500, 'swing');
+        return false;
+    });
+    
     // tool tip
     jQuery('[data-toggle="tooltip"]').tooltip();
 
     // course menu toggle
-    jQuery("#course-nav-btn").click(function() {
+    jQuery(".course-nav").hover(function() {
         jQuery("#course-menu").stop().slideToggle();
     });
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-05 04:07+0000\n"
+"POT-Creation-Date: 2017-09-01 10:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -53,32 +53,32 @@ msgstr ""
 
 #: header.php:78 templates/cart-order/content-order-detail.php:44
 #: templates/cart-order/content-order-payment.php:40
-#: templates/members/content-profile.php:60
-#: templates/members/content-profile.php:101
-#: templates/members/content-profile.php:102
+#: templates/members/content-profile.php:47
+#: templates/members/content-profile.php:88
+#: templates/members/content-profile.php:89
 msgid "Full Name"
 msgstr ""
 
 #: header.php:82 header.php:125 header.php:165
 #: templates/cart-order/content-order-detail.php:48
 #: templates/cart-order/content-order-payment.php:44
-#: templates/members/content-profile.php:73
+#: templates/members/content-profile.php:60
 msgid "Email"
 msgstr ""
 
 #: header.php:86 templates/cart-order/content-order-detail.php:52
 #: templates/cart-order/content-order-payment.php:48
-#: templates/members/content-profile.php:77
-#: templates/members/content-profile.php:109
-#: templates/members/content-profile.php:110
+#: templates/members/content-profile.php:64
+#: templates/members/content-profile.php:96
+#: templates/members/content-profile.php:97
 msgid "Mobile"
 msgstr ""
 
-#: header.php:90 header.php:129 templates/members/content-profile.php:143
+#: header.php:90 header.php:129 templates/members/content-profile.php:130
 msgid "Password >= 7 character"
 msgstr ""
 
-#: header.php:94 templates/members/content-profile.php:147
+#: header.php:94 templates/members/content-profile.php:134
 msgid "Confirm Password"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgid "Login"
 msgstr ""
 
 #: header.php:103 header.php:144 header.php:174
-#: templates/members/content-profile.php:156
+#: templates/members/content-profile.php:143
 msgid "Close"
 msgstr ""
 
@@ -118,8 +118,8 @@ msgstr ""
 msgid "Reset Password"
 msgstr ""
 
-#: header.php:189 templates/members/content-profile.php:34
-#: templates/members/content-profile.php:38
+#: header.php:189 templates/members/content-profile.php:31
+#: templates/members/content-profile.php:35
 #: templates/members/page-user-dashboard.php:28
 msgid "Profile"
 msgstr ""
@@ -570,14 +570,6 @@ msgstr ""
 msgid "Profile update successful!"
 msgstr ""
 
-#: inc/func/vifonic-user-dashboard-function.php:171
-msgid "There was an error uploading the image."
-msgstr ""
-
-#: inc/func/vifonic-user-dashboard-function.php:185
-msgid "Something wrong when upload, please try again!!"
-msgstr ""
-
 #: templates/cart-order/content-order-detail.php:28
 #: templates/cart-order/content-order-payment.php:18
 #: templates/cart-order/content-order-success.php:184
@@ -806,14 +798,14 @@ msgstr ""
 #: templates/members/content-active-course.php:10
 #: templates/members/content-my-course.php:24
 #: templates/members/content-my-wishlist.php:20
-#: templates/members/content-profile.php:32
+#: templates/members/content-profile.php:29
 msgid "Home"
 msgstr ""
 
 #: templates/members/content-active-course.php:11
 #: templates/members/content-my-course.php:25
 #: templates/members/content-my-wishlist.php:21
-#: templates/members/content-profile.php:33
+#: templates/members/content-profile.php:30
 msgid "Member"
 msgstr ""
 
@@ -851,54 +843,46 @@ msgstr ""
 msgid "There are no course in your wishlist"
 msgstr ""
 
-#: templates/members/content-profile.php:21
-#: templates/members/content-profile.php:123
+#: templates/members/content-profile.php:19
+#: templates/members/content-profile.php:110
 msgid "Male"
 msgstr ""
 
-#: templates/members/content-profile.php:22
-#: templates/members/content-profile.php:126
+#: templates/members/content-profile.php:20
+#: templates/members/content-profile.php:113
 msgid "Female"
 msgstr ""
 
-#: templates/members/content-profile.php:47
-msgid "Upload your avatar..."
-msgstr ""
-
-#: templates/members/content-profile.php:52
-msgid "Upload"
-msgstr ""
-
-#: templates/members/content-profile.php:64
-#: templates/members/content-profile.php:105
-#: templates/members/content-profile.php:106
+#: templates/members/content-profile.php:51
+#: templates/members/content-profile.php:92
+#: templates/members/content-profile.php:93
 msgid "Birthday"
 msgstr ""
 
-#: templates/members/content-profile.php:69
-#: templates/members/content-profile.php:114
+#: templates/members/content-profile.php:56
+#: templates/members/content-profile.php:101
 msgid "Sex"
 msgstr ""
 
-#: templates/members/content-profile.php:84
-#: templates/members/content-profile.php:92
+#: templates/members/content-profile.php:71
+#: templates/members/content-profile.php:79
 msgid "Update profile"
 msgstr ""
 
-#: templates/members/content-profile.php:133
+#: templates/members/content-profile.php:120
 msgid "Change Password"
 msgstr ""
 
-#: templates/members/content-profile.php:137
+#: templates/members/content-profile.php:124
 msgid "If you do not want to change your password, leave this blank!"
 msgstr ""
 
-#: templates/members/content-profile.php:139
+#: templates/members/content-profile.php:126
 msgid "Current Password"
 msgstr ""
 
-#: templates/members/content-profile.php:157
-#: templates/members/content-profile.php:157
+#: templates/members/content-profile.php:144
+#: templates/members/content-profile.php:144
 msgid "Save changes"
 msgstr ""
 

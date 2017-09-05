@@ -51,6 +51,7 @@ if (!function_exists('vifonic_setup'))
 //        add_image_size( 'small', 60, 45, true );
 //        add_image_size( 'big-thumb', 535, 250, true );
 	    add_image_size( 'course-thumbnail', 261, 161, true );
+	    add_image_size( 'teacher-thumbnail', 261, 348, true );
 	    add_image_size( 'post-thumbnail', 387, 239, true );
 	    add_image_size( 'slider-size', 1350, 300, true );
     }

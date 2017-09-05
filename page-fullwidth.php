@@ -7,23 +7,7 @@ get_header();
 
 <?php if (get_field('show_breadcrumbs') == '1'): $breadcrumbs_background = get_field('breadcrumbs_background'); ?>
 
-	<div id="breadcrumbs-wrapper">
-		<div class="container">
-			<h1 class="text-center title archive-title"><?php the_title() ?></h1>
-			<?php if (get_field('sub_title')): ?>
-				<h2 class="text-center title archive-description"><?php the_field('sub_title') ?></h2>
-			<?php endif; ?>
-			<?php if ( function_exists('yoast_breadcrumb') )
-			{yoast_breadcrumb('<div id="breadcrumbs">','</div>');} ?>
-
-		</div>
-	</div>
-
-	<?php if ($breadcrumbs_background): ?>
-		<style>
-			#breadcrumbs-wrapper { background-image: url(<?php echo $breadcrumbs_background ?>) }
-		</style>
-	<?php endif ?>
+	<?php vifonic_breadcrumb(); ?>
 
 <?php endif ?>
 

@@ -63,7 +63,9 @@ if ( !empty($cart_list) && $order_success != '' ){
 		);
 		$i = 0;
 		$repeater_value = array();
+		$repeater_my_course = get_field('profile_my_course_list', 'user_'.get_current_user_id());
 
+		$order_arr = array();
 		foreach ($cart_list as $key => $course_id){
 			$checked_coupcon = vifonic_check_coupon($course_id);
 			$is_free = get_field('free_course', $course_id);
@@ -107,9 +109,11 @@ if ( !empty($cart_list) && $order_success != '' ){
 			array_push($repeater_value, $row);
 
 			if (is_user_logged_in()){
-				$repeater_my_course = array();
 				//Create Active key and add to user
 				$course_key = md5('User'.get_current_user_id().'Order'.$order_id.'Course'.$course_id);
+				$order_item = array('course_id' => $course_id, 'course_key' => $course_key);
+
+				array_push($order_arr, $order_item);
 
 				$my_course_row = array(
 					'profile_my_course' => $course_id,
@@ -117,13 +121,16 @@ if ( !empty($cart_list) && $order_success != '' ){
 					'profile_is_active_course' => 0,
 				);
 
-				$i = add_row('order_course_list', $row);
+				$i = add_row('profile_my_course_list', $my_course_row, 'user_'.get_current_user_id());
 				array_push($repeater_my_course, $my_course_row);
 
-				update_field('profile_my_course_list', $repeater_my_course, 'user_'.get_current_user_id());
             }
 		}
 
+		vifonic_send_mail_order($email, $order_id, $order_arr);
+		vifonic_send_mail_order(get_option('admin_email'), $order_id, $order_arr);
+
+		update_field('profile_my_course_list', $repeater_my_course, 'user_'.get_current_user_id());
 		update_field('order_course_list', $repeater_value,$order_id);
 
 		$update_post['meta_input']['order_subtotal'] = $subtotal;

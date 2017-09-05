@@ -43,7 +43,7 @@
 						'menu_id' => 'course-menu',
 						'container' => 'nav',
 						'container_id' => 'nav-course-categories',
-						'depth' => 1,
+						'depth' => 2,
 						'theme_location' => 'main-nav',
 					);
 					wp_nav_menu($args);
@@ -128,13 +128,18 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control" name="vifonic_pass" id="vifonic_pass" placeholder="<?php _e('Password >= 7 character', 'vifonic'); ?>">
                                         </div>
-
-
+                                        <!--Login with Facebook, Google-->
+                                        <div class="form-group text-center">
+                                            <a href="<?php echo wp_login_url(); ?>?loginFacebook=1&redirect=<?php echo home_url(); ?>" onclick="window.location = '<?php echo wp_login_url(); ?>?loginFacebook=1&redirect='+window.location.href; return false;"><div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1"><?php _e('CONNECT WITH', 'vifonic'); ?></div></div></div></a>
+                                            <a href="<?php echo wp_login_url(); ?>?loginGoogle=1&redirect=<?php echo home_url(); ?>" onclick="window.location = '<?php echo wp_login_url(); ?>?loginGoogle=1&redirect='+window.location.href; return false;"><div class="new-google-btn new-google-1 new-google-default-anim"><div class="new-google-1-1"><div class="new-google-1-1-1"><?php _e('CONNECT WITH', 'vifonic'); ?></div></div></div></a>
+                                        </div>
+                                        <!--END Login with Facebook, Google-->
 										<?php wp_nonce_field( 'ajax-login-nonce', 'vifonic_login_security' ); ?>
                                     </div>
                                     <div class="modal-footer">
                                         <p class="pull-left" style="display: inline-block;margin: 0;line-height: 34px;">
-                                            <a data-toggle="modal" href="#modal-forgot-password"><?php _e('Forgot password?','vifonic') ?></a>
+                                            <!--<a data-toggle="modal" href="#modal-forgot-password"><?php /*_e('Forgot password?','vifonic') */?></a>-->
+                                            <a href="<?php echo wp_lostpassword_url(); ?>"><?php _e('Forgot password?','vifonic') ?></a>
                                         </p>
                                         <button type="button" class="btn btn-default" data-dismiss="modal"><?php _e('Close', 'vifonic') ?></button>
                                         <button type="submit" class="btn btn-primary btn-login vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('Login', 'vifonic') ?>" ><?php _e('Login', 'vifonic') ?></button>
@@ -183,8 +188,9 @@
 					?>
                     <li class="acc-menu-item"><a href="/user/profile"><i class="fa fa-user" aria-hidden="true"></i><?php _e('Profile', 'vifonic') ?></a></li>
                     <li class="acc-menu-item"><a href="/user/my-course"><i class="fa fa-book" aria-hidden="true"></i><?php _e('My Course', 'vifonic') ?></a></li>
+                    <li class="acc-menu-item"><a href="/user/my-wishlist"><i class="fa fa-heart" aria-hidden="true"></i><?php _e('My Wishlist', 'vifonic') ?></a></li>
                     <li class="acc-menu-item"><a href="/user/active-course"><i class="fa fa-key" aria-hidden="true"></i><?php _e('Active Course', 'vifonic') ?></a></li>
-                    <li class="acc-menu-item"><a href="/user/wallet"><i class="fa fa-money" aria-hidden="true"></i><?php _e('Wallet', 'vifonic') ?></a></li>
+<!--                    <li class="acc-menu-item"><a href="/user/wallet"><i class="fa fa-money" aria-hidden="true"></i>--><?php //_e('Wallet', 'vifonic') ?><!--</a></li>-->
 					<?php
 					printf('<li class="acc-menu-item %1$s"><div class="vifonic-divider"></div><a href="%2$s"><i class="fa fa-power-off" aria-hidden="true"></i>
 %3$s</a></li>', 'btn_logout', wp_logout_url( home_url() ), __('Logout', 'vifonic'));

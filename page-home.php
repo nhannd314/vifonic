@@ -4,7 +4,8 @@
  */
 get_header();
 
-vifonic_slider();
+echo do_shortcode('[rev_slider alias="main-slider"]');
+//vifonic_slider();
 ?>
 
 <main class="main main-page page-home full-width">
@@ -15,6 +16,17 @@ vifonic_slider();
 			if (have_posts()):
 				while (have_posts()):
 					the_post(); ?>
+
+                    <?php
+
+                    ?>
+                    <section id="section_CoursesList" class="vifonic-section" style="padding-bottom: 0;">
+                        <?php
+                        //Call function
+                        vifonic_title("KHÓA HỌC MUA NHIỀU NHẤT", "Các khóa học bán chạy nhất");
+                        vifonic_show_best_selling_course_list('slider');
+                        ?>
+                    </section>
 
                     <section id="section_CoursesList" class="vifonic-section">
                         <?php
@@ -44,7 +56,15 @@ vifonic_slider();
 						<?php
 						//Call function
 						vifonic_title("KHÓA HỌC Y KHOA MIẾN PHÍ", "Các khóa học Y Khoa miễn phí nổi bật");
-						vifonic_show_list_courses_by_category("dao-tao-nha-khoa", 8);
+						vifonic_show_list_courses_by_category('', 8, true);
+						?>
+                    </section>
+
+                    <section id="section_TeacherList" class="vifonic-section">
+						<?php
+						//Call function
+						vifonic_title("DANH SÁCH GIẢNG VIÊN");
+						vifonic_show_list_teacher(8);
 						?>
                     </section>
 

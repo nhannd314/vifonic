@@ -26,6 +26,32 @@ function my_enqueue($hook) {
 
 add_action('admin_enqueue_scripts', 'my_enqueue');
 
+
+function vifonic_is_localhost() {
+	$server_name = strtolower( $_SERVER['SERVER_NAME'] );
+	return in_array( $server_name, array( 'localhost', '127.0.0.1' ) );
+}
+
+function vifonic_from_email() {
+	$admin_email = get_option( 'admin_email' );
+	$sitename = strtolower( $_SERVER['SERVER_NAME'] );
+
+	if ( vifonic_is_localhost() ) {
+		return $admin_email;
+	}
+
+	if ( substr( $sitename, 0, 4 ) == 'www.' ) {
+		$sitename = substr( $sitename, 4 );
+	}
+
+	if ( strpbrk( $admin_email, '@' ) == '@' . $sitename ) {
+		return $admin_email;
+	}
+
+	return 'wordpress@' . $sitename;
+}
+
+
 //-----Template function
 if (!function_exists('vifonic_')) {
 	function vifonic_(){

@@ -16,7 +16,7 @@ function be_gravatar_filter($avatar, $id_or_email, $size, $default, $alt) {
 	if( is_email( $email ) && ! email_exists( $email ) )
 		return $avatar;
 
-	$custom_avatar = get_field('profile_avatar', 'user_'.get_current_user_id());
+	$custom_avatar = get_field('profile_avatar', 'user_'.$id_or_email);
 	if ($custom_avatar)
 		$return = '<img alt="'.$alt.'" src="'.$custom_avatar.'" srcset="'.$custom_avatar.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
 	elseif ($avatar)
@@ -54,6 +54,7 @@ if (is_user_logged_in()) {
 if (!function_exists('vifonic_profile_data_filter')) {
 	function vifonic_profile_data_filter($post){
 		return array(
+//			'profile_avatar' => esc_url( $post['avatar'] ),
 			'first_name' => sanitize_text_field( $post['fullname'] ),
 			'profile_birthday' => sanitize_text_field( $post['birthday'] ),
 			'profile_mobile' => sanitize_text_field( $post['mobile'] ),
@@ -70,6 +71,7 @@ if (!function_exists('vifonic_validate_profile_data')) {
 	function vifonic_validate_profile_data($post){
 		$error = array();
 
+//		$profile_avatar = $post['avatar'];
 		$fullname = $post['fullname'];
 		$profile_birthday = $post['birthday'];
 		$profile_mobile = $post['mobile'];
@@ -95,7 +97,6 @@ if (!function_exists('vifonic_validate_profile_data')) {
 				array_push($error, __('Password confirm incorrect!', 'vifonic') );
 			}
 		}
-
 
 		if (empty($error)) return false;
 		return $error;
@@ -139,6 +140,52 @@ if (!function_exists('vifonic_ajax_update_profile')) {
 			echo json_encode(array('success' => true, 'message' => __("Profile update successful!", 'vifonic')));
 		}
 
+	}
+}
+
+// Upload avatar
+if (!function_exists('vifonic_upload_avatar')){
+	add_action('wp_head', 'vifonic_upload_avatar');
+	function vifonic_upload_avatar(){
+		$user = wp_get_current_user();
+		// Check that the nonce is valid, and the user can edit this post.
+		if (isset( $_POST['my_image_upload_nonce'] )){
+			if (
+				isset( $_POST['my_image_upload_nonce'], $_POST['post_id'] )
+				&& wp_verify_nonce( $_POST['my_image_upload_nonce'], 'my_image_upload' )
+				&& current_user_can( 'edit_post', $_POST['post_id'] )
+			) {
+				// The nonce was valid and the user has the capabilities, it is safe to continue.
+
+				// These files need to be included as dependencies when on the front end.
+				require_once( ABSPATH . 'wp-admin/includes/image.php' );
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+				require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+				// Let WordPress handle the upload.
+				// Remember, 'my_image_upload' is the name of our file input in our form above.
+				$attachment_id = media_handle_upload( 'my_image_upload', $_POST['post_id'] );
+
+				if ( is_wp_error( $attachment_id ) ) {
+					// There was an error uploading the image.
+					$text = __('There was an error uploading the image.', 'vifonic');
+					echo '<script type="text/javascript">alert("'.$text.'")</script>';
+				} else {
+					// The image was uploaded successfully!
+					$old_avatar_id = get_user_meta($user->ID, 'profile_avatar', true);
+					wp_delete_attachment($old_avatar_id, true);
+					update_field('field_59852bfd73c7a', $attachment_id, 'user_'.$user->ID);
+					/*$text = __('The image was uploaded successfully!', 'vifonic');
+					echo '<script>alert("'.$text.'")</script>';*/
+					echo '<script type="text/javascript">window.location.replace("/user/profile/");</script>';
+					$_POST = array();
+				}
+			} else {
+				// The security check failed, maybe show the user an error.
+				$text = __('Something wrong when upload, please try again!!', 'vifonic');
+				echo '<script type="text/javascript">alert("'.$text.'")</script>';
+			}
+		}
 	}
 }
 

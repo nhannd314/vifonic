@@ -75,6 +75,38 @@ jQuery(document).ready(function() {
         e.preventDefault();
         return false;
     });
+    // Ajax add to wishlist
+    jQuery("button.btn-add-to-wishlist").on("click", function(e) {
+        var btn_addtowishlist = jQuery(this);
+        jQuery.ajax({
+            type: "POST",
+            dataType: "json",
+            url: ajax_add_to_wishlist_object.ajaxurl,
+            data: {
+                "action": "ajaxAddToWishlist",
+                "course_id": jQuery(this).closest("form.add-to-wishlist-form").find("#vifonic_course_id").val(),
+                "security": jQuery(this).closest("form.add-to-wishlist-form").find("#vifonic_add_to_wishlist_security").val()
+            },
+            success: function(response){
+                console.log(response);
+                clearTimeout(btn_timeout);
+                btn_addtowishlist.button('reset');
+
+                if (response.success == true){
+                    btn_addtowishlist.remove();
+                    jQuery(".course-wishlist").append('<a href="/user/my-wishlist/" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></a>');
+                    alert(response.message);
+                } else {
+                    console.log(response.error);
+                    alert(response.error);
+                }
+            }
+            // end success
+        });
+
+        e.preventDefault();
+        return false;
+    });
     // Ajax remove item
     jQuery("button.btn-remove-item").on("click", function(e) {
         $this = jQuery(this);
@@ -99,6 +131,38 @@ jQuery(document).ready(function() {
                     var x = parseInt(jQuery('#cart-count').html());
                     var y = --x;
                     jQuery('#cart-count').html( y );
+                } else {
+                    console.log(response.error);
+                    alert(response.error);
+                }
+            }
+            // end success
+        });
+
+        e.preventDefault();
+        return false;
+    });
+    // Ajax remove wishlist
+    jQuery("button.btn-remove-wishlist").on("click", function(e) {
+        $this = jQuery(this);
+        var course_id = jQuery(this).data('course-id');
+        jQuery.ajax({
+            type: "POST",
+            dataType: "json",
+            url: ajax_remove_wishlist_object.ajaxurl,
+            data: {
+                "action": "ajaxRemoveWishlist",
+                "course_id": course_id,
+                "security": jQuery("#vifonic_remove_wishlist_security").val(),
+            },
+            success: function(response){
+                console.log(response);
+                clearTimeout(btn_timeout);
+                $this.button('reset');
+
+                if (response.success === true){
+                    console.log(response.message);
+                    window.location.reload();
                 } else {
                     console.log(response.error);
                     alert(response.error);

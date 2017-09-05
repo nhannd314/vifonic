@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-21 04:20+0000\n"
-"PO-Revision-Date: 2017-08-21 04:21+0000\n"
+"POT-Creation-Date: 2017-09-05 04:07+0000\n"
+"PO-Revision-Date: 2017-09-05 04:08+0000\n"
 "Last-Translator: Y Khoa Admin <cuongiview@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,39 +13,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: single-course.php:81
-msgid "This course has not been activated!"
-msgstr "Khóa học này chưa được kích hoạt!"
+#: inc/func/vifonic-user-dashboard-function.php:171
+msgid "There was an error uploading the image."
+msgstr "Có lỗi trong quá trình tải lên."
 
-#: inc/structure.php:140
-msgid "Related Post"
-msgstr "Bài viết liên quan"
+#: inc/func/vifonic-user-dashboard-function.php:185
+msgid "Something wrong when upload, please try again!!"
+msgstr "Có lỗi khi tải lên, hãy thử lại!!"
 
-#: inc/widgets.php:18
-msgid "Vifonic Recent Posts Widget with thumbnail"
-msgstr ""
+#: templates/members/content-profile.php:47
+msgid "Upload your avatar..."
+msgstr "Tải lên ảnh đại diện..."
 
-#: inc/widgets.php:22
-msgid "Vifonic Recent Posts Widget"
-msgstr ""
+#: templates/members/content-profile.php:52
+msgid "Upload"
+msgstr "Tải lên"
 
-#: 404.php:18
+#: 404.php:13
 msgid "404. Page not found!"
 msgstr "Lỗi 404: Không tìm thấy!"
 
-#: 404.php:22
+#: 404.php:17
 msgid "It seem like the content you look is not exist"
 msgstr "Dường như nội dung bạn tìm kiếm không tồn tại"
 
-#: 404.php:24 templates/loop/content-none.php:13
+#: 404.php:19 templates/loop/content-none.php:13
 msgid "Try to search in website:"
 msgstr "Thử tìm kiếm trong trang:"
 
-#: 404.php:28 templates/loop/content-none.php:17
+#: 404.php:23 templates/loop/content-none.php:17
 msgid "Or return to"
 msgstr "Hoặc trở về"
 
-#: 404.php:28 templates/loop/content-none.php:17
+#: 404.php:23 templates/loop/content-none.php:17
 msgid "Home page"
 msgstr "Trang chủ"
 
@@ -62,38 +62,38 @@ msgstr "Xem tất cả bài viết của %s"
 msgid "Categories"
 msgstr "Chuyên mục"
 
-#: header.php:65 header.php:73 header.php:104 header.php:104 header.php:167
+#: header.php:65 header.php:73 header.php:104 header.php:104 header.php:172
 msgid "Register"
 msgstr "Đăng ký"
 
 #: header.php:78 templates/cart-order/content-order-detail.php:44
 #: templates/cart-order/content-order-payment.php:40
-#: templates/members/content-profile.php:41
-#: templates/members/content-profile.php:77
-#: templates/members/content-profile.php:78
+#: templates/members/content-profile.php:60
+#: templates/members/content-profile.php:101
+#: templates/members/content-profile.php:102
 msgid "Full Name"
 msgstr "Họ và tên"
 
-#: header.php:82 header.php:125 header.php:160
+#: header.php:82 header.php:125 header.php:165
 #: templates/cart-order/content-order-detail.php:48
 #: templates/cart-order/content-order-payment.php:44
-#: templates/members/content-profile.php:54
+#: templates/members/content-profile.php:73
 msgid "Email"
 msgstr "Email"
 
 #: header.php:86 templates/cart-order/content-order-detail.php:52
 #: templates/cart-order/content-order-payment.php:48
-#: templates/members/content-profile.php:58
-#: templates/members/content-profile.php:85
-#: templates/members/content-profile.php:86
+#: templates/members/content-profile.php:77
+#: templates/members/content-profile.php:109
+#: templates/members/content-profile.php:110
 msgid "Mobile"
 msgstr "Số điện thoại"
 
-#: header.php:90 header.php:129 templates/members/content-profile.php:119
+#: header.php:90 header.php:129 templates/members/content-profile.php:143
 msgid "Password >= 7 character"
 msgstr "Mật khẩu >= 7 kí tự"
 
-#: header.php:94 templates/members/content-profile.php:123
+#: header.php:94 templates/members/content-profile.php:147
 msgid "Confirm Password"
 msgstr "Xác nhận mật khẩu"
 
@@ -101,25 +101,29 @@ msgstr "Xác nhận mật khẩu"
 msgid "Already have an account?"
 msgstr "Bạn đã có tài khoản?"
 
-#: header.php:99 header.php:111 header.php:119 header.php:140 header.php:140
-#: header.php:167
+#: header.php:99 header.php:111 header.php:119 header.php:145 header.php:145
+#: header.php:172
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: header.php:103 header.php:139 header.php:169
-#: templates/members/content-profile.php:132
+#: header.php:103 header.php:144 header.php:174
+#: templates/members/content-profile.php:156
 msgid "Close"
 msgstr "Hủy"
 
-#: header.php:137
+#: header.php:133 header.php:134
+msgid "CONNECT WITH"
+msgstr "KẾT NỐI"
+
+#: header.php:142
 msgid "Forgot password?"
 msgstr "Quên mật khẩu?"
 
-#: header.php:153
+#: header.php:158
 msgid "Forgot Your Password?"
 msgstr "Quên mật khẩu"
 
-#: header.php:156
+#: header.php:161
 msgid ""
 "Enter your email address and we'll send you a link you can use to pick a new "
 "password."
@@ -127,46 +131,47 @@ msgstr ""
 "Nhập email của bạn và chúng tôi sẽ gửi cho bạn 1 đường dẫn, bạn có thể sử "
 "dụng nó để đặt mật khẩu mới."
 
-#: header.php:170 header.php:170
+#: header.php:175 header.php:175
 msgid "Reset Password"
 msgstr "Đặt lại mật khẩu"
 
-#: header.php:184 templates/members/content-profile.php:29
-#: templates/members/content-profile.php:33
+#: header.php:189 templates/members/content-profile.php:34
+#: templates/members/content-profile.php:38
 #: templates/members/page-user-dashboard.php:28
 msgid "Profile"
 msgstr "Thông tin cá nhân"
 
-#: header.php:185 templates/members/content-my-course.php:26
+#: header.php:190 templates/members/content-my-course.php:26
 #: templates/members/content-my-course.php:30
 #: templates/members/page-user-dashboard.php:29
 msgid "My Course"
 msgstr "Khóa học của tôi"
 
-#: header.php:186 header.php:194 templates/members/content-active-course.php:12
-#: templates/members/content-active-course.php:16
+#: header.php:191 templates/members/content-my-wishlist.php:22
+#: templates/members/content-my-wishlist.php:26
 #: templates/members/page-user-dashboard.php:30
+msgid "My Wishlist"
+msgstr "Khóa học yêu thích"
+
+#: header.php:192 header.php:200 templates/members/content-active-course.php:12
+#: templates/members/content-active-course.php:16
+#: templates/members/page-user-dashboard.php:31
 msgid "Active Course"
 msgstr "Kích hoạt khóa học"
 
-#: header.php:187 templates/members/page-user-dashboard.php:31
-msgid "Wallet"
-msgstr "Ví tiền"
-
-#: header.php:190
+#: header.php:196
 msgid "Logout"
 msgstr "Đăng xuất"
 
-#: header.php:195
+#: header.php:201
 msgid "View your cart"
 msgstr "Xem giỏ hàng"
 
-#: search.php:17
-#, php-format
-msgid "Search results for: \"%1$s\""
-msgstr "Kết quả tìm kiếm cho: \"%1$s\""
+#: single-course.php:74
+msgid "This course has not been activated!"
+msgstr "Khóa học này chưa được kích hoạt!"
 
-#: single-course.php:85 templates/loop/content-none.php:10
+#: single-course.php:78 templates/loop/content-none.php:10
 msgid "Nothing found!"
 msgstr "Không tìm thấy kết quả phù hợp!"
 
@@ -174,125 +179,231 @@ msgstr "Không tìm thấy kết quả phù hợp!"
 msgid "Theme options"
 msgstr "Tùy chỉnh giao diện"
 
+#: inc/options.php:131
+msgid "General"
+msgstr "Tổng Quan"
+
+#: inc/options.php:132
+msgid "General Settings"
+msgstr "Cài Đặt Tổng Quan"
+
+#: inc/options.php:162
+msgid "Header"
+msgstr "Đầu Trang"
+
+#: inc/options.php:163
+msgid "Header Settings"
+msgstr "Cài Đặt Đầu Trang"
+
+#: inc/options.php:171
+msgid "Breadcrumb Background"
+msgstr "Nền Đường Dẫn"
+
+#: inc/options.php:172
+msgid "Breadcrumb background with image, color, etc."
+msgstr "Thiết lập nền cho phần Đường dẫn"
+
+#: inc/options.php:188
+msgid "Footer"
+msgstr "Chân Trang"
+
+#: inc/options.php:189
+msgid "Footer Settings"
+msgstr "Cài Đặt Chân Trang"
+
+#: inc/options.php:196
+msgid "Footer Column"
+msgstr "Cột chân trang"
+
+#: inc/options.php:197
+msgid "Select the number of column in footer."
+msgstr "Chọn số lượng cột của chân trang"
+
+#: inc/options.php:199 inc/options.php:200 inc/options.php:201
+#: inc/options.php:202
+msgid "Column"
+msgstr "Cột"
+
+#: inc/options.php:211
+msgid "Footer Background"
+msgstr "Ảnh Nền Chân Trang"
+
+#: inc/options.php:212
+msgid "Footer background with image, color, etc."
+msgstr "Thiết lập nền chân trang."
+
+#: inc/options.php:227
+msgid "Social Network"
+msgstr "Mạng Xã Hội"
+
+#: inc/options.php:228
+msgid "Social Network Settings"
+msgstr "Cài đặt Mạng xã hội"
+
+#: inc/options.php:235
+msgid "Facebook"
+msgstr "Facebook"
+
+#: inc/options.php:237 inc/options.php:247 inc/options.php:256
+#: inc/options.php:265
+msgid "Url ivalid"
+msgstr "Đường dẫn không hợp lệ"
+
+#: inc/options.php:245
+msgid "Google+"
+msgstr "Google+"
+
+#: inc/options.php:254
+msgid "Youtube"
+msgstr "Youtube"
+
+#: inc/options.php:263
+msgid "Zalo"
+msgstr "Zalo"
+
 #: inc/setup.php:33
 msgid "Main Nav"
 msgstr "Menu chính"
 
-#: inc/setup.php:70 inc/setup.php:72
+#: inc/setup.php:71 inc/setup.php:73
 msgid "Course Categories"
 msgstr "Danh mục khóa học"
 
-#: inc/setup.php:71
+#: inc/setup.php:72 templates/loop/content-single-course.php:261
 msgid "Course Category"
 msgstr "Danh mục khóa học"
 
-#: inc/setup.php:91 inc/setup.php:94
+#: inc/setup.php:92 inc/setup.php:95
 msgid "Courses"
 msgstr "Khóa học"
 
-#: inc/setup.php:92
+#: inc/setup.php:93
 msgid "Course"
 msgstr "Khóa học"
 
-#: inc/setup.php:116 inc/setup.php:117 inc/setup.php:119
+#: inc/setup.php:117 inc/setup.php:118 inc/setup.php:120
 msgid "Slider"
 msgstr "Slider"
 
-#: inc/setup.php:141 inc/setup.php:144
+#: inc/setup.php:142 inc/setup.php:145
 msgid "Teachers"
 msgstr "Giảng viên"
 
-#: inc/setup.php:142 templates/loop/content-single-course-learning.php:66
-#: templates/loop/content-single-course.php:149
+#: inc/setup.php:143 templates/loop/content-single-course.php:61
 msgid "Teacher"
 msgstr "Giảng viên"
 
-#: inc/setup.php:166 inc/setup.php:169
+#: inc/setup.php:167 inc/setup.php:170
 msgid "Orders"
 msgstr "Đơn hàng"
 
-#: inc/setup.php:167
+#: inc/setup.php:168 inc/func/vifonic-cart-order-function.php:303
 msgid "Order"
 msgstr "Đơn hàng"
 
-#: inc/setup.php:192 inc/setup.php:195
+#: inc/setup.php:193 inc/setup.php:196
 msgid "Coupons"
 msgstr "Mã khuyến mãi"
 
-#: inc/setup.php:193 templates/cart-order/content-order-detail.php:82
+#: inc/setup.php:194 templates/cart-order/content-order-detail.php:82
 #: templates/cart-order/content-order-detail.php:162
 #: templates/cart-order/content-order-payment.php:120
 #: templates/cart-order/page-cart.php:58
 msgid "Coupon"
 msgstr "Mã khuyến mãi"
 
-#: inc/setup.php:222
+#: inc/setup.php:223
 msgid "Main Sidebar"
 msgstr "Main Sidebar"
 
-#: inc/setup.php:232
+#: inc/setup.php:233
 msgid "Page Sidebar"
 msgstr "Page Sidebar"
 
-#: inc/setup.php:242
+#: inc/setup.php:243
 msgid "Top Left Sidebar"
 msgstr "Top Left Sidebar"
 
-#: inc/setup.php:252
+#: inc/setup.php:253
 msgid "Top Right Sidebar"
 msgstr "Top Right Sidebar"
 
-#: inc/setup.php:262
+#: inc/setup.php:263
 msgid "Footer Sidebar 1"
 msgstr "Footer Sidebar 1"
 
-#: inc/setup.php:272
+#: inc/setup.php:273
 msgid "Footer Sidebar 2"
 msgstr "Footer Sidebar 2"
 
-#: inc/setup.php:282
+#: inc/setup.php:283
 msgid "Footer Sidebar 3"
 msgstr "Footer Sidebar 3"
 
-#: inc/setup.php:292
+#: inc/setup.php:293
 msgid "Footer Sidebar 4"
 msgstr "Footer Sidebar 4"
 
-#: inc/structure.php:79 inc/structure.php:79
+#: inc/structure.php:17
+#, php-format
+msgid "Search results for: \"%1$s\""
+msgstr "Kết quả tìm kiếm cho: \"%1$s\""
+
+#: inc/structure.php:117 inc/structure.php:117
 msgid "Share on Facebook"
 msgstr "Chia sẻ trên Facebook"
 
-#: inc/structure.php:82 inc/structure.php:82
+#: inc/structure.php:120 inc/structure.php:120
 msgid "Share on Twitter"
 msgstr "Chia sẻ trên Twitter"
 
-#: inc/structure.php:85 inc/structure.php:85
+#: inc/structure.php:123 inc/structure.php:123
 msgid "Share on Google +"
 msgstr "Chia sẻ trên Google +"
 
-#: inc/structure.php:88 inc/structure.php:88
+#: inc/structure.php:126 inc/structure.php:126
 msgid "Share on Linkedin"
 msgstr "Chia sẻ trên Linkedin"
 
-#: inc/structure.php:91 inc/structure.php:91
+#: inc/structure.php:129 inc/structure.php:129
 msgid "Share on Tumblr"
 msgstr "Chia sẻ trên Tumblr"
 
-#: inc/structure.php:94 inc/structure.php:94
+#: inc/structure.php:132 inc/structure.php:132
 msgid "Pin on Pinterest"
 msgstr "Ghim lên Pinterest"
 
-#: inc/structure.php:115
+#: inc/structure.php:152 inc/structure.php:152
+msgid "Follow on Facebook"
+msgstr "Theo dõi trên Facebook"
+
+#: inc/structure.php:156 inc/structure.php:156
+msgid "Follow on Google+"
+msgstr "Theo dõi trên Google+"
+
+#: inc/structure.php:160 inc/structure.php:160
+msgid "Follow on Youtube"
+msgstr "Theo dõi trên Youtube"
+
+#: inc/structure.php:164 inc/structure.php:164
+msgid "Chat on Zalo"
+msgstr "Chat trên Zalo"
+
+#: inc/structure.php:186
 msgid "Your comment"
 msgstr "Bình luận Facebook"
 
-#: inc/structure.php:183
-msgid "Previous"
-msgstr "Trước"
+#: inc/structure.php:209
+msgid "Related Post"
+msgstr "Bài viết liên quan"
 
-#: inc/structure.php:218 templates/cart-order/content-order-detail.php:59
-msgid "Next"
-msgstr "Tiếp"
+#: inc/widgets.php:18
+msgid "Vifonic Recent Posts Widget with thumbnail"
+msgstr "Vifonic Recent Posts Widget with thumbnail"
+
+#: inc/widgets.php:22
+msgid "Vifonic Recent Posts Widget"
+msgstr "Vifonic Recent Posts Widget"
 
 #: inc/widgets.php:28
 msgid "Recent Posts"
@@ -314,111 +425,155 @@ msgstr "Số lượng"
 msgid "Category id"
 msgstr "ID danh mục"
 
-#: inc/func/vifonic-cart-order-function.php:56
+#: inc/func/vifonic-cart-order-function.php:70
 msgid "Cart created! Course has been add to cart!"
 msgstr "Giỏ hàng mới! Khóa học đã được thêm vào giỏ hàng!"
 
-#: inc/func/vifonic-cart-order-function.php:66
+#: inc/func/vifonic-cart-order-function.php:80
 msgid "Course has been add to cart!"
 msgstr "Khóa học đã được thêm vào giỏ hàng!"
 
-#: inc/func/vifonic-cart-order-function.php:70
+#: inc/func/vifonic-cart-order-function.php:84
+#: inc/func/vifonic-cart-order-function.php:112
 msgid "Course not exists!"
 msgstr "Khóa học không tồn tại!"
 
-#: inc/func/vifonic-cart-order-function.php:93
+#: inc/func/vifonic-cart-order-function.php:103
+msgid "Wishlist created! Course has been add to wishlist!"
+msgstr "Danh sách yêu thích đã được tạo! Khóa học đã thêm vào danh sách!"
+
+#: inc/func/vifonic-cart-order-function.php:108
+msgid "Course has been add to wishlist!"
+msgstr "Khóa học đã thêm vào danh sách yêu thích!"
+
+#: inc/func/vifonic-cart-order-function.php:135
+#: inc/func/vifonic-cart-order-function.php:157
 msgid "Course has been deleted!"
 msgstr "Khóa học đã được xóa khỏi giỏ hàng!"
 
-#: inc/func/vifonic-cart-order-function.php:120
+#: inc/func/vifonic-cart-order-function.php:184
 msgid "Coupon has been expired!"
 msgstr "Mã khuyến mãi đã hết hạn!"
 
-#: inc/func/vifonic-cart-order-function.php:127
+#: inc/func/vifonic-cart-order-function.php:191
 msgid "Coupon added!"
 msgstr "Mã khuyến mãi đã được thêm!"
 
-#: inc/func/vifonic-cart-order-function.php:137
+#: inc/func/vifonic-cart-order-function.php:201
 msgid "Coupon has been applied!"
 msgstr "Mã khuyến mãi đã được áp dụng!"
 
-#: inc/func/vifonic-cart-order-function.php:141
+#: inc/func/vifonic-cart-order-function.php:205
 msgid "Coupon not exists!"
 msgstr "Mã khuyến mãi không tồn tại!"
 
-#: inc/func/vifonic-register-login-function.php:64
-#: inc/func/vifonic-register-login-function.php:264
-#: inc/func/vifonic-user-dashboard-function.php:83
+#: inc/func/vifonic-cart-order-function.php:303
+msgid "Course ordering successful!!"
+msgstr "Đặt hàng khóa học thành công!"
+
+#: inc/func/vifonic-cart-order-function.php:307
+msgid "Congratulations on successfully ordering course. This is Order detail:"
+msgstr ""
+"Xin chúc mừng khi đặt hàng khóa học thành công. Đây là Chi tiết đơn đặt hàng:"
+"\n"
+
+#: inc/func/vifonic-cart-order-function.php:312
+msgid "Course id:"
+msgstr "Mã khóa học:"
+
+#: inc/func/vifonic-cart-order-function.php:313
+msgid "Course name:"
+msgstr "Tên khóa học:"
+
+#: inc/func/vifonic-cart-order-function.php:314
+msgid "Course key:"
+msgstr "Mã kích hoạt:"
+
+#: inc/func/vifonic-register-login-function.php:65
+#: inc/func/vifonic-register-login-function.php:241
+#: inc/func/vifonic-user-dashboard-function.php:85
 msgid "This field is required!"
 msgstr "Dữ liệu bắt buộc nhập"
 
-#: inc/func/vifonic-register-login-function.php:76
-#: inc/func/vifonic-user-dashboard-function.php:92
+#: inc/func/vifonic-register-login-function.php:77
+#: inc/func/vifonic-user-dashboard-function.php:94
 msgid "Passwords must be greater than 7 characters!"
 msgstr "Mật khẩu phải lớn hơn hoặc bằng 7 kí tự"
 
-#: inc/func/vifonic-register-login-function.php:79
-#: inc/func/vifonic-user-dashboard-function.php:95
+#: inc/func/vifonic-register-login-function.php:80
+#: inc/func/vifonic-user-dashboard-function.php:97
 msgid "Password confirm incorrect!"
 msgstr "Mật khẩu xác nhận không chính xác!"
 
-#: inc/func/vifonic-register-login-function.php:82
+#: inc/func/vifonic-register-login-function.php:83
 msgid "Invalid email!"
 msgstr "Email không hợp lệ"
 
-#: inc/func/vifonic-register-login-function.php:85
+#: inc/func/vifonic-register-login-function.php:86
 msgid "Email already exists!"
 msgstr "Email đã tồn tại"
 
-#: inc/func/vifonic-register-login-function.php:181
+#: inc/func/vifonic-register-login-function.php:116
+msgid "Account registration successful on "
+msgstr "Đăng ký tài khoản thành công tại"
+
+#: inc/func/vifonic-register-login-function.php:121
+msgid ""
+"Congratulations on successfully registering your account. To activate the "
+"account please click on the following link to confirm: "
+msgstr ""
+"Xin chức mừng bạn đã đăng ký tài khoản thành công. Để kích hoạt tài khoản, "
+"hãy nhấn vào đường dẫn dưới đây để xác nhận: "
+
+#: inc/func/vifonic-register-login-function.php:158
 msgid ""
 "Account registration successful! Please check your email to confirm your "
 "registration!"
 msgstr ""
 "Đăng ký tài khoản thành công! Hãy kiểm tra email của bạn để xác nhận đăng ký!"
 
-#: inc/func/vifonic-register-login-function.php:183
+#: inc/func/vifonic-register-login-function.php:160
 msgid "Can not send email. Please check your email or use another email!"
 msgstr ""
 "Không thể gửi mail. Hãy kiểm tra email của bạn hoặc sử dụng email khác!"
 
-#: inc/func/vifonic-register-login-function.php:187
+#: inc/func/vifonic-register-login-function.php:164
 msgid "Error creating new user, please try again later!"
 msgstr "Có lỗi khi khởi tạo tài khoản mới, hãy thử lại sau!"
 
-#: inc/func/vifonic-register-login-function.php:205
+#: inc/func/vifonic-register-login-function.php:182
 msgid "Username does not exist!"
 msgstr "Tên thành viên không tồn tại"
 
-#: inc/func/vifonic-register-login-function.php:210
+#: inc/func/vifonic-register-login-function.php:187
 msgid "Account has been activated before!"
 msgstr "Tài khoản này đã được kích hoạt!"
 
-#: inc/func/vifonic-register-login-function.php:219
+#: inc/func/vifonic-register-login-function.php:196
 msgid "Activation code expired, please reapply!"
 msgstr "Mã kích hoạt đã quá hạn, hãy đăng ký lại!"
 
-#: inc/func/vifonic-register-login-function.php:229
+#: inc/func/vifonic-register-login-function.php:206
 msgid "Successful! Login account for immediate use!"
 msgstr "Đăng ký thành công! Đăng nhập tài khoản để sử dung ngay!"
 
-#: inc/func/vifonic-register-login-function.php:232
+#: inc/func/vifonic-register-login-function.php:209
 msgid "Incorrect activation code! Please check again!"
 msgstr "Mã kích hoạt không chính xác! Hãy thử lại!"
 
-#: inc/func/vifonic-register-login-function.php:251
+#: inc/func/vifonic-register-login-function.php:228
 msgid "Account not activated, please check email again!"
 msgstr "Tài khoản chưa được kích hoạt, hãy thử kiểm tra lại email!"
 
-#: inc/func/vifonic-register-login-function.php:282
+#: inc/func/vifonic-register-login-function.php:259
 msgid "The email or password is incorrect, please input again!"
 msgstr "Email hoặc mật khẩu không chính xác, hãy thử nhập lại!"
 
-#: inc/func/vifonic-register-login-function.php:287
+#: inc/func/vifonic-register-login-function.php:264
 msgid "Logged in successfully. Redirecting ..."
 msgstr "Đăng nhập thành công. Đang chuyển hướng ..."
 
-#: inc/func/vifonic-register-login-function.php:308
+#: inc/func/vifonic-register-login-function.php:283
 msgid ""
 "Requested successfully. Please check your email to confirm your resetting "
 "password!"
@@ -426,11 +581,11 @@ msgstr ""
 "Yêu cầu thành công. Hãy kiểm tra email để xác nhận việc đặt lại mật khẩu của "
 "bạn!"
 
-#: inc/func/vifonic-user-dashboard-function.php:88
+#: inc/func/vifonic-user-dashboard-function.php:90
 msgid "Current password incorrect!"
 msgstr "Mật khẩu hiện tại không chính xác!"
 
-#: inc/func/vifonic-user-dashboard-function.php:135
+#: inc/func/vifonic-user-dashboard-function.php:136
 msgid ""
 "Profile update successful! Your password has been changed, please log in "
 "again!"
@@ -438,19 +593,19 @@ msgstr ""
 "Cập nhật thông tin thành công! Mật khẩu của bạn đã được thay đổi, hãy đăng "
 "nhập lại!"
 
-#: inc/func/vifonic-user-dashboard-function.php:139
+#: inc/func/vifonic-user-dashboard-function.php:140
 msgid "Profile update successful!"
 msgstr "Cập nhật thông tin cá nhân thành công!"
 
 #: templates/cart-order/content-order-detail.php:28
 #: templates/cart-order/content-order-payment.php:18
-#: templates/cart-order/content-order-success.php:177
+#: templates/cart-order/content-order-success.php:184
 msgid "Order detail"
 msgstr "Thông tin giỏ hàng"
 
 #: templates/cart-order/content-order-detail.php:29
 #: templates/cart-order/content-order-payment.php:19
-#: templates/cart-order/content-order-success.php:178
+#: templates/cart-order/content-order-success.php:185
 msgid "Payment"
 msgstr "Thanh toán"
 
@@ -459,7 +614,7 @@ msgstr "Thanh toán"
 #: templates/cart-order/content-order-payment.php:64
 #: templates/cart-order/content-order-payment.php:79
 #: templates/cart-order/content-order-payment.php:95
-#: templates/cart-order/content-order-success.php:179
+#: templates/cart-order/content-order-success.php:186
 msgid "Finish"
 msgstr "Hoàn thành"
 
@@ -476,6 +631,10 @@ msgstr "Thông tin giao hàng"
 msgid "Address"
 msgstr "Địa chỉ của bạn"
 
+#: templates/cart-order/content-order-detail.php:59
+msgid "Next"
+msgstr "Tiếp"
+
 #: templates/cart-order/content-order-detail.php:65
 #: templates/cart-order/content-order-payment.php:103
 msgid "ORDER DETAIL"
@@ -483,8 +642,8 @@ msgstr "THÔNG TIN ĐƠN HÀNG"
 
 #: templates/cart-order/content-order-detail.php:122
 #: templates/cart-order/content-order-payment.php:160
-#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:80
-#: templates/loop/content-single-course.php:115
+#: templates/cart-order/page-cart.php:66 templates/loop/content-course.php:91
+#: templates/loop/content-single-course.php:208
 msgid "Free"
 msgstr "Miễn phí"
 
@@ -499,14 +658,14 @@ msgid "TOTAL"
 msgstr "THÀNH TIỀN"
 
 #: templates/cart-order/content-order-detail.php:163
-#: templates/loop/content-single-course.php:103
+#: templates/loop/content-single-course.php:196
 msgid "Input coupon code here..."
 msgstr "Nhập mã khuyến mãi..."
 
 #: templates/cart-order/content-order-detail.php:165
 #: templates/cart-order/content-order-detail.php:165
-#: templates/loop/content-single-course.php:105
-#: templates/loop/content-single-course.php:105
+#: templates/loop/content-single-course.php:198
+#: templates/loop/content-single-course.php:198
 msgid "Apply"
 msgstr "Áp dụng"
 
@@ -538,17 +697,18 @@ msgstr "Thanh toán chuyển khoản ngân hàng ( Phí?)"
 msgid "Payment at the central office"
 msgstr "Thanh toán tại văn phòng của Trung tâm"
 
-#: templates/cart-order/content-order-success.php:158
+#: templates/cart-order/content-order-success.php:165
 msgid "Can't create order!"
 msgstr "Không thể tạo đơn hàng"
 
-#: templates/cart-order/content-order-success.php:162
+#: templates/cart-order/content-order-success.php:169
 msgid "Cart is empty!"
 msgstr ""
 "Giỏ hàng đang trống! Hãy thêm các khóa học khác vào giỏ để tiến hành đặt "
 "hàng."
 
 #: templates/cart-order/page-cart.php:34
+#: templates/loop/content-single-course.php:247
 msgid "Are you sure?"
 msgstr "Bạn có chắc chắn muốn xóa?"
 
@@ -568,98 +728,113 @@ msgstr "Hãy đăng nhập hoặc đăng ký để tiến hành thanh toán!"
 msgid "PROCESS TO CHECKOUT"
 msgstr "TIẾN HÀNH THANH TOÁN"
 
-#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course-learning.php:41
-#: templates/loop/content-single-course.php:33
+#: templates/loop/content-single-course.php:34
 msgid "0 review"
 msgstr "0 đánh giá"
 
-#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course-learning.php:41
-#: templates/loop/content-single-course.php:33
+#: templates/loop/content-single-course.php:34
 msgid "1 review"
 msgstr "1 đánh giá"
 
-#: templates/loop/content-course.php:25 templates/loop/content-my-course.php:25
+#: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
 #: templates/loop/content-single-course-learning.php:41
-#: templates/loop/content-single-course.php:33
+#: templates/loop/content-single-course.php:34
 msgid "% review"
 msgstr "% đánh giá"
 
-#: templates/loop/content-course.php:27 templates/loop/content-my-course.php:27
+#: templates/loop/content-course.php:36 templates/loop/content-my-course.php:27
 #: templates/loop/content-single-course-learning.php:43
-#: templates/loop/content-single-course.php:35
+#: templates/loop/content-single-course.php:36
 msgid "Teacher:"
 msgstr "Giảng viên:"
 
-#: templates/loop/content-course.php:45 templates/loop/content-course.php:83
+#: templates/loop/content-course.php:53 templates/loop/content-course.php:83
+#: templates/loop/content-course.php:96
+msgid "DETAIL"
+msgstr "CHI TIẾT"
+
 #: templates/loop/content-my-course.php:44
-#: templates/loop/content-single-course.php:62
-#: templates/loop/content-single-course.php:118
+#: templates/loop/content-single-course.php:155
+#: templates/loop/content-single-course.php:211
 msgid "LEARN NOW"
 msgstr "HỌC NGAY"
 
-#: templates/loop/content-course.php:47 templates/loop/content-my-course.php:46
-#: templates/loop/content-single-course.php:64
+#: templates/loop/content-my-course.php:46
+#: templates/loop/content-single-course.php:157
 msgid "ACTIVATE YOUR COURSE"
 msgstr "KÍCH HOẠT KHÓA HỌC"
 
-#: templates/loop/content-course.php:69 templates/loop/content-course.php:70
-#: templates/loop/content-single-course.php:86
-#: templates/loop/content-single-course.php:87
-msgid "BUY NOW"
-msgstr "MUA NGAY"
-
-#: templates/loop/content-single-course-learning.php:59
-#: templates/loop/content-single-course.php:148
+#: templates/loop/content-single-course-learning.php:60
 msgid "Curriculum"
 msgstr "Giáo trình"
 
-#: templates/loop/content-single-course-learning.php:60
+#: templates/loop/content-single-course-learning.php:61
 msgid "Document"
 msgstr "Tài liệu"
 
 #: templates/loop/content-single-course-learning.php:62
-#: templates/loop/content-single-course.php:145
+msgid "Test"
+msgstr "Trắc nghiệm"
+
+#: templates/loop/content-single-course-learning.php:94
+#: templates/loop/content-single-course.php:86
+msgid "Lesson"
+msgstr "Bài"
+
+#: templates/loop/content-single-course.php:58
 msgid "Introduce"
 msgstr "Giới thiệu"
 
-#: templates/loop/content-single-course-learning.php:63
-#: templates/loop/content-single-course.php:146
+#: templates/loop/content-single-course.php:59
 msgid "Target"
 msgstr "Đối tượng"
 
-#: templates/loop/content-single-course-learning.php:64
-#: templates/loop/content-single-course.php:147
+#: templates/loop/content-single-course.php:60
 msgid "Aim"
 msgstr "Mục tiêu"
 
-#: templates/loop/content-single-course.php:94
-#: templates/loop/content-single-course.php:96
+#: templates/loop/content-single-course.php:179
+#: templates/loop/content-single-course.php:180
+msgid "BUY NOW"
+msgstr "MUA NGAY"
+
+#: templates/loop/content-single-course.php:187
+#: templates/loop/content-single-course.php:189
 msgid "ADD TO CART"
 msgstr "THÊM VÀO GIỎ"
 
-#: templates/loop/content-single-course.php:126
-msgid "Error!"
-msgstr "Báo lỗi!"
+#: templates/loop/content-single-course.php:234
+#: templates/loop/content-single-course.php:236
+msgid "ADD TO WISHLIST"
+msgstr "YÊU THÍCH"
 
-#: templates/loop/content-single-course.php:132
-msgid "Lesson"
+#: templates/loop/content-single-course.php:245
+msgid "BROWSE WISHLIST"
+msgstr "XEM YÊU THÍCH"
+
+#: templates/loop/content-single-course.php:273
+msgid "Number of lectures"
 msgstr "Số lượng bài giảng"
 
-#: templates/loop/content-single-course.php:132
+#: templates/loop/content-single-course.php:280
 msgid "Lesson duration"
 msgstr "Thời lượng bài giảng"
 
 #: templates/members/content-active-course.php:10
 #: templates/members/content-my-course.php:24
-#: templates/members/content-profile.php:27
+#: templates/members/content-my-wishlist.php:20
+#: templates/members/content-profile.php:32
 msgid "Home"
 msgstr "Trang chủ"
 
 #: templates/members/content-active-course.php:11
 #: templates/members/content-my-course.php:25
-#: templates/members/content-profile.php:28
+#: templates/members/content-my-wishlist.php:21
+#: templates/members/content-profile.php:33
 msgid "Member"
 msgstr "Học viên"
 
@@ -695,46 +870,50 @@ msgstr "Mã kích hoạt này đã được kích hoạt cho khóa học của b
 msgid "This activation code was not found!"
 msgstr "Không tìm thấy mã kích hoạt này!"
 
-#: templates/members/content-profile.php:19
-#: templates/members/content-profile.php:99
+#: templates/members/content-my-wishlist.php:35
+msgid "There are no course in your wishlist"
+msgstr "Không có khóa học nào trong danh sách yêu thích của bạn."
+
+#: templates/members/content-profile.php:21
+#: templates/members/content-profile.php:123
 msgid "Male"
 msgstr "Nam"
 
-#: templates/members/content-profile.php:20
-#: templates/members/content-profile.php:102
+#: templates/members/content-profile.php:22
+#: templates/members/content-profile.php:126
 msgid "Female"
 msgstr "Nữ"
 
-#: templates/members/content-profile.php:45
-#: templates/members/content-profile.php:81
-#: templates/members/content-profile.php:82
+#: templates/members/content-profile.php:64
+#: templates/members/content-profile.php:105
+#: templates/members/content-profile.php:106
 msgid "Birthday"
 msgstr "Ngày sinh"
 
-#: templates/members/content-profile.php:50
-#: templates/members/content-profile.php:90
+#: templates/members/content-profile.php:69
+#: templates/members/content-profile.php:114
 msgid "Sex"
 msgstr "Giới tính"
 
-#: templates/members/content-profile.php:65
-#: templates/members/content-profile.php:73
+#: templates/members/content-profile.php:84
+#: templates/members/content-profile.php:92
 msgid "Update profile"
 msgstr "Cập nhật thông tin"
 
-#: templates/members/content-profile.php:109
+#: templates/members/content-profile.php:133
 msgid "Change Password"
 msgstr "Thay đổi mật khẩu"
 
-#: templates/members/content-profile.php:113
+#: templates/members/content-profile.php:137
 msgid "If you do not want to change your password, leave this blank!"
 msgstr "Nếu bạn không muốn thay đổi mật khẩu, hãy bỏ trống phần này!"
 
-#: templates/members/content-profile.php:115
+#: templates/members/content-profile.php:139
 msgid "Current Password"
 msgstr "Mật khẩu hiện tại"
 
-#: templates/members/content-profile.php:133
-#: templates/members/content-profile.php:133
+#: templates/members/content-profile.php:157
+#: templates/members/content-profile.php:157
 msgid "Save changes"
 msgstr "Lưu thay đổi"
 

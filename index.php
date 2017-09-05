@@ -7,21 +7,7 @@ get_header(); ?>
 
 <main class="main main-index main-blog-post section">
 	<?php if ( is_home() && ! is_front_page() ) : ?>
-        <div id="breadcrumbs-wrapper">
-            <div class="container">
-
-				<?php if ( function_exists('yoast_breadcrumb') )
-				{ yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
-
-                <h1 class="vifonic-heading text-left">
-                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-					<?php
-					single_post_title();
-					?>
-                </h1>
-
-            </div>
-        </div>
+		<?php vifonic_breadcrumb(); ?>
 	<?php endif; ?>
     <div class="container">
         <div class="row blog-post-row">

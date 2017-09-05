@@ -126,10 +126,10 @@ if ( ! class_exists( 'Vifonic_theme_options' ) ) {
          **/
         public function setSections() {
 
-            // Section
+            // Section General
             $this->sections[] = array(
-                'title'  => 'General',
-                'desc'   => 'General Settings',
+                'title'  => __('General', 'vifonic'),
+                'desc'   => __('General Settings', 'vifonic'),
                 'icon'   => 'el-icon-home',
                 'fields' => array(
                     array(
@@ -154,6 +154,118 @@ if ( ! class_exists( 'Vifonic_theme_options' ) ) {
                             'url' => get_template_directory_uri().'/img/logo.png'
                         )
                     )
+                )
+            ); // end section
+
+	        // Section Header
+            $this->sections[] = array(
+                'title'  => __('Header', 'vifonic'),
+                'desc'   => __('Header Settings', 'vifonic'),
+                'icon'   => 'el-icon-website',
+                'fields' => array(
+
+	                //Breadcrumb Background
+	                array(
+		                'id'       => 'breadcrumb-bg',
+		                'type'     => 'background',
+		                'title'    => __('Breadcrumb Background', 'vifonic'),
+		                'desc'     => __('Breadcrumb background with image, color, etc.', 'vifonic'),
+		                'background-color' => false,
+		                'background-repeat' => false,
+		                'background-attachment' => false,
+		                'background-clip' => false,
+		                'background-origin' => false,
+		                'default'  => array(
+			                'background-position' => 'center center',
+			                'background-size' => 'cover',
+		                )
+	                )
+                )
+            ); // end section
+
+	        // Section Footer
+            $this->sections[] = array(
+                'title'  => __('Footer', 'vifonic'),
+                'desc'   => __('Footer Settings', 'vifonic'),
+                'icon'   => 'el-icon-website',
+                'fields' => array(
+                	//Footer Column
+	                array(
+		                'id'       => 'footer-col',
+		                'type'     => 'radio',
+		                'title'    => __('Footer Column', 'vifonic'),
+		                'desc'     => __('Select the number of column in footer.', 'vifonic'),
+		                'options'  => array(
+			                '1' => '1 '.__('Column', 'vifonic'),
+			                '2' => '2 '.__('Column', 'vifonic'),
+			                '3' => '3 '.__('Column', 'vifonic'),
+			                '4' => '4 '.__('Column', 'vifonic'),
+		                ),
+		                'default' => '3',
+	                ),
+
+	                //Footer Background
+	                array(
+		                'id'       => 'footer-bg',
+		                'type'     => 'background',
+		                'title'    => __('Footer Background', 'vifonic'),
+		                'desc'     => __('Footer background with image, color, etc.', 'vifonic'),
+		                'background-color' => false,
+		                'background-repeat' => false,
+		                'background-attachment' => false,
+		                'background-clip' => false,
+		                'background-origin' => false,
+		                'default'  => array(
+			                'background-position' => 'center center',
+			                'background-size' => 'cover',
+		                )
+	                )
+                )
+            ); // end section
+	        // Section Social Network
+            $this->sections[] = array(
+                'title'  => __('Social Network', 'vifonic'),
+                'desc'   => __('Social Network Settings', 'vifonic'),
+                'icon'   => 'el-icon-network',
+                'fields' => array(
+                	//Facebook
+	                array(
+		                'id'       => 'social-fb',
+		                'type'     => 'text',
+		                'title'    => __('Facebook', 'vifonic'),
+		                'validate' => 'url',
+		                'msg'      => __('Url ivalid', 'vifonic'),
+		                'default'  => 'https://www.facebook.com/'
+	                ),
+
+	                //Google+
+	                array(
+		                'id'       => 'social-gplus',
+		                'type'     => 'text',
+		                'title'    => __('Google+', 'vifonic'),
+		                'validate' => 'url',
+		                'msg'      => __('Url ivalid', 'vifonic'),
+		                'default'  => 'https://plus.google.com/'
+	                ),
+	                //Youtube
+	                array(
+		                'id'       => 'social-ytb',
+		                'type'     => 'text',
+		                'title'    => __('Youtube', 'vifonic'),
+		                'validate' => 'url',
+		                'msg'      => __('Url ivalid', 'vifonic'),
+		                'default'  => 'https://www.youtube.com/'
+	                ),
+	                //Zalo
+	                array(
+		                'id'       => 'social-zalo',
+		                'type'     => 'text',
+		                'title'    => __('Zalo', 'vifonic'),
+		                'validate' => 'url',
+		                'msg'      => __('Url ivalid', 'vifonic'),
+		                'default'  => 'http://zalo.me/0123456789'
+	                ),
+
                 )
             ); // end section
 

@@ -11,6 +11,7 @@ function vifonic_add_rewrite_rule(){
 	// USER DASHBOARD
 	add_rewrite_rule('^user/profile?','index.php?is_user_page=1&post_type=page&user_page=profile','top');
 	add_rewrite_rule('^user/my-course?','index.php?is_user_page=1&post_type=page&user_page=my-course','top');
+	add_rewrite_rule('^user/my-wishlist?','index.php?is_user_page=1&post_type=page&user_page=my-wishlist','top');
 	add_rewrite_rule('^user/active-course?','index.php?is_user_page=1&post_type=page&user_page=active-course','top');
 	add_rewrite_rule('^user/wallet?','index.php?is_user_page=1&post_type=page&user_page=wallet','top');
 

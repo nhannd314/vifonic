@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-    <main class="main main-course_category section">
+    <main class="main main-teacher_category section">
 	    <?php vifonic_breadcrumb(); ?>
         <div class="container">
 
@@ -14,10 +14,7 @@ get_header(); ?>
 	            <?php if (have_posts()): ?>
 
 		            <?php
-		            vifonic_title("Các khóa học nổi bật", "","left");
-		            vifonic_show_featured_courses_slider_by_category('',8);
-
-		            vifonic_title("Tất cả khóa học", "","left");
+		            vifonic_title("Tất cả giảng viên", "","left");
 		            ?>
 
                     <div class="row">
@@ -27,21 +24,16 @@ get_header(); ?>
 			            while (have_posts()) {
 				            $i++;
 				            the_post();
-				            echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
-				            get_template_part('templates/loop/content', 'course');
+				            echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">';
+				            get_template_part('templates/loop/content', 'teacher');
 				            echo '</div>';
-				            if ($i%4==0){ echo '<div class="clearfix"></div>'; }
+				            if ($i%6==0){ echo '<div class="clearfix"></div>'; }
 			            }
 			            ?>
 
                     </div>
 
 		            <?php vifonic_pagination() ?>
-
-		            <?php
-		            vifonic_title("KHÓA HỌC ONLINE MIỄN PHÍ", "","left");
-		            vifonic_show_free_courses_slider_by_category();
-		            ?>
 
 	            <?php endif; wp_reset_query(); ?>
 

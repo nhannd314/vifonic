@@ -5,6 +5,13 @@
 ?>
 
 <div class="single-course-item">
+	<?php
+	/*$is_hot_course = get_field('featured_course', get_the_ID());
+	if ($is_hot_course) {
+		//echo '<img src="'.get_stylesheet_directory_uri().'/img/hot.png" class="hot-tag" alt="">';
+        echo '<span class="hot-tag">HOT</span>';
+	}*/
+	?>
     <div class="course-thumbnail">
         <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>" target="_blank">
 			<?php vifonic_post_thumbnail( 'course-thumbnail' ) ?>
@@ -13,7 +20,9 @@
 
     <div class="course-detail">
         <div class="wrapper">
-            <h3 class="course-title"><a class="relative" rel="nofollow" href="<?php the_permalink(); ?>" target="_blank"><?php the_title() ?></a></h3>
+            <h3 class="course-title">
+                <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>" target="_blank"><?php the_title() ?></a>
+            </h3>
             <div class="course-rating">
                 <div class="rating-star">
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -41,11 +50,12 @@
 			if ($owned_course) {
 				printf('<div class="course-price"><span class="regular-price">%1$s</span><span class="sale-price">%2$s</span></div>', '', '');
 				echo '<div class="course-cart">';
-				if ($is_active_course){
+				printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('DETAIL', 'vifonic'));
+/*				if ($is_active_course){
 					printf('<a href="%1$s?lesson=1" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
 				} else {
 					printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', '/user/active-course/', __('ACTIVATE YOUR COURSE', 'vifonic'));
-				}
+				}*/
 				echo '</div>';
 			} else {
 				$is_free = get_field('free_course', get_the_ID());
@@ -63,13 +73,14 @@
 					}
 					?>
                     <div class="course-cart">
-                        <form class="buy-now-form" action="/order/detail/" method="post" role="form">
-                            <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
-							<?php wp_nonce_field( 'ajax-add-to-cart-nonce', 'vifonic_add_to_cart_security' ); ?>
-                            <button type="submit" class="btn btn-warning btn-buy-now vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('BUY NOW', 'vifonic') ?>">
-								<?php _e('BUY NOW', 'vifonic'); ?>
+                        <!--<form class="buy-now-form" action="/order/detail/" method="post" role="form">
+                            <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php /*echo get_the_ID(); */?>">
+							<?php /*wp_nonce_field( 'ajax-add-to-cart-nonce', 'vifonic_add_to_cart_security' ); */?>
+                            <button type="submit" class="btn btn-warning btn-buy-now vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php /*_e('BUY NOW', 'vifonic') */?>">
+								<?php /*_e('BUY NOW', 'vifonic'); */?>
                             </button>
-                        </form>
+                        </form>-->
+                        <?php printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('DETAIL', 'vifonic')); ?>
                     </div>
 					<?php
 				} else {
@@ -80,13 +91,15 @@
                         <span class="regular-price"><?php _e('Free', 'vifonic'); ?></span>
                     </div>
                     <div class="course-cart">
-                        <?php printf('<a href="%1$s?lesson=1" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic')); ?>
+                        <?php
+//                        printf('<a href="%1$s?lesson=1" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
+                        printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('DETAIL', 'vifonic'));
+                        ?>
                     </div>
 					<?php
 				}
 			}
-
-
+            
 			?>
 
         </div>

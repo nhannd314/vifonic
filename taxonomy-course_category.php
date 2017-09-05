@@ -8,22 +8,7 @@ get_header(); ?>
 
 
     <main class="main main-course_category section">
-        <div id="breadcrumbs-wrapper">
-            <div class="container">
-
-			    <?php if ( function_exists('yoast_breadcrumb') )
-			    { yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
-
-                <h1 class="vifonic-heading text-left">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-		            <?php
-		            $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-		            echo $term->name;
-		            ?>
-                </h1>
-
-            </div>
-        </div>
+	    <?php vifonic_breadcrumb(); ?>
         <div class="container">
 
             <div class="section-content">

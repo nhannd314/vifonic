@@ -6,21 +6,7 @@
 get_header(); ?>
 
 <main class="main main-archive main-blog-post section">
-    <div id="breadcrumbs-wrapper">
-        <div class="container">
-
-			<?php if ( function_exists('yoast_breadcrumb') )
-			{ yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
-
-            <h1 class="vifonic-heading text-left">
-                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-				<?php
-				the_archive_title();
-				?>
-            </h1>
-
-        </div>
-    </div>
+	<?php vifonic_breadcrumb(); ?>
     <div class="container">
         <div class="row blog-post-row">
             <section class="content col-xs-12 col-sm-8 col-md-9 col-lg-9" role="main">

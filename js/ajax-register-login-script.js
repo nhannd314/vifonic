@@ -102,7 +102,7 @@ jQuery(document).ready(function() {
             url: ajax_register_login_object.ajaxurl,
             data: {
                 "action": "ajaxforgotpassword", //calls wp_ajax_nopriv_ajaxlogin
-                "email": jQuery("#forgot-password-form #vifonic_email").val(),
+                "user_login": jQuery("#forgot-password-form #vifonic_email").val(),
                 "security": jQuery("#forgot-password-form #vifonic_forgot_password_security").val() },
             success: function(response){
                 clearTimeout(btn_timeout);

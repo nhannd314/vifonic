@@ -5,12 +5,7 @@
 
 get_header(); ?>
 
-<div id="breadcrumbs-wrapper">
-	<div class="container">
-		<?php if ( function_exists('yoast_breadcrumb') )
-		{yoast_breadcrumb('<div id="breadcrumbs">','</div>');} ?>
-	</div>
-</div>
+<?php vifonic_breadcrumb(); ?>
 
 <main class="main main-404">
 	<div class="container text-center">

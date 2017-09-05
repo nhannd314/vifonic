@@ -6,19 +6,8 @@
 get_header(); ?>
 
 <main class="main main-search">
-    <div id="breadcrumbs-wrapper">
-        <div class="container">
+	<?php vifonic_breadcrumb(); ?>
 
-			<?php if ( function_exists('yoast_breadcrumb') )
-			{ yoast_breadcrumb('<div id="breadcrumbs">','</div>'); } ?>
-
-            <h1 class="vifonic-heading text-left">
-                <i class="fa fa-book" aria-hidden="true"></i>
-                 <?php printf(__('Search results for: "%1$s"', 'vifonic'), get_search_query()); ?>
-            </h1>
-
-        </div>
-    </div>
 	<div class="container">
 		<div class="row">
 			<section class="content col-lg-12 col-md-12 col-sm-12 col-xs-12" role="main">

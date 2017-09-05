@@ -19,7 +19,15 @@ function ajax_add_to_cart_init(){
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
 	));
 
+	wp_localize_script( 'ajax-add-to-cart-script', 'ajax_add_to_wishlist_object', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	));
+
 	wp_localize_script( 'ajax-add-to-cart-script', 'ajax_remove_item_object', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	));
+
+	wp_localize_script( 'ajax-add-to-cart-script', 'ajax_remove_wishlist_object', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
 	));
 
@@ -31,8 +39,14 @@ function ajax_add_to_cart_init(){
 	add_action( 'wp_ajax_nopriv_ajaxAddToCart', 'vifonic_ajax_add_to_cart' );
 	add_action( 'wp_ajax_ajaxAddToCart', 'vifonic_ajax_add_to_cart' );
 
+	add_action( 'wp_ajax_nopriv_ajaxAddToWishlist', 'vifonic_ajax_add_to_wishlist' );
+	add_action( 'wp_ajax_ajaxAddToWishlist', 'vifonic_ajax_add_to_wishlist' );
+
 	add_action( 'wp_ajax_nopriv_ajaxRemoveItem', 'vifonic_ajax_remove_item' );
 	add_action( 'wp_ajax_ajaxRemoveItem', 'vifonic_ajax_remove_item' );
+
+	add_action( 'wp_ajax_nopriv_ajaxRemoveWishlist', 'vifonic_ajax_remove_wishlist' );
+	add_action( 'wp_ajax_ajaxRemoveWishlist', 'vifonic_ajax_remove_wishlist' );
 
 	add_action( 'wp_ajax_nopriv_ajaxAddCoupon', 'vifonic_ajax_add_coupon' );
 	add_action( 'wp_ajax_ajaxAddCoupon', 'vifonic_ajax_add_coupon' );
@@ -73,6 +87,34 @@ if (!function_exists('vifonic_ajax_add_to_cart')) {
 	}
 }
 
+//ADD TO WISHLIST BUTTON
+if (!function_exists('vifonic_ajax_add_to_wishlist')) {
+	function vifonic_ajax_add_to_wishlist() {
+		// First check the nonce, if it fails the function will break
+		check_ajax_referer( 'ajax-add-to-wishlist-nonce', 'security' );
+
+		$course_id = isset($_POST['course_id']) ? $_POST['course_id'] : 0;
+		$course = get_post(intval($course_id));
+		if ($course != null) {
+			$wishlist = get_field('profile_wishlist', 'user_'.get_current_user_id());
+			if(!$wishlist) {
+				$wishlist = array($course_id);
+				update_field('profile_wishlist', $wishlist, 'user_'.get_current_user_id());
+				echo json_encode( array('success' => true, 'message' => array( __('Wishlist created! Course has been add to wishlist!', 'vifonic')) ));
+				die();
+			} else {
+				array_push($wishlist, $course_id);
+				update_field('profile_wishlist', $wishlist, 'user_'.get_current_user_id());
+				echo json_encode( array('success' => true, 'message' => array( __('Course has been add to wishlist!', 'vifonic')) ));
+				die();
+			}
+		} else {
+			echo json_encode(array('success' => false, 'error' => __('Course not exists!', 'vifonic') ));
+			die();
+		}
+	}
+}
+
 //REMOVE ITEM BUTTON
 if (!function_exists('vifonic_ajax_remove_item')) {
 	function vifonic_ajax_remove_item() {
@@ -90,6 +132,28 @@ if (!function_exists('vifonic_ajax_remove_item')) {
 					unset($cart_list["course_".$course_id]);
 				}
 				setcookie('cart_list', json_encode($cart_list), time()+(60*60*24), "/");
+				echo json_encode( array('success' => true, 'message' => array( __('Course has been deleted!', 'vifonic')) ));
+				die();
+			}
+		}
+	}
+}
+
+//REMOVE WISHLIST BUTTON
+if (!function_exists('vifonic_ajax_remove_wishlist')) {
+	function vifonic_ajax_remove_wishlist() {
+		// First check the nonce, if it fails the function will break
+		check_ajax_referer( 'ajax-remove-wishlist-nonce', 'security' );
+
+		$course_id = isset($_POST['course_id']) ? $_POST['course_id'] : 0;
+		$course = get_post(intval($course_id));
+		if ($course != null) {
+			$wishlist = get_field('profile_wishlist', 'user_'.get_current_user_id());
+			if($wishlist) {
+				if(($key = array_search($course_id, $wishlist)) !== false) {
+					unset($wishlist[$key]);
+				}
+				update_field('profile_wishlist', $wishlist, 'user_'.get_current_user_id());
 				echo json_encode( array('success' => true, 'message' => array( __('Course has been deleted!', 'vifonic')) ));
 				die();
 			}
@@ -224,4 +288,34 @@ if (!function_exists('vifonic_check_coupon')) {
 	}
 }
 
+
+//Send Mail Order
+if (!function_exists('vifonic_send_mail_order')) {
+	function vifonic_send_mail_order( $user_email, $order_id, $order_arr = array() ) {
+		// get the posted data
+		$email_address = vifonic_from_email();
+
+		// write the email content
+		$header = "MIME-Version: 1.0\n";
+		$header .= "Content-Type: text/html; charset=utf-8\n";
+		$header .= "From:" . $email_address;
+
+		$subject = __('Order', 'vifonic'). ' #'.$order_id.' - '.__('Course ordering successful!!', 'vifonic');
+		$subject = "=?utf-8?B?" . base64_encode( $subject ) . "?=";
+		$to      = $user_email;
+
+		$message = __('Congratulations on successfully ordering course. This is Order detail:', 'vifonic');
+
+		foreach ($order_arr as $order_item) {
+			$course = get_post($order_item['course_id']);
+			$message .= '<br/>';
+			$message .= '<br/>'.__('Course id:', 'vifonic').$order_item['course_id'];
+			$message .= '<br/>'.__('Course name:', 'vifonic').$course->post_title;
+			$message .= '<br/>'.__('Course key:', 'vifonic').$order_item['course_key'];
+		}
+
+		// send the email using wp_mail()
+		return wp_mail( $to, $subject, $message, $header );
+	}
+}
 ?>

@@ -27,6 +27,7 @@ jQuery(document).ready(function() {
             url: ajax_update_profile_object.ajaxurl,
             data: {
                 "action": "ajaxUpdateProfile",
+                // "avatar": jQuery("#update-profile-form #vifonic_avatar").val(),
                 "fullname": jQuery("#update-profile-form #vifonic_fullname").val(),
                 "birthday": jQuery("#update-profile-form #vifonic_birthday").val(),
                 "mobile": jQuery("#update-profile-form #vifonic_mobile").val(),

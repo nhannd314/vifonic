@@ -1,4 +1,9 @@
 <?php
+//add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
+function wpse_136058_debug_admin_menu() {
+
+	echo '<pre>' . print_r( $GLOBALS[ 'menu' ], TRUE) . '</pre>';
+}
 if (is_user_logged_in()){
 	$userID    = get_current_user_id();
 	$user_meta = get_userdata( $userID );
@@ -55,6 +60,9 @@ if (is_user_logged_in()){
 			remove_menu_page( 'wp-fast-cache' );
 			remove_menu_page( 'itsec' );
 			remove_menu_page( 'about-ultimate' );
+			remove_menu_page('edit.php?post_type=acf');
+			remove_menu_page('edit.php?post_type=acf-field-group');
+
 		}
 
 		function vifonic_remove_unnecessary_wordpress_menus() {
@@ -62,7 +70,6 @@ if (is_user_logged_in()){
 			unset( $submenu['themes.php'][6] );
 			unset( $submenu['themes.php'][20] );
 			unset( $submenu['themes.php'][22] );
-			remove_menu_page('edit.php?post_type=acf');
 		}
 	}
 }

@@ -27,8 +27,9 @@ $user = wp_get_current_user();
 									<ul class="student-menu">
                                         <li class="acc-menu-item"><a href="/user/profile"><i class="fa fa-user" aria-hidden="true"></i><?php _e('Profile', 'vifonic') ?></a></li>
                                         <li class="acc-menu-item"><a href="/user/my-course"><i class="fa fa-book" aria-hidden="true"></i><?php _e('My Course', 'vifonic') ?></a></li>
+                                        <li class="acc-menu-item"><a href="/user/my-wishlist"><i class="fa fa-heart" aria-hidden="true"></i><?php _e('My Wishlist', 'vifonic') ?></a></li>
                                         <li class="acc-menu-item"><a href="/user/active-course"><i class="fa fa-key" aria-hidden="true"></i><?php _e('Active Course', 'vifonic') ?></a></li>
-                                        <li class="acc-menu-item"><a href="/user/wallet"><i class="fa fa-money" aria-hidden="true"></i><?php _e('Wallet', 'vifonic') ?></a></li>
+<!--                                        <li class="acc-menu-item"><a href="/user/wallet"><i class="fa fa-money" aria-hidden="true"></i>--><?php //_e('Wallet', 'vifonic') ?><!--</a></li>-->
 									</ul>
 								</div>
 							</div>
@@ -45,6 +46,9 @@ $user = wp_get_current_user();
 									break;
 								case 'my-course':
 									get_template_part('templates/members/content', 'my-course');
+									break;
+                                case 'my-wishlist':
+									get_template_part('templates/members/content', 'my-wishlist');
 									break;
 								case 'active-course':
 									get_template_part('templates/members/content', 'active-course');
