@@ -19,9 +19,9 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
     <div class="row single-course-heading">
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <h1 class="course-title title" itemprop="name">
+            <h2 class="course-title title" itemprop="name">
 				<?php the_title(); ?>
-            </h1>
+            </h2>
             <p class="course-desc"><?php vifonic_the_excerpt(100); ?></p>
             <div class="course-rating">
                 <div class="rating-star">
@@ -63,10 +63,12 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
                         <!-- TAB CONTENT -->
                         <div class="tab-content">
                             <div class="active tab-pane fade in" id="gioi-thieu">
-					            <?php vifonic_title('Giới thiệu','','left'); ?>
+					            <?php //vifonic_title('Giới thiệu','','left'); ?>
+                                <h4>Giới thiệu</h4>
                                 <div class="course-content clearfix"><?php the_content() ?></div>
+                                <h4>Giáo trình</h4>
 	                            <?php
-	                            vifonic_title('Giáo trình','','left');
+	                            //vifonic_title('Giáo trình','','left');
 
 	                            if( have_rows('course_chapter') ): ?>
 
@@ -100,15 +102,18 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 	                            ?>
                             </div>
                             <div class="tab-pane fade" id="doi-tuong">
-					            <?php vifonic_title('Đối tượng','','left'); ?>
+                                <h4>Đối tượng</h4>
+					            <?php //vifonic_title('Đối tượng','','left'); ?>
                                 <div class="course-content clearfix"><?php the_field('course_subjects'); ?></div>
                             </div>
                             <div class="tab-pane fade" id="muc-tieu">
-					            <?php vifonic_title('Mục tiêu','','left'); ?>
+                                <h4>Mục tiêu</h4>
+					            <?php //vifonic_title('Mục tiêu','','left'); ?>
                                 <div class="course-content clearfix"><?php the_field('course_target'); ?></div>
                             </div>
                             <div class="tab-pane fade" id="giang-vien">
-					            <?php vifonic_title('Giảng viên','','left'); ?>
+                                <h4>Giảng viên</h4>
+					            <?php //vifonic_title('Giảng viên','','left'); ?>
                                 <div class="course-content clearfix">
 						            <?php
 						            $teacher_arr = get_field('teacher_list', get_the_ID());
@@ -152,7 +157,7 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 	                if ($owned_course) {
 		                echo '<div class="course-cart">';
 		                if ($is_active_course){
-			                printf('<a href="%1$s?lesson=1" class="btn btn-primary btn-block btn-lg">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
+			                printf('<a href="%1$s?action=overview" class="btn btn-primary btn-block btn-lg">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
 		                } else {
 			                printf('<a href="%1$s" class="btn btn-primary btn-block btn-lg">%2$s</a>', '/user/active-course/', __('ACTIVATE YOUR COURSE', 'vifonic'));
 		                }
@@ -208,7 +213,7 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
                                 <span class="regular-price"><?php _e('Free', 'vifonic'); ?></span>
                             </div>
                             <div class="course-cart">
-				                <?php printf('<a href="%1$s?lesson=1" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic')); ?>
+				                <?php printf('<a href="%1$s?action=overview" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic')); ?>
                             </div>
 			                <?php
 		                }

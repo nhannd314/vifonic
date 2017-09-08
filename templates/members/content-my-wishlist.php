@@ -23,7 +23,7 @@ if (!$my_course_id_list){
 </ul>
 
 <div class="main-inner">
-	<h1 class="user-page-header"><i class="fa fa-heart" aria-hidden="true"></i><?php _e('My Wishlist', 'vifonic') ?></h1>
+	<h2 class="user-page-header"><i class="fa fa-heart" aria-hidden="true"></i><?php _e('My Wishlist', 'vifonic') ?></h2>
 
 	<div class="container-fluid">
 		<div class="row">

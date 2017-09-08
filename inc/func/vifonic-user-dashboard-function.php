@@ -10,13 +10,13 @@
 //--------------------- Update Profile -----------------------
 //Custom Avatar
 function be_gravatar_filter($avatar, $id_or_email, $size, $default, $alt) {
-
+	$user_id = is_object( $id_or_email ) ? $id_or_email->user_id : $id_or_email;
 	// If provided an email and it doesn't exist as WP user, return avatar since there can't be a custom avatar
 	$email = is_object( $id_or_email ) ? $id_or_email->comment_author_email : $id_or_email;
 	if( is_email( $email ) && ! email_exists( $email ) )
 		return $avatar;
 
-	$custom_avatar = get_field('profile_avatar', 'user_'.$id_or_email);
+	$custom_avatar = esc_url(get_field('profile_avatar', 'user_'.$user_id));
 	if ($custom_avatar)
 		$return = '<img alt="'.$alt.'" src="'.$custom_avatar.'" srcset="'.$custom_avatar.'" class="avatar avatar-40 photo" height="'.$size.'" width="'.$size.'">';
 	elseif ($avatar)

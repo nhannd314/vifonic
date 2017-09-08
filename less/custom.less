@@ -53,6 +53,7 @@ img {
     border-bottom: solid 1px #eee;
     min-height: @top-bar-height;
     padding-top: 6px;
+    color: #888;
     .left {
 
     }
@@ -98,7 +99,7 @@ img {
                 position: absolute;
                 top: calc(~"100% + 30px"); left: 0;
                 margin: 0; padding: 0;
-                border-top: solid 5px @brand-second !important;
+                border-top: solid 5px @brand-primary !important;
                 box-shadow: 1px 1px 10px -3px rgba(0, 0, 0, 0.5);
                 list-style: none;
                 min-width: 220px;
@@ -189,8 +190,8 @@ img {
         }
     } //End center
     .header-right {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 11px;
+        padding-bottom: 11px;
         .register-login {
             display: inline-block;
             margin-right: 15px;
@@ -260,8 +261,10 @@ img {
                 position: absolute;
                 top: calc(~"100% + 32px"); left: 0;
                 margin: 0; padding: 0;
-                border-top: solid 5px @brand-second !important;
-                border: solid 1px @brand-second;
+                border-top: solid 5px @brand-primary !important;
+                -webkit-box-shadow: 1px 1px 12px -3px rgba(0, 0, 0, .4);
+                -moz-box-shadow: 1px 1px 12px -3px rgba(0, 0, 0, .4);
+                box-shadow: 1px 1px 12px -3px rgba(0, 0, 0, .4);
                 list-style: none;
                 min-width: 260px;
                 max-width: 300px;
@@ -288,7 +291,6 @@ img {
                     }
                 }
                 .acc-header {
-                    text-align: center;
                     a {
                         color: @brand-primary;
                         font-weight: 700;
@@ -380,11 +382,10 @@ img {
         margin-bottom: 20px;
         .section-title-main {
             font-size: @font-size-h3;
-            font-weight: 400;
             &:after {
                 content: '';
                 display: block;
-                border-bottom: 2px solid @brand-second;
+                border-bottom: 3px solid @brand-second;
                 width: 130px;
                 margin: 5px 0;
             }
@@ -426,7 +427,7 @@ img {
     width: 85%;
     height: 1px;
     margin: 0 auto;
-    border-top: 1px solid @brand-second;
+    border-top: 1px solid #ddd;
 }
 //Section
 .vifonic-section {
@@ -498,7 +499,8 @@ img {
         padding: 25px 0;
         #breadcrumbs {
             color: #FFF;
-            font-size: 18px;
+            font-size: 15px;
+            margin-bottom: 5px;
             a {
                 color: #FFF;
             }
@@ -695,7 +697,7 @@ main.main-single {
 
 //----------------------- DASHBOARD ----------------------------
 main.page-dashboard {
-    border-top: 1px solid @brand-second;
+    //border-top: 1px solid @brand-second;
     background-color: #F0F0F0;
     .sidebar-left {
         @media only screen and (min-width: 1200px) {
@@ -703,7 +705,7 @@ main.page-dashboard {
         }
     }
     .dashboard-menu {
-        background-color: @brand-second;
+        background-color: @brand-primary;
         color: #fff;
         .user-info {
             padding: 15px;
@@ -724,11 +726,11 @@ main.page-dashboard {
         }
         .user-menu {
             label {
-                text-align: center;
                 width: 100%;
                 padding: 0 15px;
                 margin: 0;
                 line-height: 30px;
+                font-size: 16px;
             }
             .user-menu-title {
                 margin: 0 0 15px;
@@ -751,7 +753,7 @@ main.page-dashboard {
                     }
                     &:hover {
                         a {
-                            color: @brand-primary;
+                            color: #ccc;
                         }
                     }
                 }
@@ -759,8 +761,7 @@ main.page-dashboard {
         }
     }
     .dashboard-content {
-        padding:15px 0;
-
+        padding: 0 15px 30px 0;
         .main-inner{
             background: #fff;
             border-radius: 5px;
@@ -768,9 +769,14 @@ main.page-dashboard {
             .profile-wrapper {
                 padding: 15px 0;
                 .profile-avatar {
-                    border: 1px solid @brand-primary;
+                    border: 1px solid #ddd;
                     margin-bottom: 15px;
                     background-color: #fff;
+                }
+                .table-user-information {
+                    tr:first-child td {
+                        border-top: none;
+                    }
                 }
             }
 
@@ -781,7 +787,7 @@ main.page-dashboard {
                 padding: 15px;
                 color: #000;
                 text-transform: uppercase;
-                border-bottom: 1px solid #e1e1e1;
+                border-bottom: 1px solid #ddd;
                 i{
                     color: @brand-primary;
                     margin-right: 10px;
@@ -871,6 +877,7 @@ main.page-cart {
                         margin-bottom: 15px;
                         font-size: 16px;
                         text-align: left;
+                        color: @brand-second;
                         .sale-price { text-decoration: line-through; }
                         i {
                             color: @brand-second;
@@ -975,6 +982,7 @@ main.page-order {
                             margin-bottom: 0px;
                             font-size: 14px;
                             text-align: left;
+
                             .sale-price { text-decoration: line-through; }
                             i {
                                 color: @brand-second;
@@ -1068,14 +1076,16 @@ main.page-order {
 }
 
 .single-course-item {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #ddd;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
     border-radius: 1px;
     background-color: #fff;
-    box-shadow: 1px 5px 10px #ddd;
     margin-bottom: 30px;
     position: relative;
+    &:hover {
+        box-shadow: 01px 0px 12px -3px #999;
+    }
     .hot-tag {
         display: inline-block;
         position: absolute;
@@ -1110,6 +1120,7 @@ main.page-order {
             }
             .course-rating {
                 padding:5px 0;
+                display: none;
                 .rating-star {
                     display: inline-block;
                     i {
@@ -1125,7 +1136,6 @@ main.page-order {
                 }
             }
             .course-teacher {
-                text-align: center;
                 margin-top: 5px;
             }
             .course-price {
@@ -1146,7 +1156,8 @@ main.page-order {
                     display: inline-block;
                 }
                 .regular-price {
-                    font-weight:700;
+                    font-weight:500;
+                    color: @brand-second;
                 }
             }
             .course-cart {
@@ -1161,10 +1172,13 @@ main.page-order {
 
 }
 
+#best-selling-course {
+    margin: 0;
+}
+
 //Featured Course Slider
 .courses-slider {
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     .owl-item img {
         /* display: block; */
         /* width: 100%; */
@@ -1209,10 +1223,11 @@ main.main-single-course {
     .single-course-heading {
         .course-title {
             font-size: 32px;
-            font-weight:300;
+            font-weight:500;
         }
         .course-rating {
             padding:5px 0;
+            display: none;
             .rating-star {
                 display: inline-block;
                 i {
@@ -1272,7 +1287,7 @@ main.main-single-course {
                             -moz-box-shadow: 0px 5px 10px 0px #ddd;
                             box-shadow: 0px 5px 10px 0px #ddd;
                             &:before {
-                                color: red;
+                                color: @brand-second;
                             }
                         }
                         a {
@@ -1281,7 +1296,7 @@ main.main-single-course {
                         .lesson-wrapper {
                             padding-left: 50px;
                             p {
-                                font-size: 16px;
+                                font-size: 14px;
                                 margin: 0px;
                             }
 
@@ -1298,7 +1313,7 @@ main.main-single-course {
                         -moz-box-shadow: 0px 5px 10px 0px #ddd;
                         box-shadow: 0px 5px 10px 0px #ddd;
                         &:before {
-                            color: red;
+                            color: @brand-second;
                         }
                     }
                 }
@@ -1353,9 +1368,9 @@ main.main-single-course {
                             display: inline-block;
                         }
                         .regular-price {
-                            font-weight:700;
+                            font-weight:500;
                             font-size: 24px;
-                            color: red;
+                            color: @brand-second;
                         }
                     }
                     .course-cart {
@@ -1428,6 +1443,13 @@ main.main-single-course {
 
     .course-tabs-wrapper {
         margin-bottom: 20px;
+        ul.nav-tabs {
+            li {
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
         .tab-content {
             .tab-pane {
                 background-color: #fff;
@@ -1447,17 +1469,50 @@ main.main-single-course {
             }
         }
     }
+
+    //Overview
+    .course-overview {
+        padding: 15px 0;
+        .curriculum-wrapper {
+            .course_chapter {
+                ul.chapter-list {
+                    li.chapter-item {
+                        background-color: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 3px;
+                        margin-bottom: 15px;
+                        .chapter-title {
+                            margin: 0;
+                            padding: 10px;
+                            background-color: #ccc;
+                            border-radius: 3px 3px 0 0;
+                            font-size: 16px;
+                            color: #333;
+                        }
+                        ul.lesson-list {
+                            li.lesson-item {
+                                border-bottom: 1px solid #f3f3f3;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 //----------------------- TEACHER ----------------------------
 .single-teacher-item {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #ddd;
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
     border-radius: 1px;
     background-color: #fff;
-    box-shadow: 1px 5px 10px #ddd;
     margin-bottom: 30px;
+    &:hover {
+        box-shadow: 01px 0px 12px -3px #999;
+    }
     .teacher-thumbnail {
         padding: 10px;
         img {
@@ -1489,7 +1544,7 @@ main.main-single-teacher {
 
 //---------------------- Email Subcribe ----------------------
 .vifonic_email_subcribe {
-    padding:10px 0;
+    padding:40px 0 15px 0;
     //background-color: darken(@brand-primary, 10%);
     text-align: center;
     //border-bottom: 1px solid #fff;
@@ -1513,13 +1568,12 @@ main.main-single-teacher {
         padding: 0 15px;
         height: 30px;
         font-weight: 700;
-        border: 2px solid #fff;
         margin-left: 5px;
     }
 }
 
 //--------------------- Comment ------------------------------
-#comments {
+/*#comments {
     clear: both;
     margin-bottom: 30px;
 
@@ -1654,7 +1708,152 @@ main.main-single-teacher {
             }
         }
     }
+}*/
+
+/*Comment Output*/
+#comments {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    .comments-title {
+        display: none;
+    }
+    .comment-list {
+        list-style: none;
+        padding: 0;
+        height: 500px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+            background-color: #F5F5F5;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: -webkit-linear-gradient(top,@brand-primary 0%, lighten(@brand-primary, 10%) 50%, lighten(@brand-primary, 10%) 51%, @brand-primary 100%);
+        }
+
+        li {
+            ol.children {
+                list-style: none;
+                margin-top: 10px;
+            }
+        }
+        li.depth-1 {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        .comment-meta {
+            position: relative;
+            .comment-author.vcard {
+                b.fn {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: @brand-primary;
+                    vertical-align: top;
+                    padding-left: 10px;
+                }
+                span.says {
+                    display: none;
+                }
+                img.photo {}
+                img.avatar {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: cover;
+                }
+            }
+            .comment-metadata {
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                left: 55px;
+                a {
+                    color: #ccc;
+                    font-size: 12px;
+                }
+                a.comment-edit-link {
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    padding: 3px;
+                    color: #ccc;
+                    margin-left: 10px;
+                }
+            }
+        }
+        .comment-content {
+            padding-left: 55px;
+        }
+        .reply {
+            padding-left: 55px;
+            a.comment-reply-link {
+/*                border: 1px solid #999;
+                border-radius: 3px;
+                padding: 3px;*/
+                color: #999;
+            }
+        }
+    }
+    #cancel-comment-reply {
+        a {}
+    }
+    /*Comment Form*/
+    #respond {
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: rgba(80, 173, 78, 0.2);
+        #reply-title {
+            margin: 0;
+            padding: 5px 0;
+            #cancel-comment-reply-link {
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: 3px;
+                background-color: #fff;
+                color: #ccc;
+                margin-left: 10px;
+            }
+        }
+        #cancel-comment-reply-link { }
+        #commentform {
+            .logged-in-as {
+                display: none;
+            }
+            .comment-form-comment {
+                margin: 0;
+                label {
+                    display: none;
+                }
+                textarea#comment {
+                    width: 100%;
+                }
+            }
+            .form-submit {
+                text-align: right;
+                margin: 0;
+                input#submit {
+                    color: #fff;
+                    background-color: @brand-primary;
+                    border: 1px solid @brand-primary;
+                    padding: 5px 10px;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
+
+
+
 
 //--------------------------- FOOTER -------------------------
 
@@ -1739,20 +1938,17 @@ main.main-single-teacher {
     bottom: 40px;
     right: 40px;
     z-index:1000;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: @brand-primary;
+    cursor: pointer;
     i.fa-angle-up {
-        width: 40px;
-        height: 40px;
-        border: 2px solid @brand-second;
-        text-align: center;
-        &:before{
-            color: @brand-second;
-            font-size: 36px;
-        }
-        &:hover{
-            background-color: @brand-second;
-            &:before{
-                color: #ffffff;
-            }
-        }
+        color: #fff;
+        font-size: 30px;
+        line-height: 35px;
+    }
+    &:hover{
+        background-color: darken(@brand-primary, 10%);
     }
 }

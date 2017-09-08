@@ -26,9 +26,9 @@ $lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : 0;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
     <div class="row single-course-heading">
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-            <h1 class="course-title title" itemprop="name">
+            <h2 class="course-title title" itemprop="name">
 				<?php the_title(); ?>
-            </h1>
+            </h2>
             <p class="course-desc"><?php vifonic_the_excerpt(100); ?></p>
             <div class="course-rating">
                 <div class="rating-star">
@@ -91,7 +91,7 @@ $lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : 0;
                                                             } else {
 					                                            $current_class = '';
                                                             }
-					                                        printf('<li class="lesson-item %1$s"><a href="%2$s?lesson=%3$s"><div class="lesson-wrapper"><p class="lesson-number">%4$s %3$s:</p><p class="lesson-title">%5$s</p></div></a></li>', $current_class, get_the_permalink(), $i, __('Lesson', 'vifonic'), $lesson['lesson_title']);
+					                                        printf('<li class="lesson-item %1$s"><a href="%2$s?action=learning&lesson=%3$s"><div class="lesson-wrapper"><p class="lesson-number">%4$s %3$s:</p><p class="lesson-title">%5$s</p></div></a></li>', $current_class, get_the_permalink(), $i, __('Lesson', 'vifonic'), $lesson['lesson_title']);
 					                                        $i++;
 				                                        }
 				                                        echo '</ul>';
@@ -119,7 +119,8 @@ $lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : 0;
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="trac-nghiem">
-				                <?php vifonic_title('Trắc nghiệm khóa học','','left'); ?>
+                                <h4>Trắc nghiệm khóa học</h4>
+				                <?php //vifonic_title('Trắc nghiệm khóa học','','left'); ?>
                                 <div class="course-content clearfix"><?php the_field('course_test'); ?></div>
                             </div>
                             <!--<div class="tab-pane fade" id="gioi-thieu">
@@ -156,7 +157,7 @@ $lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : 0;
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 course-reviews">
             <div class="course-reviews-wrapper">
 			    <?php
-			    vifonic_title('Thảo luận','','left');
+			    //vifonic_title('Thảo luận','','left');
 			    comments_template();
 			    ?>
             </div>

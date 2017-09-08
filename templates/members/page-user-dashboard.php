@@ -23,7 +23,6 @@ $user = wp_get_current_user();
 							<div class="user-menu">
 								<label><?php _e('PERSONAL INFORMATION', 'vifonic'); ?></label>
 								<div class="content">
-									<h3 class="user-menu-title"><?php _e('STUDENT', 'vifonic'); ?></h3>
 									<ul class="student-menu">
                                         <li class="acc-menu-item"><a href="/user/profile"><i class="fa fa-user" aria-hidden="true"></i><?php _e('Profile', 'vifonic') ?></a></li>
                                         <li class="acc-menu-item"><a href="/user/my-course"><i class="fa fa-book" aria-hidden="true"></i><?php _e('My Course', 'vifonic') ?></a></li>

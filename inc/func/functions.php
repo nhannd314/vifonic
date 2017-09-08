@@ -11,6 +11,7 @@ require get_template_directory() . '/inc/func/vifonic-custom-page-function.php';
 require get_template_directory() . '/inc/func/vifonic-register-login-function.php';
 require get_template_directory() . '/inc/func/vifonic-user-dashboard-function.php';
 require get_template_directory() . '/inc/func/vifonic-cart-order-function.php';
+require get_template_directory() . '/inc/func/vifonic-comment-ajax-function.php';
 
 
 add_action( 'admin_enqueue_scripts', 'load_admin_style' );
@@ -50,7 +51,6 @@ function vifonic_from_email() {
 
 	return 'wordpress@' . $sitename;
 }
-
 
 //-----Template function
 if (!function_exists('vifonic_')) {

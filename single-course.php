@@ -32,40 +32,48 @@ get_header(); ?>
 								}
 							}
 
-							$lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : '';
+							//Get Action
+							$action = isset($_GET['action']) ? $_GET['action'] : '';
+							if ($action == 'overview') {
+							    $case = 'overview';
+                            } elseif ($action == 'learning') {
+								$lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : '';
 
-							if ($lesson_id != ''){
-								$is_free = get_field('free_course', get_the_ID());
-								if($is_free){
-									$case = 'free';
-								}
-
-								$user = wp_get_current_user();
-								$my_course_list = get_field('profile_my_course_list', 'user_'.$user->ID);
-								if ($my_course_list){
-									foreach ($my_course_list as $my_course) {
-										if (get_the_ID() == $my_course['profile_my_course']) {
-											if ( $my_course['profile_is_active_course'] == true ) {
-												if ( 0 < intval($lesson_id)
-												     && intval($lesson_id) <= $count_lesson && $count_lesson > 0 ) {
-													$case = 'learning';
-												} else {
-													$case = 'none';
+								if ($lesson_id != ''){
+									$is_free = get_field('free_course', get_the_ID());
+									if($is_free){
+										$case = 'free';
+									} else {
+										$user = wp_get_current_user();
+										$my_course_list = get_field('profile_my_course_list', 'user_'.$user->ID);
+										if ($my_course_list){
+											foreach ($my_course_list as $my_course) {
+												if (get_the_ID() == $my_course['profile_my_course']) {
+													if ( $my_course['profile_is_active_course'] == true ) {
+														if ( 0 < intval($lesson_id)
+														     && intval($lesson_id) <= $count_lesson && $count_lesson > 0 ) {
+															$case = 'learning';
+														} else {
+															$case = 'none';
+														}
+														break;
+													} elseif ( $my_course['profile_is_active_course'] == false){
+														$case = 'not_active';
+														break;
+													}
 												}
-												break;
-											} elseif ( $my_course['profile_is_active_course'] == false){
-												$case = 'not_active';
-												break;
 											}
 										}
 									}
-                                }
-							}
+								}
+                            }
 						} else {
 						    $case = '';
                         }
-
                         switch ($case){
+                            case 'overview':
+	                            get_template_part('templates/loop/content', 'single-course-overview');
+                                break;
                             case 'learning':
                             case 'free':
 	                            get_template_part('templates/loop/content', 'single-course-learning');

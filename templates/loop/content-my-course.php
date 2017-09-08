@@ -41,7 +41,7 @@
 	                }
                 }
                 if ($is_active_course){
-                    printf('<a href="%1$s?lesson=1" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
+                    printf('<a href="%1$s?action=overview" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('LEARN NOW', 'vifonic'));
                 } else {
 	                printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', '/user/active-course/', __('ACTIVATE YOUR COURSE', 'vifonic'));
                 }

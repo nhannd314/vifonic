@@ -1,5 +1,8 @@
 jQuery(document).ready(function ()
 {
+    jQuery("#comments").prepend(jQuery("#respond"));
+
+    jQuery(".dashboard-menu").css("height", jQuery(".dashboard-content").parent().height());
     //Sidebar scroll
     if(jQuery('.course-information').length != 0){
         jQuery(window).scroll(function () {

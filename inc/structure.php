@@ -13,16 +13,16 @@ if (!function_exists('vifonic_breadcrumb')){
                     <h1 class="vifonic-heading text-left">
 						<?php
 						if (is_search()){
-							echo '<i class="fa fa-search" aria-hidden="true"></i>';
+							//echo '<i class="fa fa-search" aria-hidden="true"></i>';
 							printf(__('Search results for: "%1$s"', 'vifonic'), get_search_query());
 						} elseif (is_archive()){
-							echo '<i class="fa fa-newspaper-o" aria-hidden="true"></i>';
+							//echo '<i class="fa fa-newspaper-o" aria-hidden="true"></i>';
 							echo get_the_archive_title();
 						} elseif (is_single()) {
-							echo '<i class="fa fa-book" aria-hidden="true"></i>';
+							//echo '<i class="fa fa-book" aria-hidden="true"></i>';
 							echo get_the_title();
 						} elseif (is_tax()){
-							echo '<i class="fa fa-newspaper-o" aria-hidden="true"></i>';
+							//echo '<i class="fa fa-newspaper-o" aria-hidden="true"></i>';
 							$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 							echo $term->name;
 						}
@@ -180,11 +180,11 @@ if (!function_exists('vifonic_comment_facebook'))
 		if ($link == '') $link = home_url('/');
 		?>
         <div class="clearfix"></div>
-        <div class="facebook-comment responsive" style="border: 1px solid #3B5998;">
-            <h4 class="title" style="background-color: #3B5998;padding: 5px 20px;color: #fff;font-weight: 700;margin-top: 0;">
+        <div class="facebook-comment responsive" style="border: 0px solid #3B5998;">
+            <!--<h4 class="title" style="background-color: #3B5998;padding: 5px 20px;color: #fff;font-weight: 700;margin-top: 0;">
                 <i class="fa fa-comment-o" aria-hidden="true" style="margin-right: 5px;"></i>
-				<?php _e('Your comment', 'vifonic') ?>
-            </h4>
+				<?php /*_e('Your comment', 'vifonic') */?>
+            </h4>-->
             <div class="fb-comments" data-href="<?php echo $link ?>" data-width="100%" data-numposts="20"></div>
         </div>
 		<?php
