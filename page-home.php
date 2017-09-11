@@ -4,8 +4,8 @@
  */
 get_header();
 
-echo do_shortcode('[rev_slider alias="main-slider"]');
-//vifonic_slider();
+//echo do_shortcode('[rev_slider alias="main-slider"]');
+vifonic_slider();
 ?>
 
 <main class="main main-page page-home full-width">

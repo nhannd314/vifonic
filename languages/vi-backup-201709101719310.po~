@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vifonic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 05:34+0000\n"
-"PO-Revision-Date: 2017-09-08 05:38+0000\n"
+"POT-Creation-Date: 2017-09-10 17:18+0000\n"
+"PO-Revision-Date: 2017-09-10 17:18+0000\n"
 "Last-Translator: Y Khoa Admin <cuongiview@gmail.com>\n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -13,29 +13,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: comments.php:86 comments.php:147
-msgid "Reply to "
-msgstr "Trả lời"
-
-#: comments.php:86 comments.php:147
-msgid "Cancel"
-msgstr "Hủy"
-
-#: comments.php:117
-msgid "Processing..."
-msgstr "Đang xủ lý..."
-
-#: comments.php:126
-msgid "You might have left one of the fields blank, or be posting too quickly"
-msgstr "Bạn đang để trống bình luận hoặc thao tác quá nhanh."
-
-#: comments.php:132
-msgid "Thanks for your comment. We appreciate your response."
-msgstr "Cảm ơn bình luận của bạn. Chúng tôi đánh giá cao phản hồi của bạn."
-
-#: comments.php:134
-msgid "Please wait a while before posting your next comment"
-msgstr "Vui lòng đợi một lúc trước khi đăng nhận xét tiếp theo của bạn."
+#: templates/loop/content-single-course-learning.php:35
+msgid "Go back"
+msgstr ""
 
 #: 404.php:13
 msgid "404. Page not found!"
@@ -66,11 +46,36 @@ msgstr "Đăng bởi"
 msgid "View all posts by %s"
 msgstr "Xem tất cả bài viết của %s"
 
+#: comments.php:86 comments.php:147
+msgid "Reply to"
+msgstr "Trả lời"
+
+#: comments.php:86 comments.php:147
+msgid "Cancel"
+msgstr "Hủy"
+
 #: comments.php:92 comments.php:153
 #: inc/func/vifonic-comment-ajax-function.php:11
 #: inc/func/vifonic-comment-ajax-function.php:15
+#: templates/loop/content-single-course-learning.php:68
 msgid "Comment"
 msgstr "Bình luận"
+
+#: comments.php:117
+msgid "Processing..."
+msgstr "Đang xủ lý..."
+
+#: comments.php:126
+msgid "You might have left one of the fields blank, or be posting too quickly"
+msgstr "Bạn đang để trống bình luận hoặc thao tác quá nhanh."
+
+#: comments.php:132
+msgid "Thanks for your comment. We appreciate your response."
+msgstr "Cảm ơn bình luận của bạn. Chúng tôi đánh giá cao phản hồi của bạn."
+
+#: comments.php:134
+msgid "Please wait a while before posting your next comment"
+msgstr "Vui lòng đợi một lúc trước khi đăng nhận xét tiếp theo của bạn."
 
 #: header.php:39
 msgid "Categories"
@@ -181,11 +186,11 @@ msgstr "Đăng xuất"
 msgid "View your cart"
 msgstr "Xem giỏ hàng"
 
-#: single-course.php:82
+#: single-course.php:83
 msgid "This course has not been activated!"
 msgstr "Khóa học này chưa được kích hoạt!"
 
-#: single-course.php:86 templates/loop/content-none.php:10
+#: single-course.php:87 templates/loop/content-none.php:10
 msgid "Nothing found!"
 msgstr "Không tìm thấy kết quả phù hợp!"
 
@@ -650,6 +655,7 @@ msgid "Address"
 msgstr "Địa chỉ của bạn"
 
 #: templates/cart-order/content-order-detail.php:59
+#: templates/loop/content-single-course-learning.php:48
 msgid "Next"
 msgstr "Tiếp"
 
@@ -747,25 +753,21 @@ msgid "PROCESS TO CHECKOUT"
 msgstr "TIẾN HÀNH THANH TOÁN"
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "0 review"
 msgstr "0 đánh giá"
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "1 review"
 msgstr "1 đánh giá"
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "% review"
 msgstr "% đánh giá"
 
 #: templates/loop/content-course.php:36 templates/loop/content-my-course.php:27
-#: templates/loop/content-single-course-learning.php:43
 #: templates/loop/content-single-course.php:36
 msgid "Teacher:"
 msgstr "Giảng viên:"
@@ -785,19 +787,19 @@ msgstr "HỌC NGAY"
 msgid "ACTIVATE YOUR COURSE"
 msgstr "KÍCH HOẠT KHÓA HỌC"
 
-#: templates/loop/content-single-course-learning.php:60
+#: templates/loop/content-single-course-learning.php:65
 msgid "Curriculum"
 msgstr "Giáo trình"
 
-#: templates/loop/content-single-course-learning.php:61
+#: templates/loop/content-single-course-learning.php:66
 msgid "Document"
 msgstr "Tài liệu"
 
-#: templates/loop/content-single-course-learning.php:62
+#: templates/loop/content-single-course-learning.php:67
 msgid "Test"
 msgstr "Trắc nghiệm"
 
-#: templates/loop/content-single-course-learning.php:94
+#: templates/loop/content-single-course-learning.php:95
 #: templates/loop/content-single-course-overview.php:47
 #: templates/loop/content-single-course.php:88
 msgid "Lesson"

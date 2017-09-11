@@ -8,7 +8,7 @@ get_header(); ?>
 <?php vifonic_breadcrumb(); ?>
 
 <main class="main main-single-course">
-	<div class="container">
+	<div class="main-single-course-wrapper container">
 		<div class="row">
 			<section class="content col-lg-12 col-md-12 col-sm-12 col-xs-12" role="main">
 
@@ -16,6 +16,7 @@ get_header(); ?>
 				if (have_posts()):
 					while (have_posts()):
 						the_post();
+
 						$case = '';
 
 						$course_chapter = get_field('course_chapter');

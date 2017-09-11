@@ -1500,6 +1500,129 @@ main.main-single-course {
             }
         }
     }
+
+    //===== Learning Page =====
+    .single-course-learning-wrapper {
+        height: 100vh;
+        .single-course-primary {
+            margin-bottom: 0;
+            .col-content {
+                -webkit-transition: width 0.5s; /* For Safari 3.1 to 6.0 */
+                transition: width 0.5s;
+            }
+            .course-detail-wrapper {
+                margin-bottom: 0;
+                //Tab
+                .course-tabs {
+                    .course-tabs-wrapper {
+                        margin-bottom: 0;
+                        .tab-content {
+                            .tab-pane {
+                                height: calc(~"100vh - 45px");
+                            }
+                        }
+                    }
+                }
+                .chapter-list {
+                    height: calc(~"100vh - 75px");
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar-track {
+                        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+                        background-color: #F5F5F5;
+                        border-radius: 10px;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                        background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background-color: #FFF;
+                        background-image: -webkit-linear-gradient(top,@brand-primary 0%, lighten(@brand-primary, 10%) 50%, lighten(@brand-primary, 10%) 51%, @brand-primary 100%);
+                    }
+                }
+                //Comment
+                .course-reviews {
+                    height: calc(~"100vh - 75px");
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar-track {
+                        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+                        background-color: #F5F5F5;
+                        border-radius: 10px;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                        background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background-color: #FFF;
+                        background-image: -webkit-linear-gradient(top,@brand-primary 0%, lighten(@brand-primary, 10%) 50%, lighten(@brand-primary, 10%) 51%, @brand-primary 100%);
+                    }
+                    #comments {
+                        background-color: #fff;
+                        padding: 0;
+                        border-radius: 0;
+                        border: none;
+                        .comment-list {
+                            height: auto;
+                            overflow-y: unset;
+                        }
+                    }
+                }
+
+            }
+        }
+        .btn-action {
+            font-size: 20px;
+        }
+        .course-top-action {
+            font-size: 16px;
+            padding: 12px 0;
+            .btn-go-back {
+                i {
+                    -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                    margin-right: 5px;
+                }
+            }
+            .btn-full-width {
+                float: right;
+                i {
+                    margin-left: 5px;
+                }
+            }
+        }
+        .course-bottom-action {
+            .btn-next-lesson {
+                float: right;
+                i {
+                    border: 1px solid @brand-primary;
+                    background-color: @brand-primary;
+                    color: #fff;
+                    border-radius: 100%;
+                    text-align: center;
+                    line-height: 28px;
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+body.single-course-learning {
+    #top-bar, #header, #footer, #breadcrumbs-wrapper {
+        display: none;
+    }
 }
 
 //----------------------- TEACHER ----------------------------

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-08 05:42+0000\n"
+"POT-Creation-Date: 2017-09-10 17:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -54,6 +54,7 @@ msgstr ""
 #: comments.php:92 comments.php:153
 #: inc/func/vifonic-comment-ajax-function.php:11
 #: inc/func/vifonic-comment-ajax-function.php:15
+#: templates/loop/content-single-course-learning.php:68
 msgid "Comment"
 msgstr ""
 
@@ -180,11 +181,11 @@ msgstr ""
 msgid "View your cart"
 msgstr ""
 
-#: single-course.php:82
+#: single-course.php:83
 msgid "This course has not been activated!"
 msgstr ""
 
-#: single-course.php:86 templates/loop/content-none.php:10
+#: single-course.php:87 templates/loop/content-none.php:10
 msgid "Nothing found!"
 msgstr ""
 
@@ -639,6 +640,7 @@ msgid "Address"
 msgstr ""
 
 #: templates/cart-order/content-order-detail.php:59
+#: templates/loop/content-single-course-learning.php:48
 msgid "Next"
 msgstr ""
 
@@ -734,25 +736,21 @@ msgid "PROCESS TO CHECKOUT"
 msgstr ""
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "0 review"
 msgstr ""
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "1 review"
 msgstr ""
 
 #: templates/loop/content-course.php:34 templates/loop/content-my-course.php:25
-#: templates/loop/content-single-course-learning.php:41
 #: templates/loop/content-single-course.php:34
 msgid "% review"
 msgstr ""
 
 #: templates/loop/content-course.php:36 templates/loop/content-my-course.php:27
-#: templates/loop/content-single-course-learning.php:43
 #: templates/loop/content-single-course.php:36
 msgid "Teacher:"
 msgstr ""
@@ -772,19 +770,23 @@ msgstr ""
 msgid "ACTIVATE YOUR COURSE"
 msgstr ""
 
-#: templates/loop/content-single-course-learning.php:60
+#: templates/loop/content-single-course-learning.php:35
+msgid "Go back"
+msgstr ""
+
+#: templates/loop/content-single-course-learning.php:65
 msgid "Curriculum"
 msgstr ""
 
-#: templates/loop/content-single-course-learning.php:61
+#: templates/loop/content-single-course-learning.php:66
 msgid "Document"
 msgstr ""
 
-#: templates/loop/content-single-course-learning.php:62
+#: templates/loop/content-single-course-learning.php:67
 msgid "Test"
 msgstr ""
 
-#: templates/loop/content-single-course-learning.php:94
+#: templates/loop/content-single-course-learning.php:95
 #: templates/loop/content-single-course-overview.php:47
 #: templates/loop/content-single-course.php:88
 msgid "Lesson"
