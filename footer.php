@@ -85,7 +85,6 @@ $footer_bg_size =  $vifonic_options['footer-bg']['background-size'];
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,400italic,700,700italic,300italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
 
 <?php wp_footer(); ?>

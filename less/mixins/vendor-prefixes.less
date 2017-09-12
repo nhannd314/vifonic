@@ -145,6 +145,18 @@
        -o-transform: translate(@x, @y);
           transform: translate(@x, @y);
 }
+.translateX(@x) {
+    -webkit-transform: translateX(@x);
+    -ms-transform: translateX(@x); // IE9 only
+    -o-transform: translateX(@x);
+    transform: translateX(@x);
+}
+.translateY(@x) {
+    -webkit-transform: translateY(@x);
+    -ms-transform: translateY(@x); // IE9 only
+    -o-transform: translateY(@x);
+    transform: translateY(@x);
+}
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);

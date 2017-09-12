@@ -75,34 +75,46 @@ vifonic_slider();
                                     <?php vifonic_title("Tại sao chọn chúng tôi"); ?>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-wifi" aria-hidden="true"></i>
-                                    <h4>Học trực tuyến</h4>
-                                    <p>mọi lức mọi nới</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-wifi" aria-hidden="true"></i>
+                                        <h4>Học trực tuyến</h4>
+                                        <p>Học mọi lúc mọi nơi, chủ động công việc</p>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-money" aria-hidden="true"></i>
-                                    <h4>Tiết kiệm chi phí</h4>
-                                    <p>giá quá rẻ so với học offline</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-dollar" aria-hidden="true"></i>
+                                        <h4>Tiết kiệm chi phí</h4>
+                                        <p>Quá rẻ so với học Offline tại trung tâm</p>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-undo" aria-hidden="true"></i>
-                                    <h4>Hoàn tiền</h4>
-                                    <p>nếu không lòng</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-reply" aria-hidden="true"></i>
+                                        <h4>Hoàn tiền</h4>
+                                        <p>Nếu cảm thấy không hài lòng về khóa học</p>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                    <h4>Thanh toán một lần</h4>
-                                    <p>học trọn đời</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <h4>Thanh toán một lần</h4>
+                                        <p>Thanh toán một lần, học trọn đời</p>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                    <h4>Trách nhiệm</h4>
-                                    <p>test kiểm tra năng lực sau khóa học</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                        <h4>Trách nhiệm</h4>
+                                        <p>Test kiểm tra năng lực sau khóa học</p>
+                                    </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2">
-                                    <i class="fa fa-comments-o" aria-hidden="true"></i>
-                                    <h4>Hỗ trợ</h4>
-                                    <p>hỗ trợ và giải đáp trong quá trình học</p>
+                                    <div class="wrap">
+                                        <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                        <h4>Hỗ trợ</h4>
+                                        <p>Hỗ trợ và giải đáp trong quá trình học</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

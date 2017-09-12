@@ -1,6 +1,6 @@
 <?php
 /**
- * Content For Single Post
+ * Content For Single Course
  */
 ?>
 
@@ -18,7 +18,7 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope="" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
     <div class="row single-course-heading">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h2 class="course-title title" itemprop="name">
 				<?php the_title(); ?>
             </h2>
@@ -170,11 +170,11 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 			                if ($sale_price > 0){
 				                $regular_price = vifonic_price_format($regular_price);
 				                $sale_price = vifonic_price_format($sale_price);
-				                printf('<div class="course-price"><i class="fa fa-money" aria-hidden="true"></i><span class="regular-price">%1$s</span><span class="sale-price">%2$s</span></div>', $sale_price, $regular_price);
+				                printf('<div class="course-price"><span class="regular-price">%1$s</span><span class="sale-price">%2$s</span></div>', $sale_price, $regular_price);
 			                } else {
 				                $regular_price = vifonic_price_format($regular_price);
 
-				                printf('<div class="course-price"><i class="fa fa-money" aria-hidden="true"></i><span class="regular-price">%1$s</span></div>', $regular_price);
+				                printf('<div class="course-price"><span class="regular-price">%1$s</span></div>', $regular_price);
 			                }
 			                ?>
                             <div class="course-cart form-group form-inline">
@@ -259,10 +259,8 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 
                     <div class="course-lesson-time">
                         <table class="table-info">
-                            <tbody><tr>
-                                <td class="td-icon">
-                                    <i class="fa fa-book" aria-hidden="true"></i>
-                                </td>
+                            <tbody>
+                            <tr>
                                 <td class="td-name"><?php _e('Course Category', 'vifonic'); ?></td>
                                 <td class="td-detail">
 					                <?php foreach ($course_cat_list as $cat_id){
@@ -272,22 +270,17 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
                                 </td>
                             </tr>
                             <tr>
-                                <td class="td-icon">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                                </td>
                                 <td class="td-name"><?php _e('Number of lectures', 'vifonic'); ?></td>
                                 <td class="td-detail"><?php echo $count_lesson; ?></td>
                             </tr>
                             <tr>
-                                <td class="td-icon">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                </td>
                                 <td class="td-name"><?php _e('Lesson duration', 'vifonic'); ?></td>
                                 <td class="td-detail">
                                     <span><?php the_field('course_duration'); ?></span>
                                 </td>
                             </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
 		                <?php
 		                /*printf('<p><span class="lesson-time"><i class="fa fa-file-text-o" aria-hidden="true"></i>%1$s</span> %2$s</p>
 										<p><span class="lesson-time"><i class="fa fa-clock-o" aria-hidden="true"></i>%3$s</span> %4$s</p>'

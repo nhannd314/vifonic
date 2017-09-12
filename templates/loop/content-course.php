@@ -13,7 +13,7 @@
 	}*/
 	?>
     <div class="course-thumbnail">
-        <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>" target="_blank">
+        <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>">
 			<?php vifonic_post_thumbnail( 'course-thumbnail' ) ?>
         </a>
     </div>
@@ -21,7 +21,7 @@
     <div class="course-detail">
         <div class="wrapper">
             <h3 class="course-title">
-                <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>" target="_blank"><?php the_title() ?></a>
+                <a class="relative" rel="nofollow" href="<?php the_permalink(); ?>"><?php the_title() ?></a>
             </h3>
             <div class="course-rating">
                 <div class="rating-star">
@@ -62,7 +62,7 @@
 				}
 				?>
                 <div class="course-cart">
-					<?php printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('DETAIL', 'vifonic')); ?>
+					<?php printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('Detail', 'vifonic')); ?>
                 </div>
 				<?php
 			} else {
@@ -73,7 +73,7 @@
                 </div>
                 <div class="course-cart">
 					<?php
-					printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('DETAIL', 'vifonic'));
+					printf('<a href="%1$s" class="btn btn-primary">%2$s</a>', get_the_permalink(), __('Detail', 'vifonic'));
 					?>
                 </div>
 				<?php

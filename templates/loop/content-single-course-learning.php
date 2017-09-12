@@ -31,28 +31,21 @@ if ($lesson_id < $count_lesson) {
 
     <div class="row single-course-primary">
         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-content">
-            <div class="course-top-action">
-                <a class="btn-action btn-go-back" href="<?php the_permalink() ?>?action=overview"><i class="fa fa-play-circle"></i><?php _e('Go back', 'vifonic'); ?></a>
+            <div class="course-top-action clearfix">
+                <a class="btn-action btn-go-back" href="<?php the_permalink() ?>?action=overview"><i class="fa fa-backward"></i><?php _e('Go back', 'vifonic'); ?></a>
                 <a class="btn-action btn-full-width" href="#"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
             </div>
             <div class="course-video-wrapper">
-				<?php
-				$lesson_video = $lesson_list[$lesson_id-1]['lesson_video'];
-				echo '<iframe width="100%" height="490" src="https://www.youtube.com/embed/'.$lesson_video.'/?&autoplay=0" frameborder="0" allowfullscreen></iframe>';
-				?>
+				<?php $lesson_video = $lesson_list[$lesson_id-1]['lesson_video']; ?>
+                <iframe class="video-frame" src="https://www.youtube.com/embed/<?php echo $lesson_video ?>" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="course-bottom-action">
+            <div class="course-bottom-action clearfix">
                 <?php
                 if ($lesson_id < $count_lesson) {
 	                ?>
-                    <a class="btn-action btn-next-lesson" href="<?php the_permalink() ?>?action=learning&lesson=<?php echo $next_lesson; ?>"><?php _e('Next', 'vifonic'); ?><i class="fa fa-step-forward"></i></a>
+                    <a class="btn-action btn-next-lesson" href="<?php the_permalink() ?>?action=learning&lesson=<?php echo $next_lesson; ?>">Bài tiếp theo <i class="fa fa-fast-forward"></i></a>
 	                <?php
                 }
-                ?>
-            </div>
-            <div class="course-reviews">
-                <?php
-                //vifonic_comment_facebook(get_the_permalink());
                 ?>
             </div>
         </div>
@@ -73,35 +66,33 @@ if ($lesson_id < $count_lesson) {
 						        <?php
 						        if( get_field('course_chapter') ): ?>
 
-                                    <div class="row course_chapter">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <ul class="chapter-list">
-										        <?php
-										        $i = 1;
-										        while( have_rows('course_chapter') ): the_row();
-											        // vars
-											        $chapter_title = get_sub_field('chapter_title');
-											        $course_lesson = get_sub_field('course_lesson');
-											        echo '<li class="chapter-item"><h4 class="chapter-title">'.$chapter_title.'</h4>';
-											        if ($course_lesson){
-												        echo '<ul class="lesson-list">';
-												        foreach ($course_lesson as $lesson){
-													        $current_class = '';
-													        if ($lesson_id == $i) {
-														        $current_class = 'current';
-													        } else {
-														        $current_class = '';
-													        }
-													        printf('<li class="lesson-item %1$s"><a href="%2$s?action=learning&lesson=%3$s"><div class="lesson-wrapper"><p class="lesson-number">%4$s %3$s:</p><p class="lesson-title">%5$s</p></div></a></li>', $current_class, get_the_permalink(), $i, __('Lesson', 'vifonic'), $lesson['lesson_title']);
-													        $i++;
-												        }
-												        echo '</ul>';
-											        }
-											        echo '</li>';
-										        endwhile;
-										        ?>
-                                            </ul>
-                                        </div>
+                                    <div class="course_chapter">
+                                        <ul class="chapter-list">
+                                            <?php
+                                            $i = 1;
+                                            while( have_rows('course_chapter') ): the_row();
+                                                // vars
+                                                $chapter_title = get_sub_field('chapter_title');
+                                                $course_lesson = get_sub_field('course_lesson');
+                                                echo '<li class="chapter-item"><h4 class="chapter-title">'.$chapter_title.'</h4>';
+                                                if ($course_lesson){
+                                                    echo '<ul class="lesson-list">';
+                                                    foreach ($course_lesson as $lesson){
+                                                        $current_class = '';
+                                                        if ($lesson_id == $i) {
+                                                            $current_class = 'current';
+                                                        } else {
+                                                            $current_class = '';
+                                                        }
+                                                        printf('<li class="lesson-item %1$s"><a href="%2$s?action=learning&lesson=%3$s"><div class="lesson-wrapper"><p class="lesson-number">%4$s %3$s:</p><p class="lesson-title">%5$s</p></div></a></li>', $current_class, get_the_permalink(), $i, __('Lesson', 'vifonic'), $lesson['lesson_title']);
+                                                        $i++;
+                                                    }
+                                                    echo '</ul>';
+                                                }
+                                                echo '</li>';
+                                            endwhile;
+                                            ?>
+                                        </ul>
                                     </div>
 
 						        <?php endif; ?>

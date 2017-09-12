@@ -379,7 +379,7 @@ if (!function_exists('vifonic_show_list_courses_by_category'))
 			while ($queryCourse->have_posts()) {
 				$queryCourse->the_post();
 
-				echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+				echo '<div class="col-mb-12 col-xs-6 col-sm-6 col-md-3 col-lg-3">';
 				get_template_part('templates/loop/content', 'course');
 				echo '</div>';
 
@@ -427,7 +427,7 @@ if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
 			echo '<div id="featured-course" class="owl-carousel owl-theme courses-slider">';
 			while ($queryCourse->have_posts()) {
 				$queryCourse->the_post();
-				echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 course-item">';
+				echo '<div class="course-item">';
 				get_template_part('templates/loop/content', 'course');
 				echo '</div>';
 			}
@@ -436,7 +436,7 @@ if (!function_exists('vifonic_show_featured_courses_slider_by_category'))
                     jQuery(document).ready(function(){
                         jQuery("#featured-course").owlCarousel({
                             loop:true,
-                            margin:10,
+                            margin:24,
                             autoplay: true,
                             navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
                             dots: false,
@@ -497,7 +497,7 @@ if (!function_exists('vifonic_show_free_courses_slider_by_category'))
 			echo '<div id="free-course" class="owl-carousel owl-theme courses-slider">';
 			while ($queryCourse->have_posts()) {
 				$queryCourse->the_post();
-				echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 course-item">';
+				echo '<div class="course-item">';
 				get_template_part('templates/loop/content', 'course');
 				echo '</div>';
 			}
@@ -506,7 +506,7 @@ if (!function_exists('vifonic_show_free_courses_slider_by_category'))
                     jQuery(document).ready(function(){
                         jQuery("#free-course").owlCarousel({
                             loop:true,
-                            margin:10,
+                            margin:24,
                             autoplay: true,
                             navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
                             dots: false,
@@ -562,7 +562,7 @@ if (!function_exists('vifonic_related_courses')) {
 				echo '<div id="related-course" class="owl-carousel owl-theme courses-slider">';
 				while (have_posts()) {
 					the_post();
-					echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 course-item">';
+					echo '<div class="course-item">';
 					get_template_part('templates/loop/content', $content_template);
 					echo '</div>';
 				}
@@ -571,7 +571,7 @@ if (!function_exists('vifonic_related_courses')) {
                     jQuery(document).ready(function(){
                         jQuery("#related-course").owlCarousel({
                             loop:true,
-                            margin:10,
+                            margin:24,
                             autoplay: true,
                             navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
                             dots: false,
@@ -628,7 +628,7 @@ if (!function_exists('vifonic_slider'))
                     jQuery(document).ready(function(){
                         jQuery("#vifonic_slider").owlCarousel({
                             loop:true,
-                            margin:10,
+                            margin:24,
                             autoplay: true,
                             autoplayTimeout: 3000,
                             responsiveClass:true,
@@ -709,7 +709,7 @@ if (!function_exists('vifonic_show_list_courses_by_teacher'))
 				if ($teacher_list == null || !in_array($teacher_id, $teacher_list)){
 					continue;
 				}
-				echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+				echo '<div class="col-mb-12 col-xs-6 col-sm-6 col-md-3 col-lg-3">';
 				get_template_part('templates/loop/content', 'course');
 				echo '</div>';
 
@@ -767,7 +767,7 @@ if (!function_exists('vifonic_show_best_selling_course_list'))
 	            while ($queryCourse->have_posts()) {
 		            $queryCourse->the_post();
 
-		            echo '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">';
+		            echo '<div class="col-mb-12 col-xs-6 col-sm-6 col-md-3 col-lg-3">';
 		            get_template_part('templates/loop/content', 'course');
 		            echo '</div>';
 
@@ -781,7 +781,7 @@ if (!function_exists('vifonic_show_best_selling_course_list'))
 	            echo '<div id="best-selling-course" class="owl-carousel owl-theme courses-slider">';
 	            while ($queryCourse->have_posts()) {
 		            $queryCourse->the_post();
-		            echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 course-item">';
+		            echo '<div class="course-item">';
 		            get_template_part('templates/loop/content', 'course');
 		            echo '</div>';
 	            }
@@ -791,7 +791,7 @@ if (!function_exists('vifonic_show_best_selling_course_list'))
                     jQuery(document).ready(function(){
                         jQuery("#best-selling-course").owlCarousel({
                             loop:true,
-                            margin:10,
+                            margin:24,
                             autoplay: true,
                             navText: ["<i class=\"fa fa-chevron-left\"></i>", "<i class=\"fa fa-chevron-right\"></i>"],
                             dots: false,

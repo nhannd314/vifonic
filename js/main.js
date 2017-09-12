@@ -88,4 +88,10 @@ jQuery(document).ready(function ()
             console.log('hide');
         }
     });
+
+    // responsive video frame
+    jQuery('.video-frame').css('height', parseInt(jQuery(this).width() * 9 / 16));
+    jQuery(window).resize(function() {
+        jQuery('.video-frame').css('height', parseInt(jQuery(this).width() * 9/16));
+    });
 });
