@@ -78,13 +78,14 @@ jQuery(document).ready(function() {
     // Ajax add to wishlist
     jQuery("button.btn-add-to-wishlist").on("click", function(e) {
         var btn_addtowishlist = jQuery(this);
+        var course_id = jQuery(this).closest("form.add-to-wishlist-form").find("#vifonic_course_id").val();
         jQuery.ajax({
             type: "POST",
             dataType: "json",
             url: ajax_add_to_wishlist_object.ajaxurl,
             data: {
                 "action": "ajaxAddToWishlist",
-                "course_id": jQuery(this).closest("form.add-to-wishlist-form").find("#vifonic_course_id").val(),
+                "course_id": course_id,
                 "security": jQuery(this).closest("form.add-to-wishlist-form").find("#vifonic_add_to_wishlist_security").val()
             },
             success: function(response){
@@ -93,9 +94,10 @@ jQuery(document).ready(function() {
                 btn_addtowishlist.button('reset');
 
                 if (response.success == true){
-                    btn_addtowishlist.remove();
-                    jQuery(".course-wishlist").append('<a href="/user/my-wishlist/" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></a>');
-                    alert(response.message);
+                    btn_addtowishlist.hide();
+                    jQuery(".course-wishlist .btn-remove-wishlist").show();
+                    //jQuery(".course-wishlist").append('<a href="/user/my-wishlist/" class="btn btn-danger"><i class="fa fa-heart" aria-hidden="true"></i></a>');
+                    //alert(response.message);
                 } else {
                     console.log(response.error);
                     alert(response.error);
@@ -162,7 +164,10 @@ jQuery(document).ready(function() {
 
                 if (response.success === true){
                     console.log(response.message);
-                    window.location.reload();
+                    $this.hide();
+                    jQuery(".course-wishlist .add-to-wishlist-form").show();
+                    jQuery(".course-wishlist .btn-add-to-wishlist").show();
+                    // window.location.reload();
                 } else {
                     console.log(response.error);
                     alert(response.error);

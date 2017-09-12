@@ -117,7 +117,7 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
                                 <div class="course-content clearfix">
 						            <?php
 						            $teacher_arr = get_field('teacher_list', get_the_ID());
-						            vifonic_show_list_teacher(-1, $teacher_arr);
+						            vifonic_show_list_teacher_of_course($teacher_arr);
 						            ?>
                                 </div>
                             </div>
@@ -231,28 +231,26 @@ $course_cat_list = wp_get_post_terms( get_the_ID(), 'course_category', array('or
 		                    if (!$wishlist){
 			                    $wishlist = array();
                             }
+                            $add_display = "";
+                            $remove_display = "";
 		                    if (!in_array(get_the_ID(), $wishlist)){
-			                    ?>
-                                <form class="add-to-wishlist-form" action="/user/my-wishlist/" method="post" role="form">
-                                    <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
-				                    <?php wp_nonce_field( 'ajax-add-to-wishlist-nonce', 'vifonic_add_to_wishlist_security' ); ?>
-                                    <button type="submit" class="btn btn-danger btn-add-to-wishlist vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('ADD TO WISHLIST', 'vifonic'); ?>">
-                                        <i class="fa fa-heart" aria-hidden="true"></i>
-					                    <?php _e('ADD TO WISHLIST', 'vifonic'); ?>
-                                    </button>
-                                </form>
-			                    <?php
+			                    $add_display = 'block';
+			                    $remove_display = 'none';
 		                    } else {
-			                    wp_nonce_field( 'ajax-remove-wishlist-nonce', 'vifonic_remove_wishlist_security' );
-			                    ?>
-                                <a href="/user/my-wishlist/" class="btn btn-danger">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-				                    <?php _e('BROWSE WISHLIST', 'vifonic'); ?>
-                                </a>
-                                <button type="button" class="btn btn-danger btn-remove-wishlist vifonic-ajax-button" onclick="confirm('<?php _e('Are you sure?', 'vifonic'); ?>')" data-course-id="<?php echo get_the_ID(); ?>" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>"><i class="fa fa-times" aria-hidden="true"></i></button>
-			                    <?php
+			                    $add_display = 'none';
+			                    $remove_display = 'block';
 		                    }
+		                    wp_nonce_field( 'ajax-remove-wishlist-nonce', 'vifonic_remove_wishlist_security' );
 		                    ?>
+                            <form class="add-to-wishlist-form" action="/user/my-wishlist/" method="post" role="form" style="display: <?php echo $add_display; ?>;">
+                                <input type="hidden" name="vifonic_course_id" id="vifonic_course_id" value="<?php echo get_the_ID(); ?>">
+		                        <?php wp_nonce_field( 'ajax-add-to-wishlist-nonce', 'vifonic_add_to_wishlist_security' ); ?>
+                                <button type="submit" class="btn btn-danger btn-add-to-wishlist vifonic-ajax-button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> <?php _e('ADD TO WISHLIST', 'vifonic'); ?>">
+                                    <i class="fa fa-heart" aria-hidden="true"></i>
+			                        <?php _e('ADD TO WISHLIST', 'vifonic'); ?>
+                                </button>
+                            </form>
+                            <button type="button" class="btn btn-danger btn-remove-wishlist vifonic-ajax-button" data-course-id="<?php echo get_the_ID(); ?>" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> ĐÃ YÊU THÍCH"  style="display: <?php echo $remove_display; ?>;"><i class='fa fa-heart'></i> ĐÃ YÊU THÍCH</button>
                         </div>
                         <?php
                     } ?>

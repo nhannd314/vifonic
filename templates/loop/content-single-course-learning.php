@@ -22,8 +22,12 @@ if( !empty($course_chapter) ){
 
 $lesson_id = isset($_GET['lesson']) ? $_GET['lesson'] : 0;
 $next_lesson = 1;
+$pre_lesson = 1;
 if ($lesson_id < $count_lesson) {
     $next_lesson = $lesson_id + 1;
+}
+if ($lesson_id > $pre_lesson) {
+	$pre_lesson = $lesson_id - 1;
 }
 ?>
 
@@ -41,6 +45,11 @@ if ($lesson_id < $count_lesson) {
             </div>
             <div class="course-bottom-action clearfix">
                 <?php
+                if ($lesson_id > $pre_lesson) {
+	                ?>
+                    <a class="btn-action btn-previous-lesson" href="<?php the_permalink() ?>?action=learning&lesson=<?php echo $pre_lesson; ?>"><i class="fa fa-fast-backward"></i> Bài trước</a>
+	                <?php
+                }
                 if ($lesson_id < $count_lesson) {
 	                ?>
                     <a class="btn-action btn-next-lesson" href="<?php the_permalink() ?>?action=learning&lesson=<?php echo $next_lesson; ?>">Bài tiếp theo <i class="fa fa-fast-forward"></i></a>

@@ -1573,6 +1573,7 @@ main.main-single-course {
                         border: none;
                         .comment-list {
                             height: auto;
+                            max-height: unset;
                             overflow-y: unset;
                         }
                     }
@@ -1624,6 +1625,19 @@ main.main-single-course {
                 color: #fff;
                 &:hover {
                     color: #ccc;
+                }
+            }
+            .btn-previous-lesson {
+                float: left;
+                i {
+                    background-color: @brand-primary;
+                    color: #fff;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 34px;
+                    width: 34px;
+                    height: 34px;
+                    margin-left: 5px;
                 }
             }
             .btn-next-lesson {
@@ -1707,6 +1721,7 @@ main.main-single-teacher {
     .your-email input {
         height:30px;
         border: 1px solid #fff;
+        color: #000;
         max-width: 280px;
         padding-left: 10px;
         padding-right: 10px;

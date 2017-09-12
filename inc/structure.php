@@ -688,6 +688,37 @@ if (!function_exists('vifonic_show_list_teacher'))
 	}
 }
 
+if (!function_exists('vifonic_show_list_teacher_of_course'))
+{
+	function vifonic_show_list_teacher_of_course($teacher_arr = array()){
+		$args = array(
+			'post_type' => 'teacher',
+			'post_status' => 'publish',
+			'orderby'   => 'rand',
+		);
+		if(!empty($teacher_arr)) {
+			$args['post__in'] = $teacher_arr;
+		}
+		$queryCourse = new WP_Query($args);
+		if ($queryCourse->have_posts()){
+			echo '<div class="row">';
+			$i = 0;
+			while ($queryCourse->have_posts()) {
+				$queryCourse->the_post();
+
+				echo '<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">';
+				get_template_part('templates/loop/content', 'teacher');
+				echo '</div>';
+
+				$i++;
+				if ($i%3==0){ echo '<div class="clearfix"></div>'; }
+			}
+			echo '</div>';
+		}
+		wp_reset_query();
+	}
+}
+
 // ============== Show list Courses of a Teacher ============
 if (!function_exists('vifonic_show_list_courses_by_teacher'))
 {

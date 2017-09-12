@@ -2,7 +2,11 @@ jQuery(document).ready(function ()
 {
     jQuery("#comments").prepend(jQuery("#respond"));
 
-    jQuery(".dashboard-menu").css("height", jQuery(".dashboard-content").parent().height());
+    if(jQuery(".dashboard-menu").height() <  jQuery(".dashboard-content").parent().height()) {
+        jQuery(".dashboard-menu").css("height", jQuery(".dashboard-content").parent().height());
+    } else {
+        jQuery(".dashboard-menu").css("height", jQuery(".dashboard-content").parent().parent().height());
+    }
     //Sidebar scroll
     if(jQuery('.course-information').length != 0){
         jQuery(window).scroll(function () {
