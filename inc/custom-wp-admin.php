@@ -14,9 +14,13 @@ if (is_user_logged_in()){
 	}
 
 	function vifonic_no_admin_access() {
+		global $pagenow;
 		$redirect = isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : home_url( '/' );
-		if ( current_user_can( 'subscriber' ) )
-			exit( wp_redirect( $redirect ) );
+		if (current_user_can( 'subscriber' )) {
+			if ( $pagenow == 'profile.php' || $pagenow == 'index.php' ) {
+				exit( wp_redirect( $redirect ) );
+			}
+		}
 	}
 	add_action( 'admin_init', 'vifonic_no_admin_access', 100 );
 

@@ -33,7 +33,24 @@
                 </div>
                 <span class="rating-text"><?php comments_number(__('0 review', 'vifonic'), __('1 review', 'vifonic'), __('% review', 'vifonic')); ?></span>
             </div>
-			<?php printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), get_field( 'teacher_name', get_the_ID()) ); ?>
+
+			<?php
+			$teacher_list = get_field("teacher_list", get_the_ID());
+			if (!empty($teacher_list)) {
+				$post_type_query  = new WP_Query(
+					array (
+						'post_type'      => 'teacher',
+						'post__in' => $teacher_list
+					)
+				);
+
+				$posts_array = $post_type_query->posts;
+				$post_title_array = wp_list_pluck( $posts_array, 'post_title' );
+				printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), implode(", ",$post_title_array) );
+			} else {
+				printf('<p class="course-teacher">%1$s <strong>%2$s</strong></p>', __('Teacher:', 'vifonic'), "" );
+            }
+            ?>
 			<?php
 			$is_active_course = false;
 			$owned_course = false;
