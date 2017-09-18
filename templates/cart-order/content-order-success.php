@@ -64,7 +64,9 @@ if ( !empty($cart_list) && $order_success != '' ){
 		$i = 0;
 		$repeater_value = array();
 		$repeater_my_course = get_field('profile_my_course_list', 'user_'.get_current_user_id());
-
+		if (!$repeater_my_course) {
+			$repeater_my_course = array();
+		}
 		$order_arr = array();
 		foreach ($cart_list as $key => $course_id){
 			$checked_coupcon = vifonic_check_coupon($course_id);
@@ -120,10 +122,8 @@ if ( !empty($cart_list) && $order_success != '' ){
 					'profile_my_course_key' => $course_key,
 					'profile_is_active_course' => 0,
 				);
-
-				$i = add_row('profile_my_course_list', $my_course_row, 'user_'.get_current_user_id());
 				array_push($repeater_my_course, $my_course_row);
-
+				$i = add_row('profile_my_course_list', $my_course_row, 'user_'.get_current_user_id());
             }
 		}
 
